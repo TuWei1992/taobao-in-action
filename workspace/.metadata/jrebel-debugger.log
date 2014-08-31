@@ -1,0 +1,1483 @@
+[2014-08-31 23:02:09.907] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JREventRequestManager.createThreadStartRequest(JREventRequestManager.java:128)
+	at org.eclipse.jdi.internal.request.EventRequestManagerImpl$$$jr.createThreadStartRequest(<generated>:60000)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget$ThreadStartHandler.createRequest(JDIDebugTarget.java:1921)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget$ThreadStartHandler.<init>(JDIDebugTarget.java:1911)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.initializeRequests(JDIDebugTarget.java:506)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.initialize(JDIDebugTarget.java:446)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.<init>(JDIDebugTarget.java:315)
+	at org.eclipse.jdt.debug.core.JDIDebugModel$1.run(JDIDebugModel.java:183)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.jdt.debug.core.JDIDebugModel.newDebugTarget(JDIDebugModel.java:187)
+	at org.eclipse.jdt.internal.launching.StandardVMDebugger.createDebugTarget(StandardVMDebugger.java:447)
+	at org.eclipse.jdt.internal.launching.StandardVMDebugger.run(StandardVMDebugger.java:323)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatLaunchConfigurationDelegate.launch(TomcatLaunchConfigurationDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:697)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3537)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3473)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:367)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:09.913] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadDeathRequest.<init>(JRThreadDeathRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:186)
+	at com.zeroturnaround.jdi.request.JREventRequestManager.createThreadDeathRequest(JREventRequestManager.java:124)
+	at org.eclipse.jdi.internal.request.EventRequestManagerImpl$$$jr.createThreadDeathRequest(<generated>:60000)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget$ThreadDeathHandler.createRequest(JDIDebugTarget.java:2021)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget$ThreadDeathHandler.<init>(JDIDebugTarget.java:2011)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.initializeRequests(JDIDebugTarget.java:507)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.initialize(JDIDebugTarget.java:446)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.<init>(JDIDebugTarget.java:315)
+	at org.eclipse.jdt.debug.core.JDIDebugModel$1.run(JDIDebugModel.java:183)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.jdt.debug.core.JDIDebugModel.newDebugTarget(JDIDebugModel.java:187)
+	at org.eclipse.jdt.internal.launching.StandardVMDebugger.createDebugTarget(StandardVMDebugger.java:447)
+	at org.eclipse.jdt.internal.launching.StandardVMDebugger.run(StandardVMDebugger.java:323)
+	at org.eclipse.jst.server.tomcat.core.internal.TomcatLaunchConfigurationDelegate.launch(TomcatLaunchConfigurationDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:697)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3537)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3473)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:367)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:09.957] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:09.958] vm: detectProxyType java.lang.Thread
+[2014-08-31 23:02:09.969] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:09.977] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:09.978] vm: isProxyType java.lang.ref.Finalizer$FinalizerThread
+[2014-08-31 23:02:09.978] vm: detectProxyType java.lang.ref.Finalizer$FinalizerThread
+[2014-08-31 23:02:09.979] vm: isProxyType java.lang.ref.Finalizer$FinalizerThread
+[2014-08-31 23:02:09.981] vm: isProxyType java.lang.ref.Reference$ReferenceHandler
+[2014-08-31 23:02:09.981] vm: detectProxyType java.lang.ref.Reference$ReferenceHandler
+[2014-08-31 23:02:09.982] vm: isProxyType java.lang.ref.Reference$ReferenceHandler
+[2014-08-31 23:02:09.983] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:09.989] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRClassPrepareRequest.<init>(JRClassPrepareRequest.java:11)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:119)
+	at com.zeroturnaround.jdi.request.JREventRequestManager.createClassPrepareRequest(JREventRequestManager.java:76)
+	at org.eclipse.jdi.internal.request.EventRequestManagerImpl$$$jr.createClassPrepareRequest(<generated>:60000)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1179)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1139)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1112)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1089)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.createRequests(JavaBreakpoint.java:602)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.addToTarget(JavaBreakpoint.java:584)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.breakpointAdded(JDIDebugTarget.java:1287)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.notifyTarget(JavaDebugOptionsManager.java:296)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.handleDebugEvents(JavaDebugOptionsManager.java:515)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1109)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1143)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:407)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:09.992] classprepare: submit additional request for java.lang.Error$$M$*
+[2014-08-31 23:02:09.993] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRClassPrepareRequest.<init>(JRClassPrepareRequest.java:11)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:119)
+	at com.zeroturnaround.jdi.request.JREventRequestManager.createClassPrepareRequest(JREventRequestManager.java:76)
+	at org.eclipse.jdi.internal.request.EventRequestManagerImpl$$$jr.createClassPrepareRequest(<generated>:60000)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1179)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1139)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1112)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1089)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.createRequests(JavaBreakpoint.java:606)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.addToTarget(JavaBreakpoint.java:584)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.breakpointAdded(JDIDebugTarget.java:1287)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.notifyTarget(JavaDebugOptionsManager.java:296)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.handleDebugEvents(JavaDebugOptionsManager.java:515)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1109)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1143)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:407)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:10.002] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRExceptionRequest.<init>(JRExceptionRequest.java:14)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:132)
+	at com.zeroturnaround.jdi.request.JREventRequestManager.createExceptionRequest(JREventRequestManager.java:84)
+	at org.eclipse.jdi.internal.request.EventRequestManagerImpl$$$jr.createExceptionRequest(<generated>:60000)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaExceptionBreakpoint.newRequests(JavaExceptionBreakpoint.java:198)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.createRequest(JavaBreakpoint.java:486)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.createRequests(JavaBreakpoint.java:626)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.addToTarget(JavaBreakpoint.java:584)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.breakpointAdded(JDIDebugTarget.java:1287)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.notifyTarget(JavaDebugOptionsManager.java:296)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.handleDebugEvents(JavaDebugOptionsManager.java:515)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1109)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1143)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:407)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:10.011] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRClassPrepareRequest.<init>(JRClassPrepareRequest.java:11)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:119)
+	at com.zeroturnaround.jdi.request.JREventRequestManager.createClassPrepareRequest(JREventRequestManager.java:76)
+	at org.eclipse.jdi.internal.request.EventRequestManagerImpl$$$jr.createClassPrepareRequest(<generated>:60000)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1179)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1139)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1112)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1089)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.createRequests(JavaBreakpoint.java:602)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.addToTarget(JavaBreakpoint.java:584)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.breakpointAdded(JDIDebugTarget.java:1287)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.notifyTarget(JavaDebugOptionsManager.java:296)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.handleDebugEvents(JavaDebugOptionsManager.java:529)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1109)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1143)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:407)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:10.012] classprepare: submit additional request for java.lang.Throwable$$M$*
+[2014-08-31 23:02:10.013] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRClassPrepareRequest.<init>(JRClassPrepareRequest.java:11)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:119)
+	at com.zeroturnaround.jdi.request.JREventRequestManager.createClassPrepareRequest(JREventRequestManager.java:76)
+	at org.eclipse.jdi.internal.request.EventRequestManagerImpl$$$jr.createClassPrepareRequest(<generated>:60000)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1179)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1139)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1112)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.createClassPrepareRequest(JDIDebugTarget.java:1089)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.createRequests(JavaBreakpoint.java:606)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.addToTarget(JavaBreakpoint.java:584)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.breakpointAdded(JDIDebugTarget.java:1287)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.notifyTarget(JavaDebugOptionsManager.java:296)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.handleDebugEvents(JavaDebugOptionsManager.java:529)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1109)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1143)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:407)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:10.017] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRExceptionRequest.<init>(JRExceptionRequest.java:14)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:132)
+	at com.zeroturnaround.jdi.request.JREventRequestManager.createExceptionRequest(JREventRequestManager.java:84)
+	at org.eclipse.jdi.internal.request.EventRequestManagerImpl$$$jr.createExceptionRequest(<generated>:60000)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaExceptionBreakpoint.newRequests(JavaExceptionBreakpoint.java:198)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.createRequest(JavaBreakpoint.java:486)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.createRequests(JavaBreakpoint.java:626)
+	at org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.addToTarget(JavaBreakpoint.java:584)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.breakpointAdded(JDIDebugTarget.java:1287)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.notifyTarget(JavaDebugOptionsManager.java:296)
+	at org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.handleDebugEvents(JavaDebugOptionsManager.java:529)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1109)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1143)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:407)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:10.025] eventmgr: ---------------------
+[2014-08-31 23:02:10.025] eventmgr: start handling events
+[2014-08-31 23:02:10.026] eventmgr: suspend Attach Listener 1
+[2014-08-31 23:02:10.027] eventmgr: suspend Signal Dispatcher 1
+[2014-08-31 23:02:10.027] eventmgr: suspend Finalizer 1
+[2014-08-31 23:02:10.028] eventmgr: suspend Reference Handler 1
+[2014-08-31 23:02:10.028] eventmgr: suspend main 1
+[2014-08-31 23:02:10.029] eventmgr: event VMStartEvent: 0
+[2014-08-31 23:02:10.029] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:10.032] vm: resume
+[2014-08-31 23:02:10.033] vm: suspend count after vm resume Attach Listener 0
+[2014-08-31 23:02:10.034] vm: suspend count after vm resume Signal Dispatcher 0
+[2014-08-31 23:02:10.035] vm: suspend count after vm resume Finalizer 0
+[2014-08-31 23:02:10.035] vm: suspend count after vm resume Reference Handler 0
+[2014-08-31 23:02:10.036] vm: suspend count after vm resume main 0
+[2014-08-31 23:02:10.036] eventmgr: ---------------------
+[2014-08-31 23:02:10.036] eventmgr: start handling events
+[2014-08-31 23:02:10.037] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:10.037] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:10.038] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:10.038] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:10.039] eventmgr: suspend main 0
+[2014-08-31 23:02:10.039] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:10.039] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:10.041] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:10.042] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:10.043] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:10.043] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:10.044] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:10.044] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:10.045] eventset: after eventset resume main 0
+[2014-08-31 23:02:10.745] eventmgr: ---------------------
+[2014-08-31 23:02:10.746] eventmgr: start handling events
+[2014-08-31 23:02:10.746] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:10.747] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:10.747] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:10.748] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:10.748] eventmgr: suspend main 1
+[2014-08-31 23:02:10.749] eventmgr: ExceptionEvent main ExceptionEvent: 9 java.lang.UnsatisfiedLinkError 1
+[2014-08-31 23:02:10.749] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:10.751] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRExceptionRequest.<init>(JRExceptionRequest.java:14)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:132)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:65)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:10.757] eventset: resume, ignore false, policy 1
+[2014-08-31 23:02:10.759] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:10.760] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:10.760] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:10.761] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:10.762] eventset: after eventset resume main 0
+[2014-08-31 23:02:10.765] eventmgr: ---------------------
+[2014-08-31 23:02:10.765] eventmgr: start handling events
+[2014-08-31 23:02:10.766] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:10.767] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:10.767] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:10.767] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:10.768] eventmgr: suspend main 1
+[2014-08-31 23:02:10.768] eventmgr: ExceptionEvent main ExceptionEvent: 9 java.lang.UnsatisfiedLinkError 1
+[2014-08-31 23:02:10.769] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:10.769] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRExceptionRequest.<init>(JRExceptionRequest.java:14)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:132)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:65)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:10.770] eventset: resume, ignore false, policy 1
+[2014-08-31 23:02:10.771] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:10.772] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:10.773] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:10.773] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:10.774] eventset: after eventset resume main 1
+[2014-08-31 23:02:10.774] eventmgr: ---------------------
+[2014-08-31 23:02:10.774] eventmgr: start handling events
+[2014-08-31 23:02:10.775] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:10.775] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:10.776] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:10.776] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:10.776] eventmgr: suspend main 1
+[2014-08-31 23:02:10.777] eventmgr: ExceptionEvent main ExceptionEvent: 9 java.lang.UnsatisfiedLinkError 1
+[2014-08-31 23:02:10.777] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:10.778] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRExceptionRequest.<init>(JRExceptionRequest.java:14)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:132)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:65)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:10.778] eventset: resume, ignore false, policy 1
+[2014-08-31 23:02:10.779] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:10.780] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:10.780] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:10.781] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:10.781] eventset: after eventset resume main 0
+[2014-08-31 23:02:11.020] eventmgr: ---------------------
+[2014-08-31 23:02:11.020] eventmgr: start handling events
+[2014-08-31 23:02:11.025] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:11.029] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:11.030] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:11.031] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:11.033] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:11.034] eventmgr: suspend main 0
+[2014-08-31 23:02:11.034] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:11.035] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:11.035] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:11.039] vm: isProxyType sun.misc.GC$Daemon
+[2014-08-31 23:02:11.039] vm: detectProxyType sun.misc.GC$Daemon
+[2014-08-31 23:02:11.041] vm: isProxyType sun.misc.GC$Daemon
+[2014-08-31 23:02:11.043] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:11.044] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:11.044] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:11.045] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:11.056] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:11.063] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:11.064] eventset: after eventset resume main 0
+[2014-08-31 23:02:11.733] eventmgr: ---------------------
+[2014-08-31 23:02:11.734] eventmgr: start handling events
+[2014-08-31 23:02:11.735] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:11.735] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:11.736] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:11.736] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:11.737] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:11.738] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:11.738] eventmgr: suspend main 0
+[2014-08-31 23:02:11.739] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:11.739] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:11.740] eventmgr: ---------------------
+[2014-08-31 23:02:11.740] eventmgr: start handling events
+[2014-08-31 23:02:11.740] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:11.741] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:11.743] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:11.744] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:11.749] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:11.750] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:11.751] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:11.755] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:11.752] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:11.757] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:11.758] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:11.758] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:11.759] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:11.759] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:11.760] eventmgr: suspend main 0
+[2014-08-31 23:02:11.760] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:11.760] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:11.761] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:11.761] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:11.762] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:11.762] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:11.763] eventset: after eventset resume main 0
+[2014-08-31 23:02:11.764] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:11.765] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:11.766] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:11.767] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:11.768] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:11.768] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:11.769] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:11.770] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:11.770] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:11.771] eventset: after eventset resume main 0
+[2014-08-31 23:02:13.941] eventmgr: ---------------------
+[2014-08-31 23:02:13.941] eventmgr: start handling events
+[2014-08-31 23:02:13.942] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:13.943] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:13.943] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:13.944] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:13.944] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:13.945] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:13.945] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:13.946] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:13.946] eventmgr: suspend main 0
+[2014-08-31 23:02:13.946] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:13.947] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:13.947] eventmgr: ---------------------
+[2014-08-31 23:02:13.947] eventmgr: start handling events
+[2014-08-31 23:02:13.948] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:13.949] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:13.950] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:13.950] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:13.951] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:13.952] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:13.952] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:13.953] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:13.953] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:13.953] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:13.954] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:13.954] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:13.955] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:13.955] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:13.955] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:13.955] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:13.956] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:13.956] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:13.956] eventmgr: suspend main 0
+[2014-08-31 23:02:13.956] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:13.957] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:13.957] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:13.957] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:13.958] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:13.958] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:13.958] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:13.959] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:13.959] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:13.960] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:13.960] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:13.960] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:13.961] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:13.961] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:13.962] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:13.962] eventset: after eventset resume main 0
+[2014-08-31 23:02:13.963] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:13.963] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:13.964] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:13.964] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:13.965] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:13.965] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:13.966] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:13.966] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:13.967] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:13.967] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:13.968] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:13.968] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:13.969] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:13.969] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:13.970] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:13.970] eventset: after eventset resume main 0
+[2014-08-31 23:02:13.970] eventmgr: ---------------------
+[2014-08-31 23:02:13.970] eventmgr: start handling events
+[2014-08-31 23:02:13.971] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:13.972] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:13.972] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:13.973] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:13.973] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:13.973] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:13.974] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:13.974] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:13.975] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:13.975] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:13.976] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:13.976] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:13.977] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:13.977] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:13.978] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:13.978] eventmgr: suspend main 0
+[2014-08-31 23:02:13.978] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:13.979] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:13.979] eventmgr: ---------------------
+[2014-08-31 23:02:13.979] eventmgr: start handling events
+[2014-08-31 23:02:13.979] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:13.980] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:13.980] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:13.981] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:13.981] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:13.982] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:13.982] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:13.982] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:13.983] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:13.983] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:13.983] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:13.983] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:13.984] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:13.984] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:13.985] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:13.985] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:13.986] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:13.986] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:13.986] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:13.986] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:13.987] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:13.987] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:13.987] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:13.987] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:13.988] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:13.988] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:13.989] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:13.989] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:13.990] eventmgr: suspend main 0
+[2014-08-31 23:02:13.990] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:13.990] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:13.991] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:13.991] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:13.992] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:13.993] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:13.995] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:13.996] vm: isProxyType org.apache.tomcat.util.threads.TaskThread
+[2014-08-31 23:02:13.996] vm: detectProxyType org.apache.tomcat.util.threads.TaskThread
+[2014-08-31 23:02:13.996] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:13.997] eventset: after eventset resume main 0
+[2014-08-31 23:02:13.998] eventmgr: ---------------------
+[2014-08-31 23:02:13.998] eventmgr: start handling events
+[2014-08-31 23:02:13.998] vm: isProxyType org.apache.tomcat.util.threads.TaskThread
+[2014-08-31 23:02:13.999] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.000] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:14.001] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.002] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.002] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.004] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.005] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.006] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.007] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.007] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.007] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.008] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.008] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.009] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.009] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.009] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:14.010] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.010] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:14.010] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.011] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:14.011] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:14.012] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:14.012] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:14.013] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:14.013] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:14.014] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:14.014] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:14.015] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:14.015] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:14.016] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:14.016] eventmgr: suspend main 0
+[2014-08-31 23:02:14.016] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:14.016] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:14.017] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:14.017] eventset: after eventset resume main 0
+[2014-08-31 23:02:14.017] eventmgr: ---------------------
+[2014-08-31 23:02:14.018] eventmgr: start handling events
+[2014-08-31 23:02:14.018] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:14.019] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.020] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:14.021] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.022] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.022] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:14.023] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.023] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.024] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.024] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.024] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.025] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.025] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.026] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.026] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.026] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:14.026] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.027] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:14.027] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.027] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:14.027] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.028] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:14.028] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.029] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:14.029] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:14.029] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:14.029] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:14.030] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:14.030] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:14.031] eventmgr: suspend main 0
+[2014-08-31 23:02:14.031] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:14.031] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:14.031] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:14.032] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:14.032] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:14.032] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:14.033] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:14.034] eventset: after eventset resume main 0
+[2014-08-31 23:02:14.034] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:14.034] eventmgr: ---------------------
+[2014-08-31 23:02:14.035] eventmgr: start handling events
+[2014-08-31 23:02:14.037] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:14.037] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.038] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.038] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.039] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.040] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.040] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.041] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.041] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.042] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.042] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.043] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.043] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.044] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.044] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.045] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.045] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:14.045] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.046] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:14.046] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:14.046] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:14.047] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:14.047] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:14.047] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:14.048] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:14.048] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:14.048] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:14.049] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:14.049] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:14.050] eventmgr: suspend main 0
+[2014-08-31 23:02:14.050] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:14.050] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:14.051] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:14.051] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:14.051] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:14.052] eventset: after eventset resume main 0
+[2014-08-31 23:02:14.052] eventmgr: ---------------------
+[2014-08-31 23:02:14.052] eventmgr: start handling events
+[2014-08-31 23:02:14.054] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.054] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:14.055] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.055] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.056] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:14.056] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.057] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.057] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.057] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.058] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.058] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.058] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.059] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.059] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.059] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.060] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:14.060] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.060] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:14.060] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.061] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:14.061] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.061] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:14.061] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:14.062] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:14.062] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:14.063] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:14.063] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:14.063] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:14.063] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:14.064] eventmgr: suspend main 0
+[2014-08-31 23:02:14.064] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:14.064] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:14.064] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:14.065] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:14.065] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:14.065] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:14.066] eventset: after eventset resume main 0
+[2014-08-31 23:02:14.067] vm: isProxyType java.lang.Thread
+[2014-08-31 23:02:14.069] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:14.070] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.070] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.071] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.071] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.072] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.072] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.073] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.073] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.073] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:14.074] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:14.074] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:14.075] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:14.075] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:14.076] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:14.076] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:14.077] eventset: after eventset resume main 0
+[2014-08-31 23:02:14.154] eventmgr: ---------------------
+[2014-08-31 23:02:14.154] eventmgr: start handling events
+[2014-08-31 23:02:14.155] eventmgr: suspend http-bio-8080-exec-2 0
+[2014-08-31 23:02:14.155] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.156] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.156] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.157] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.157] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.158] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.158] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.159] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.159] eventmgr: suspend localhost-startStop-1 0
+[2014-08-31 23:02:14.160] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:14.160] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:14.161] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:14.161] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:14.162] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:14.162] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:14.163] eventmgr: suspend main 0
+[2014-08-31 23:02:14.163] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:14.163] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:14.164] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:14.165] vm: isProxyType org.apache.tomcat.util.threads.TaskThread
+[2014-08-31 23:02:14.166] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:14.167] eventset: after eventset resume http-bio-8080-exec-2 0
+[2014-08-31 23:02:14.167] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:14.168] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:14.168] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:14.169] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:14.169] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:14.170] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:14.171] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:14.171] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:14.172] eventset: after eventset resume localhost-startStop-1 0
+[2014-08-31 23:02:14.172] eventset: after eventset resume Catalina-startStop-1 0
+[2014-08-31 23:02:14.173] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:14.173] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:14.174] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:14.174] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:14.175] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:14.176] eventset: after eventset resume main 0
+[2014-08-31 23:02:23.938] eventmgr: ---------------------
+[2014-08-31 23:02:23.938] eventmgr: start handling events
+[2014-08-31 23:02:23.939] eventmgr: suspend http-bio-8080-exec-2 0
+[2014-08-31 23:02:23.940] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:23.940] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:23.941] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:23.941] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:23.942] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:23.943] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:23.943] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:23.944] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:23.945] eventmgr: suspend Catalina-startStop-1 0
+[2014-08-31 23:02:23.945] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:23.946] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:23.946] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:23.947] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:23.947] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:23.948] eventmgr: suspend main 0
+[2014-08-31 23:02:23.948] eventmgr: ThreadDeathEvent localhost-startStop-1 ThreadDeathEvent: 5 0
+[2014-08-31 23:02:23.948] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:23.948] eventmgr: ---------------------
+[2014-08-31 23:02:23.948] eventmgr: start handling events
+[2014-08-31 23:02:23.949] eventmgr: suspend http-bio-8080-exec-2 0
+[2014-08-31 23:02:23.949] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadDeathRequest.<init>(JRThreadDeathRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:186)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:89)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:23.950] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:23.950] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:23.951] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:23.951] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:23.951] eventset: after eventset resume http-bio-8080-exec-2 0
+[2014-08-31 23:02:23.952] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:23.952] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:23.952] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:23.952] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:23.953] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:23.953] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:23.953] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:23.953] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:23.954] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:23.954] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:23.954] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:23.954] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:23.955] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:23.955] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:23.955] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:23.955] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:23.956] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:23.956] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:23.956] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:23.956] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:23.957] eventmgr: suspend main 0
+[2014-08-31 23:02:23.957] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:23.957] eventmgr: ThreadDeathEvent Catalina-startStop-1 ThreadDeathEvent: 5 0
+[2014-08-31 23:02:23.957] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:23.958] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:23.958] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:23.958] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadDeathRequest.<init>(JRThreadDeathRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:186)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:89)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:23.958] eventset: after eventset resume main 0
+[2014-08-31 23:02:23.959] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:23.959] eventset: after eventset resume http-bio-8080-exec-2 0
+[2014-08-31 23:02:23.960] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:23.960] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:23.961] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:23.961] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:23.962] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:23.962] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:23.963] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:23.963] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:23.964] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:23.964] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:23.965] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:23.965] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:23.966] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:23.966] eventset: after eventset resume main 0
+[2014-08-31 23:02:34.838] eventmgr: ---------------------
+[2014-08-31 23:02:34.839] eventmgr: start handling events
+[2014-08-31 23:02:34.842] eventmgr: suspend http-bio-8080-exec-4 0
+[2014-08-31 23:02:34.843] eventmgr: suspend http-bio-8080-exec-3 0
+[2014-08-31 23:02:34.844] eventmgr: suspend http-bio-8080-exec-2 0
+[2014-08-31 23:02:34.846] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:34.847] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:34.848] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:34.850] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:34.851] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:34.852] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:34.853] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:34.854] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:34.855] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:34.856] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:34.857] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:34.857] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:34.858] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:34.859] eventmgr: suspend main 0
+[2014-08-31 23:02:34.859] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:34.859] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:34.860] eventmgr: ---------------------
+[2014-08-31 23:02:34.860] eventmgr: start handling events
+[2014-08-31 23:02:34.860] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:34.863] eventmgr: suspend http-bio-8080-exec-4 0
+[2014-08-31 23:02:34.864] vm: isProxyType org.apache.tomcat.util.threads.TaskThread
+[2014-08-31 23:02:34.864] eventmgr: suspend http-bio-8080-exec-3 0
+[2014-08-31 23:02:34.868] eventmgr: suspend http-bio-8080-exec-2 0
+[2014-08-31 23:02:34.869] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:34.870] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:34.871] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:34.871] eventset: after eventset resume http-bio-8080-exec-4 0
+[2014-08-31 23:02:34.872] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:34.873] eventset: after eventset resume http-bio-8080-exec-3 0
+[2014-08-31 23:02:34.874] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:34.874] eventset: after eventset resume http-bio-8080-exec-2 0
+[2014-08-31 23:02:34.875] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:34.876] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:34.877] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:34.877] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:34.877] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:34.877] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:34.878] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:34.878] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:34.879] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:34.879] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:34.880] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:34.880] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:34.880] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:34.881] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:34.881] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:34.881] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:34.882] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:34.882] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:34.882] eventmgr: suspend main 0
+[2014-08-31 23:02:34.883] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:34.883] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:34.883] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:34.884] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:34.884] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:34.884] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:34.885] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:34.885] eventset: after eventset resume main 0
+[2014-08-31 23:02:34.886] vm: isProxyType org.apache.tomcat.util.threads.TaskThread
+[2014-08-31 23:02:34.887] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:34.888] eventset: after eventset resume http-bio-8080-exec-4 0
+[2014-08-31 23:02:34.889] eventset: after eventset resume http-bio-8080-exec-3 0
+[2014-08-31 23:02:34.889] eventset: after eventset resume http-bio-8080-exec-2 0
+[2014-08-31 23:02:34.890] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:34.891] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:34.891] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:34.892] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:34.892] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:34.893] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:34.893] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:34.894] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:34.895] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:34.895] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:34.896] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:34.896] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:34.897] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:34.897] eventset: after eventset resume main 0
+[2014-08-31 23:02:35.075] eventmgr: ---------------------
+[2014-08-31 23:02:35.075] eventmgr: start handling events
+[2014-08-31 23:02:35.076] eventmgr: suspend http-bio-8080-exec-5 0
+[2014-08-31 23:02:35.077] eventmgr: suspend http-bio-8080-exec-4 0
+[2014-08-31 23:02:35.077] eventmgr: suspend http-bio-8080-exec-3 0
+[2014-08-31 23:02:35.078] eventmgr: suspend http-bio-8080-exec-2 0
+[2014-08-31 23:02:35.078] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:35.079] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:35.080] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:35.080] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:35.081] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:35.081] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:35.082] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:35.083] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:35.083] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:35.084] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:35.085] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:35.085] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:35.086] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:35.087] eventmgr: suspend main 0
+[2014-08-31 23:02:35.087] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:35.088] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:35.088] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:35.090] vm: isProxyType org.apache.tomcat.util.threads.TaskThread
+[2014-08-31 23:02:35.091] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:35.093] eventset: after eventset resume http-bio-8080-exec-5 0
+[2014-08-31 23:02:35.095] eventset: after eventset resume http-bio-8080-exec-4 0
+[2014-08-31 23:02:35.095] eventset: after eventset resume http-bio-8080-exec-3 0
+[2014-08-31 23:02:35.097] eventset: after eventset resume http-bio-8080-exec-2 0
+[2014-08-31 23:02:35.099] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:35.101] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:35.101] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:35.102] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:35.102] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:35.103] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:35.104] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:35.104] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:35.105] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:35.105] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:35.106] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:35.107] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:35.107] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:35.108] eventset: after eventset resume main 0
+[2014-08-31 23:02:35.108] eventmgr: ---------------------
+[2014-08-31 23:02:35.108] eventmgr: start handling events
+[2014-08-31 23:02:35.109] eventmgr: suspend http-bio-8080-exec-6 0
+[2014-08-31 23:02:35.110] eventmgr: suspend http-bio-8080-exec-5 0
+[2014-08-31 23:02:35.111] eventmgr: suspend http-bio-8080-exec-4 0
+[2014-08-31 23:02:35.112] eventmgr: suspend http-bio-8080-exec-3 0
+[2014-08-31 23:02:35.112] eventmgr: suspend http-bio-8080-exec-2 0
+[2014-08-31 23:02:35.113] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:35.113] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:35.114] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:35.114] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:35.116] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:02:35.117] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:35.118] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:35.118] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:35.119] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:02:35.120] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:02:35.121] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:02:35.122] eventmgr: suspend Finalizer 0
+[2014-08-31 23:02:35.123] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:02:35.123] eventmgr: suspend main 0
+[2014-08-31 23:02:35.124] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:02:35.124] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:02:35.125] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:02:35.126] vm: isProxyType org.apache.tomcat.util.threads.TaskThread
+[2014-08-31 23:02:35.127] eventset: resume, ignore false, policy 0
+[2014-08-31 23:02:35.128] eventset: after eventset resume http-bio-8080-exec-6 0
+[2014-08-31 23:02:35.129] eventset: after eventset resume http-bio-8080-exec-5 0
+[2014-08-31 23:02:35.130] eventset: after eventset resume http-bio-8080-exec-4 0
+[2014-08-31 23:02:35.130] eventset: after eventset resume http-bio-8080-exec-3 0
+[2014-08-31 23:02:35.131] eventset: after eventset resume http-bio-8080-exec-2 0
+[2014-08-31 23:02:35.131] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:02:35.132] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:02:35.133] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:02:35.133] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:02:35.134] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:02:35.134] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:02:35.135] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:02:35.135] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:02:35.136] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:02:35.137] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:02:35.137] eventset: after eventset resume Signal Dispatcher 0
+[2014-08-31 23:02:35.138] eventset: after eventset resume Finalizer 0
+[2014-08-31 23:02:35.138] eventset: after eventset resume Reference Handler 0
+[2014-08-31 23:02:35.139] eventset: after eventset resume main 0
+[2014-08-31 23:03:25.738] eventmgr: ---------------------
+[2014-08-31 23:03:25.738] eventmgr: start handling events
+[2014-08-31 23:03:25.740] eventmgr: suspend http-bio-8080-exec-8 0
+[2014-08-31 23:03:25.740] eventmgr: suspend http-bio-8080-exec-7 0
+[2014-08-31 23:03:25.742] eventmgr: suspend http-bio-8080-exec-6 0
+[2014-08-31 23:03:25.743] eventmgr: suspend http-bio-8080-exec-5 0
+[2014-08-31 23:03:25.743] eventmgr: suspend http-bio-8080-exec-4 0
+[2014-08-31 23:03:25.744] eventmgr: suspend http-bio-8080-exec-3 0
+[2014-08-31 23:03:25.745] eventmgr: suspend http-bio-8080-exec-2 0
+[2014-08-31 23:03:25.745] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:03:25.746] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:03:25.746] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:03:25.747] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:03:25.749] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:03:25.750] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:03:25.751] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:03:25.751] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:03:25.752] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:03:25.753] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:03:25.753] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:03:25.754] eventmgr: suspend Finalizer 0
+[2014-08-31 23:03:25.755] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:03:25.755] eventmgr: suspend main 0
+[2014-08-31 23:03:25.755] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:03:25.756] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:03:25.756] eventmgr: ---------------------
+[2014-08-31 23:03:25.757] eventmgr: start handling events
+[2014-08-31 23:03:25.757] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.java:132)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher.access$0(EventDispatcher.java:100)
+	at org.eclipse.jdt.internal.debug.core.EventDispatcher$1.run(EventDispatcher.java:249)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+[2014-08-31 23:03:25.758] eventmgr: suspend http-bio-8080-exec-10 0
+[2014-08-31 23:03:25.759] eventmgr: suspend http-bio-8080-exec-9 0
+[2014-08-31 23:03:25.759] vm: isProxyType org.apache.tomcat.util.threads.TaskThread
+[2014-08-31 23:03:25.760] eventmgr: suspend http-bio-8080-exec-8 0
+[2014-08-31 23:03:25.760] eventset: resume, ignore false, policy 0
+[2014-08-31 23:03:25.761] eventmgr: suspend http-bio-8080-exec-7 0
+[2014-08-31 23:03:25.761] eventset: after eventset resume http-bio-8080-exec-10 0
+[2014-08-31 23:03:25.761] eventmgr: suspend http-bio-8080-exec-6 0
+[2014-08-31 23:03:25.762] eventmgr: suspend http-bio-8080-exec-5 0
+[2014-08-31 23:03:25.762] eventset: after eventset resume http-bio-8080-exec-9 0
+[2014-08-31 23:03:25.763] eventset: after eventset resume http-bio-8080-exec-8 0
+[2014-08-31 23:03:25.763] eventmgr: suspend http-bio-8080-exec-4 0
+[2014-08-31 23:03:25.763] eventset: after eventset resume http-bio-8080-exec-7 0
+[2014-08-31 23:03:25.763] eventmgr: suspend http-bio-8080-exec-3 0
+[2014-08-31 23:03:25.764] eventmgr: suspend http-bio-8080-exec-2 0
+[2014-08-31 23:03:25.764] eventset: after eventset resume http-bio-8080-exec-6 0
+[2014-08-31 23:03:25.765] eventmgr: suspend ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:03:25.765] eventset: after eventset resume http-bio-8080-exec-5 0
+[2014-08-31 23:03:25.765] eventmgr: suspend ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:03:25.765] eventset: after eventset resume http-bio-8080-exec-4 0
+[2014-08-31 23:03:25.767] eventmgr: suspend http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:03:25.767] eventset: after eventset resume http-bio-8080-exec-3 0
+[2014-08-31 23:03:25.769] eventmgr: suspend http-bio-8443-Acceptor-0 0
+[2014-08-31 23:03:25.770] eventset: after eventset resume http-bio-8080-exec-2 0
+[2014-08-31 23:03:25.770] eventmgr: suspend http-bio-8080-exec-1 0
+[2014-08-31 23:03:25.771] eventset: after eventset resume ajp-bio-8009-AsyncTimeout 0
+[2014-08-31 23:03:25.771] eventmgr: suspend http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:03:25.773] eventset: after eventset resume ajp-bio-8009-Acceptor-0 0
+[2014-08-31 23:03:25.774] eventmgr: suspend http-bio-8080-Acceptor-0 0
+[2014-08-31 23:03:25.775] eventset: after eventset resume http-bio-8443-AsyncTimeout 0
+[2014-08-31 23:03:25.776] eventmgr: suspend ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:03:25.776] eventset: after eventset resume http-bio-8443-Acceptor-0 0
+[2014-08-31 23:03:25.777] eventmgr: suspend GC Daemon 0
+[2014-08-31 23:03:25.778] eventmgr: suspend Attach Listener 0
+[2014-08-31 23:03:25.779] eventset: after eventset resume http-bio-8080-exec-1 0
+[2014-08-31 23:03:25.780] eventmgr: suspend Signal Dispatcher 0
+[2014-08-31 23:03:25.780] eventset: after eventset resume http-bio-8080-AsyncTimeout 0
+[2014-08-31 23:03:25.781] eventmgr: suspend Finalizer 0
+[2014-08-31 23:03:25.781] eventset: after eventset resume http-bio-8080-Acceptor-0 0
+[2014-08-31 23:03:25.782] eventmgr: suspend Reference Handler 0
+[2014-08-31 23:03:25.782] eventset: after eventset resume ContainerBackgroundProcessor[StandardEngine[Catalina]] 0
+[2014-08-31 23:03:25.784] eventmgr: suspend main 0
+[2014-08-31 23:03:25.784] eventset: after eventset resume GC Daemon 0
+[2014-08-31 23:03:25.784] eventmgr: event ThreadStartEvent: 4
+[2014-08-31 23:03:25.785] eventset: after eventset resume Attach Listener 0
+[2014-08-31 23:03:25.785] eventmgr: end handling events with NOT_REBEL
+[2014-08-31 23:03:25.786] jreventrequest: java.lang.ClassNotFoundException: com.sun.tools.jdi.EventRequestManagerImpl$EventRequestImpl
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.zeroturnaround.jdi.request.JREventRequest.initPropertiesInternally(JREventRequest.java:21)
+	at com.zeroturnaround.jdi.request.JREventRequest.<init>(JREventRequest.java:16)
+	at com.zeroturnaround.jdi.request.JRThreadStartRequest.<init>(JRThreadStartRequest.java:12)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:192)
+	at com.zeroturnaround.jdi.request.JRRequestWrapper.wrap(JRRequestWrapper.java:92)
+	at com.zeroturnaround.jdi.event.JREvent.request(JREvent.java:21)
+	at org.ec
