@@ -1,0 +1,7 @@
+<classpath>
+  <container id="taobao-open!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Work/Frameworks/GitHub/taobao-in-action/taobao-open/src/main/webapp/WEB-INF/lib/taobao-sdk-java-online_standard-20140830.jar">
+      <source-attachment-path>/taobao-open/src/main/webapp/WEB-INF/lib/taobao-sdk-java-online_standard-20140830-source.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

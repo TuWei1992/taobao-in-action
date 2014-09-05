@@ -1,2 +1,6 @@
 2014-08-31 01:29:22.025 [Worker-1] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:63807/jrebel/notifications
 2014-08-31 22:52:12.054 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:51244/jrebel/notifications
+2014-09-01 10:19:58.649 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:51683/jrebel/notifications
+2014-09-01 22:55:43.774 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:54649/jrebel/notifications
+2014-09-03 10:27:57.627 [Worker-0] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:62019/jrebel/notifications
+2014-09-05 15:39:53.924 [Worker-4] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:53313/jrebel/notifications
