@@ -1,0 +1,43 @@
+package com.taobao.api.response;
+
+import com.taobao.api.internal.mapping.ApiField;
+
+import com.taobao.api.TaobaoResponse;
+
+/**
+ * TOP API: taobao.weitao.cloudtags.group.add response.
+ * 
+ * @author auto create
+ * @since 1.0, null
+ */
+public class WeitaoCloudtagsGroupAddResponse extends TaobaoResponse {
+
+	private static final long serialVersionUID = 6281427789227278247L;
+
+	/** 
+	 * 是否成功
+	 */
+	@ApiField("is_success")
+	private Boolean isSuccess;
+
+	/** 
+	 * 是否添加成功
+	 */
+	@ApiField("result")
+	private String result;
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+	public Boolean getIsSuccess( ) {
+		return this.isSuccess;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+	public String getResult( ) {
+		return this.result;
+	}
+
+}
