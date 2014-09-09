@@ -44,6 +44,8 @@ Icon
 *.exe
 *.o
 *.so
+*.snap
+*.dat
 
 
 # Logs and databases #
