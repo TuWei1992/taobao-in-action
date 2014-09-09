@@ -29,3 +29,29 @@
 2014-09-06 08:33:48.043 [Worker-4] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:49161/jrebel/notifications
 2014-09-06 12:23:50.606 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:49198/jrebel/notifications
 2014-09-06 15:52:54.053 [Worker-0] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:49269/jrebel/notifications
+2014-09-06 20:53:04.714 [Worker-1] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:57485/jrebel/notifications
+2014-09-06 21:43:56.615 [Worker-1] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:60758/jrebel/notifications
+2014-09-07 08:55:49.672 [Worker-3] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:49161/jrebel/notifications
+2014-09-09 14:15:28.883 [Worker-0] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:50174/jrebel/notifications
+2014-09-09 15:15:38.810 [main] DEBUG AbstractRebelTab -  ====== Creating the rebel tab ==
+2014-09-09 15:15:38.810 [main] DEBUG AbstractRebelTab -  ----- createLaunchRebelComponent
+2014-09-09 15:15:38.864 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 15:16:03.743 [main] DEBUG AbstractRebelTab -  ====== Creating the rebel tab ==
+2014-09-09 15:16:03.743 [main] DEBUG AbstractRebelTab -  ----- createLaunchRebelComponent
+2014-09-09 15:16:03.790 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 15:22:21.828 [main] DEBUG AbstractRebelTab -  ====== Creating the rebel tab ==
+2014-09-09 15:22:21.829 [main] DEBUG AbstractRebelTab -  ----- createLaunchRebelComponent
+2014-09-09 15:22:21.872 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 17:14:18.337 [main] DEBUG AbstractRebelTab -  ====== Creating the rebel tab ==
+2014-09-09 17:14:18.337 [main] DEBUG AbstractRebelTab -  ----- createLaunchRebelComponent
+2014-09-09 17:14:18.392 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 17:24:31.287 [main] DEBUG AbstractRebelTab -  ====== Creating the rebel tab ==
+2014-09-09 17:24:31.287 [main] DEBUG AbstractRebelTab -  ----- createLaunchRebelComponent
+2014-09-09 17:24:31.343 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 17:24:34.865 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 17:24:47.182 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 17:24:47.323 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 17:24:48.359 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 17:24:55.934 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 17:24:56.072 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 17:25:05.233 [main] DEBUG AbstractRebelTab -   -- initializeFrom 

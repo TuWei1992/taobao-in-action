@@ -1,7 +1,6 @@
 INDEX VERSION 1.122+D:\Work\Frameworks\GitHub\taobao-in-action\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3054102453.index
-1516334725.index
 1260077041.index
-3536881018.index
+1516334725.index
+3054102453.index
 1265122237.index
 3208585471.index

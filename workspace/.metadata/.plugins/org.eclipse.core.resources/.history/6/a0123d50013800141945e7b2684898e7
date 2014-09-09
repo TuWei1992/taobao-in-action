@@ -1,0 +1,118 @@
+Taobao Open
+
+开发环境说明：
+使用账号：沙箱测试帐号（可自注册或使用沙箱提供的公用帐号）
+沙箱首页：http://www.tbsandbox.com/
+API 调用入口： http://gw.api.tbsandbox.com/router/rest
+商城卖家系统账号 -> sandbox_c_1 ， sandbox_b_01（密码taobao1234）
+集市卖家系统账号 -> sandbox_c_2（密码taobao1234）
+
+
+API 调用有几个必备参数，都是需提前获取到的，除调用入口地址外，还包括 AppKey、AppSecret、Access Token（或SessionKey）。
+AppKey、Appsecret 在创建应用时就可获得；而 Access Token 则用通过登录账号授权方式（详细请参考下一节 用户授权介绍）取得；在取得这些数据后方能进行API 调用，获取相应的商品、订单等数据。
+正式环境：
+AppKey：21697746
+AppSecret：78ccc9518b7c5cc19a602a635ebb8bcd
+测试环境：
+AppKey：1021697746
+AppSecret：sandbox18b7c5cc19a602a635ebb8bcd
+
+
+6100123e268aa1e00578d89e9c25f171db8d1976fc6ae8d2074082786
+6100123e268aa1e00578d89e9c25f171db8d1976fc6ae8d2074082786
+
+
+==================================
+[MVC]:
+Spring MVC
+==================================
+
+==================================
+[Conversion]:
+Java Pacakge：
+com.dream
+		--item.controller.ItemController[list,detail]
+		--item.dao
+		--item.servie
+		
+View Directory：
+views/item/list.jsp
+views/item/detail.jsp
+
+Layout:com.opensymphony.sitemesh.webapp.SiteMeshFilter
+==================================
+
+==================================
+[Logging]:slf4j+log4j
+==================================
+
+==================================
+[Urlrewrite]:org.tuckey.web.filters.urlrewrite.UrlRewriteFilter
+==================================
+
+==================================
+maven常见命令备忘：
+mvn install:install-file -DgroupId=com.google.zxing -DartifactId=zxing-core -Dversion=1.0.0-Dpackaging=jar -Dfile=core.jar
+mvn install:install-file -DgroupId=com.taobao -DartifactId=taobao-sdk-java-online_standard -Dversion=20140830 -Dpackaging=jar -Dfile=d:\Work\Frameworks\GitHub\taobao-in-action\taobao-open\src\main\webapp\WEB-INF\lib\taobao-sdk-java-online_standard-20140830.jar
+==================================
+
+
+==================================
+[ToDo List]：
+[A.高优先级]
+[B.中优先级]
+[C.低优先级]
+
+1.maven管理应用，maven私服
+2.h2数据库
+3.session管理机制改造
+4.版本发布计划，版本规范
+5.JS框架选型
+6.CSS框架选型
+7.安全规范
+8.性能规范
+9.缓存规范
+10.工作流规范
+11.环境切换规范，和maven相结合
+12.单元测试规范，自动化测试(selenium,junit)
+13.泛型规范
+14.日志规范，数据库操作日志
+15.定时任务规范
+16.数据库持久化规范
+17.数据模型规范
+18.异常处理规范
+19.国际化规范
+20.属性文件管理规范
+21.原型设计规范
+22.任务调度
+23.批量处理
+24.兼容性处理规范
+25.搜索引擎
+26.SEO规范
+27.静态化
+29.消息中间件
+30.自动化代码工具
+27.单点登录规范
+28.经营分析
+29.推荐引擎
+30.数据通信接口规范，XML,JSON
+31.增量发布规范
+32.CI整合,代码审查、自动化测试、自动化部署
+33.CBB+产品平台+产品三部曲
+34.Restful，使用Restful风格的Urls
+35.性能监控，性能监控新增Metrics/Graphite演示
+36.YUI Compressor 压缩js/css,见bin/yuicompressor.bat命令及webapp中两个版本的js/css文件
+37.JSONP实现Mashup
+38.JavaMail
+39.选定过程管理工具
+40.需求定义规范
+41.角色权限、菜单管理
+42.CMS相关
+43.审计日志
+44.多应用件的单点登录
+45.分布式会话
+46.分布式数据库
+47.NoSQL
+48.应用命名和一句话描述
+49.灰度发布
+50.OAuth研究、淘宝开放平台接口记录

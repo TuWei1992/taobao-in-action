@@ -25,7 +25,7 @@ public class OpenAuth {
 				"61011016b17be5783500d7d17747676adced2f659c3e1632074082786");
 		props.put("client_id", "1021697746");
 		props.put("client_secret", "sandbox18b7c5cc19a602a635ebb8bcd");
-		props.put("redirect_uri", "http://192.168.1.102:8080/taobao-open");
+		props.put("redirect_uri", "http://www.dreamlabs.com:8080/taobao-open");
 		props.put("view", "web");
 		String s = "";
 		try {
