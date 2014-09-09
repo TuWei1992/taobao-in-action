@@ -5,7 +5,6 @@ INDEX VERSION 1.126+D:\Work\Frameworks\GitHub\taobao-in-action\workspace\.metada
 1706080208.index
 1476303987.index
 2083027676.index
-4040606491.index
 3245047425.index
 3158903189.index
 3170704300.index
@@ -13,9 +12,7 @@ INDEX VERSION 1.126+D:\Work\Frameworks\GitHub\taobao-in-action\workspace\.metada
 2012300293.index
 882645223.index
 3856265303.index
-3104444823.index
 3821800891.index
-2202322528.index
 3700179808.index
 4070374538.index
 706545846.index
@@ -24,14 +21,12 @@ INDEX VERSION 1.126+D:\Work\Frameworks\GitHub\taobao-in-action\workspace\.metada
 4118439648.index
 671442048.index
 541038936.index
-2995689807.index
 366581530.index
 1125194859.index
 544989629.index
 1974953102.index
 3988217338.index
 1105952996.index
-364521255.index
 2446096153.index
 3815710957.index
 2029941434.index
@@ -41,7 +36,6 @@ INDEX VERSION 1.126+D:\Work\Frameworks\GitHub\taobao-in-action\workspace\.metada
 2526770668.index
 4181194722.index
 1699529691.index
-3001772045.index
 4045698901.index
 1651364385.index
 1265122237.index
@@ -69,7 +63,6 @@ INDEX VERSION 1.126+D:\Work\Frameworks\GitHub\taobao-in-action\workspace\.metada
 873443250.index
 4064109260.index
 688951820.index
-4083982437.index
 1832821679.index
 1515616081.index
 784626211.index
@@ -79,14 +72,11 @@ INDEX VERSION 1.126+D:\Work\Frameworks\GitHub\taobao-in-action\workspace\.metada
 1645779128.index
 3890549828.index
 4276067845.index
-2284124770.index
 1207149137.index
 2435843845.index
-1018554988.index
 1847742442.index
 838310438.index
 3384692066.index
-3332916554.index
 3830188083.index
 3752087680.index
 37908933.index
