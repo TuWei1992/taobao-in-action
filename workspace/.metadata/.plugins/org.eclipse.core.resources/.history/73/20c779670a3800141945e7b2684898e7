@@ -38,7 +38,6 @@ import com.taobao.api.response.ItemsOnsaleGetResponse;
  * 
  * @author Frank
  */
-
 @Controller
 @RequestMapping(value = "/item")
 public class ItemController {

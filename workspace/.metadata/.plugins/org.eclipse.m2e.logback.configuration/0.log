@@ -4091,3 +4091,7 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: in comment 
 2014-09-09 17:52:09,961 [Worker-94] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.dream:taobao-open:0.0.1-SNAPSHOT @ D:\Work\Frameworks\GitHub\taobao-in-action\taobao-open\pom.xml.
 2014-09-09 17:52:17,274 [Worker-93] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\Work\Frameworks\GitHub\taobao-in-action\taobao-open
 2014-09-09 17:52:17,274 [Worker-93] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -o -s D:\Work\Frameworks\Java\apache-maven-3.0.4\conf\settings.xml jetty:run
+2014-09-09 18:16:50,970 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-09-09 18:16:50,974 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2014-09-09 18:16:50,977 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-09-09 18:16:50,977 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Work\Frameworks\GitHub\taobao-in-action\taobao-open\src\test\resources

@@ -12,7 +12,6 @@ INDEX VERSION 1.126+D:\Work\Frameworks\GitHub\taobao-in-action\workspace\.metada
 4060753762.index
 3911428325.index
 528271902.index
-1265122237.index
 4269443248.index
 2435843845.index
 882645223.index
