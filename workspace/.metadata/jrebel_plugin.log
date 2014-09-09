@@ -55,3 +55,17 @@
 2014-09-09 17:24:55.934 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
 2014-09-09 17:24:56.072 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
 2014-09-09 17:25:05.233 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 19:53:27.499 [Worker-2] DEBUG HttpNotifications - Listening to JRebel notifications at http://127.0.0.1:49161/jrebel/notifications
+2014-09-09 19:53:58.730 [main] DEBUG AbstractRebelTab -  ====== Creating the rebel tab ==
+2014-09-09 19:53:58.730 [main] DEBUG AbstractRebelTab -  ----- createLaunchRebelComponent
+2014-09-09 19:53:58.777 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 19:54:29.048 [main] DEBUG AbstractRebelTab -  ====== Creating the rebel tab ==
+2014-09-09 19:54:29.048 [main] DEBUG AbstractRebelTab -  ----- createLaunchRebelComponent
+2014-09-09 19:54:29.079 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 19:54:30.954 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 20:39:06.480 [main] DEBUG AbstractRebelTab -  ====== Creating the rebel tab ==
+2014-09-09 20:39:06.480 [main] DEBUG AbstractRebelTab -  ----- createLaunchRebelComponent
+2014-09-09 20:39:06.511 [main] DEBUG AbstractRebelTab -   -- initializeFrom 
+2014-09-09 22:32:06.212 [main] DEBUG AbstractRebelTab -  ====== Creating the rebel tab ==
+2014-09-09 22:32:06.213 [main] DEBUG AbstractRebelTab -  ----- createLaunchRebelComponent
+2014-09-09 22:32:06.263 [main] DEBUG AbstractRebelTab -   -- initializeFrom 

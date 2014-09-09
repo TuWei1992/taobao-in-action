@@ -8,108 +8,95 @@
 	<packaging>war</packaging>
 	<name>DreamTown :: Taobao :: Open</name>
 
+
+	<developers>
+		<developer>
+			<id>f.46886799</id>
+			<name>Frank Zhang</name>
+			<email>46886799@163.com</email>
+			<url>http://www.dreamlabs.com</url>
+			<timezone>8</timezone>
+		</developer>
+	</developers>
+
 	<properties>
 		<!-- 主要依赖库的版本定义 -->
 		<springside.version>4.2.3-SNAPSHOT</springside.version>
 		<spring.version>3.1.2.RELEASE</spring.version>
 		<aspectj.version>1.6.9</aspectj.version>
-		
-		<!--日志相关的版本定义-->
+		<cglib.version>2.2.2</cglib.version>
+		<asm.version>3.3.1</asm.version>
+
+		<!--日志相关的版本定义 -->
 		<slf4j.version>1.6.2</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
 		<log4jdbc.version>1.2</log4jdbc.version>
-		
-		<!--Apache Commons相关的版本定义-->
+
+		<!--Apache Commons相关的版本定义 -->
 		<commons-beanutils.version>1.8.3</commons-beanutils.version>
 		<commons-collections.version>3.2.1</commons-collections.version>
-		<commons-configuration.version>1.10</commons-configuration.version>	
-		<commons-dbcp.version>1.4</commons-dbcp.version>	
+		<commons-configuration.version>1.10</commons-configuration.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
 		<commons-io.version>1.4</commons-io.version>
 		<commons-pool.version>1.5.4</commons-pool.version>
 		<commons-codec.version>1.9</commons-codec.version>
 		<commons-lang.version>3.1</commons-lang.version>
-		
-		<!--其他类库-->
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+
+		<!--其他类库 -->
 		<urlrewrite.version>3.1.0</urlrewrite.version>
 		<ehcache.version>2.6.9</ehcache.version>
 		<sitemesh.version>2.4.2</sitemesh.version>
 		<jackson.version>1.9.2</jackson.version>
 		<taobao.version>20140830</taobao.version>
-		
-		<!--单元测试相关的版本定义-->
+		<urlrewritefilter.version>3.1.0</urlrewritefilter.version>
+
+		<!--单元测试相关的版本定义 -->
 		<junit.version>4.11</junit.version>
 		<selenium.version>2.42.2</selenium.version>
-		
-		<!--运行环境相关的版本定义-->
+
+		<!--运行环境相关的版本定义 -->
 		<h2.version>1.3.170</h2.version>
-		
 		<jstl.version>1.2</jstl.version>
 		<jstl.version>1.2</jstl.version>
 		<javax.servlet.version>2.5</javax.servlet.version>
 		<jetty.version>8.1.10.v20130312</jetty.version>
-		<jetty.plugin.version>8.1.3.v20120416</jetty.plugin.version>
-		
-		
+
+
 		<!-- Plugin的属性定义 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.6</java.version>
-	
+
 		<!-- 项目属性 -->
 		<jdbc.driver.groupId>com.h2database</jdbc.driver.groupId>
 		<jdbc.driver.artifactId>h2</jdbc.driver.artifactId>
 		<jdbc.driver.version>${h2.version}</jdbc.driver.version>
-		<!--
-			<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
-			<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
-			<jdbc.driver.version>5.1.22</jdbc.driver.version>
-		-->	
+		<!-- <jdbc.driver.groupId>mysql</jdbc.driver.groupId> <jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId> 
+			<jdbc.driver.version>5.1.22</jdbc.driver.version> -->
 	</properties>
 
 	<prerequisites>
-  		<maven>3.0.0</maven>
+		<maven>3.0.0</maven>
 	</prerequisites>
-	
+
 	<repositories>
-		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址.
-		<repository>
-			<id>nexus</id>
-			<name>Team Nexus Repository</name>
-			<url>http://localhost:8081/nexus/content/groups/public</url> 
-		</repository>
-		-->
+		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址. <repository> <id>nexus</id> <name>Team 
+			Nexus Repository</name> <url>http://localhost:8081/nexus/content/groups/public</url> 
+			</repository> -->
 	</repositories>
 
-	<!-- 设定插件仓库, 如有Nexus私服, 取消注释并指向正确的服务器地址. 
-	<pluginRepositories> 
-		<pluginRepository> 
-			<id>nexus</id>
-			<name>Team Nexus Repository</name>
-			<url>http://localhost:8081/nexus/content/groups/public</url> 
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-	-->
+	<!-- 设定插件仓库, 如有Nexus私服, 取消注释并指向正确的服务器地址. <pluginRepositories> <pluginRepository> 
+		<id>nexus</id> <name>Team Nexus Repository</name> <url>http://localhost:8081/nexus/content/groups/public</url> 
+		<snapshots> <enabled>false</enabled> </snapshots> </pluginRepository> </pluginRepositories> -->
 
 	<!-- 依赖项定义 -->
 	<dependencies>
 		<!-- 主要依赖库的版本定义 Start -->
-		<!--<dependency>
-			<groupId>org.springside</groupId>
-			<artifactId>springside-core</artifactId>
-			<version>${springside.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springside</groupId>
-			<artifactId>springside-extension</artifactId>
-			<version>${springside.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springside</groupId>
-			<artifactId>springside-metrics</artifactId>
-			<version>${springside.version}</version>
-		</dependency>-->
+		<!--<dependency> <groupId>org.springside</groupId> <artifactId>springside-core</artifactId> 
+			<version>${springside.version}</version> </dependency> <dependency> <groupId>org.springside</groupId> 
+			<artifactId>springside-extension</artifactId> <version>${springside.version}</version> 
+			</dependency> <dependency> <groupId>org.springside</groupId> <artifactId>springside-metrics</artifactId> 
+			<version>${springside.version}</version> </dependency> -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
@@ -123,7 +110,23 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
@@ -131,9 +134,40 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<!-- 主要依赖库的版本定义 Start -->
-		
-		<!--日志相关的版本定义 Start-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>${cglib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>${asm.version}</version>
+		</dependency>
+		<!-- 主要依赖库的版本定义 End -->
+
+		<!--日志相关的版本定义 Start -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -166,9 +200,9 @@
 			<version>${log4jdbc.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-		<!--日志相关的版本定义 End-->
+		<!--日志相关的版本定义 End -->
 
-		<!--Apache Commons相关的版本定义 Start-->
+		<!--Apache Commons相关的版本定义 Start -->
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
@@ -179,9 +213,14 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>${commons-lang.version}</version>
 		</dependency>
-		<!--Apache Commons相关的版本定义 End-->
-		
-		<!--其他类库 Start-->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${commons-dbcp.version}</version>
+		</dependency>
+		<!--Apache Commons相关的版本定义 End -->
+
+		<!--其他类库 Start -->
 		<dependency>
 			<groupId>opensymphony</groupId>
 			<artifactId>sitemesh</artifactId>
@@ -190,25 +229,32 @@
 		</dependency>
 		<!-- JSON begin -->
 		<dependency>
-				<groupId>org.codehaus.jackson</groupId>
-  				<artifactId>jackson-core-asl</artifactId>
-				<version>${jackson.version}</version>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
-			 <groupId>org.codehaus.jackson</groupId>
-      		 <artifactId>jackson-mapper-asl</artifactId>
-			 <version>${jackson.version}</version>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
-	
+
 		<!-- JSON end -->
 		<dependency>
-		 <groupId>com.taobao</groupId>
-  		 <artifactId>taobao-sdk-java-online_standard</artifactId>
-  		 <version>${taobao.version}</version>
+			<groupId>org.tuckey</groupId>
+			<artifactId>urlrewritefilter</artifactId>
+			<version>${urlrewritefilter.version}</version>
 		</dependency>
-		<!--其他类库 End-->
-		
-		<!--单元测试相关的版本定义 Start-->
+
+		<dependency>
+			<groupId>com.taobao</groupId>
+			<artifactId>taobao-sdk-java-online_standard</artifactId>
+			<version>${taobao.version}</version>
+		</dependency>
+
+		<!--其他类库 End -->
+
+		<!--单元测试相关的版本定义 Start -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -260,16 +306,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!--单元测试相关的版本定义 End-->
-		
-		<!--运行环境相关的版本定义 Start-->
-		<!-- h2  如果生产数据库不是H2，解开下面的注释
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>${h2.version}</version>
-		</dependency>
-		-->
+		<!--单元测试相关的版本定义 End -->
+
+		<!--运行环境相关的版本定义 Start -->
+		<!-- h2 如果生产数据库不是H2，解开下面的注释 <dependency> <groupId>com.h2database</groupId> 
+			<artifactId>h2</artifactId> <version>${h2.version}</version> </dependency> -->
 		<!-- jdbc driver -->
 		<dependency>
 			<groupId>${jdbc.driver.groupId}</groupId>
@@ -301,10 +342,10 @@
 			<version>${jetty.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<!--运行环境相关的版本定义 End-->
+		<!--运行环境相关的版本定义 End -->
 	</dependencies>
-	
-	
+
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -314,7 +355,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<plugins>
 			<!-- compiler插件, 设定JDK版本 -->
@@ -353,40 +394,17 @@
 			</plugin>
 
 			<!-- 增加functional test的Source目录 -->
-			<!--<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.8</version>
-				<executions>
-					<execution>
-						<id>add-functional-source</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-test-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>src/test/functional</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>-->
+			<!--<plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>build-helper-maven-plugin</artifactId> 
+				<version>1.8</version> <executions> <execution> <id>add-functional-source</id> 
+				<phase>generate-sources</phase> <goals> <goal>add-test-source</goal> </goals> 
+				<configuration> <sources> <source>src/test/functional</source> </sources> 
+				</configuration> </execution> </executions> </plugin> -->
 
 			<!-- cobertura插件, 设置不需要计算覆盖率的类 -->
-			<!-- <plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<instrumentation>
-						<excludes>
-							<exclude>**/entity/**/*.class</exclude>
-							<exclude>**/*Controller.class</exclude>
-						</excludes>
-					</instrumentation>
-				</configuration>
-			</plugin>-->
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>cobertura-maven-plugin</artifactId> 
+				<version>2.6</version> <configuration> <instrumentation> <excludes> <exclude>**/entity/**/*.class</exclude> 
+				<exclude>**/*Controller.class</exclude> </excludes> </instrumentation> </configuration> 
+				</plugin> -->
 
 			<!-- jetty插件, 设定context path与spring profile -->
 			<plugin>
@@ -394,19 +412,38 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${jetty.version}</version>
 				<configuration>
-					<systemProperties>
-						<systemProperty>
-							<name>spring.profiles.active</name>
-							<value>development</value>
-						</systemProperty>
-					</systemProperties>
-					<useTestClasspath>true</useTestClasspath>
-
 					<webAppConfig>
 						<contextPath>/${project.artifactId}</contextPath>
 					</webAppConfig>
 				</configuration>
 			</plugin>
+
+			<!-- tomcat7 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<path>/${project.artifactId}</path>
+				</configuration>
+			</plugin>
+
+			<!-- jrebel -->
+			<plugin>
+				<groupId>org.zeroturnaround</groupId>
+				<artifactId>jrebel-maven-plugin</artifactId>
+				<version>1.1.5</version>
+				<executions>
+					<execution>
+						<id>generate-rebel-xml</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 
 			<!-- resources插件 -->
 			<plugin>
@@ -483,10 +520,12 @@
 						<artifactId>maven-antrun-plugin</artifactId>
 						<configuration>
 							<target>
-								<property file="src/main/resources/application.development.properties" />
+								<property
+									file="src/main/resources/application.development.properties" />
 								<property file="src/main/resources/application.properties" />
-								<sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${jdbc.username}" password="${jdbc.password}"
-									onerror="continue" encoding="${project.build.sourceEncoding}">
+								<sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${jdbc.username}"
+									password="${jdbc.password}" onerror="continue"
+									encoding="${project.build.sourceEncoding}">
 									<classpath refid="maven.test.classpath" />
 									<transaction src="src/main/resources/sql/h2/schema.sql" />
 									<transaction src="src/test/resources/data/h2/import-data.sql" />

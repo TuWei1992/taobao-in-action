@@ -1,4 +1,5 @@
 eclipse.m2.WorkspacelifecycleMappingsLocation=D\:/Work/Frameworks/GitHub/taobao-in-action/workspace/.metadata/.plugins/org.eclipse.m2e.core/lifecycle-mapping-metadata.xml
+eclipse.m2.debugOutput=true
 eclipse.m2.defaultRuntime=D\:\\Work\\Frameworks\\Java\\apache-maven-3.0.4
 eclipse.m2.downloadSources=true
 eclipse.m2.globalSettingsFile=D\:\\Work\\Frameworks\\Java\\apache-maven-3.0.4\\conf\\settings.xml
