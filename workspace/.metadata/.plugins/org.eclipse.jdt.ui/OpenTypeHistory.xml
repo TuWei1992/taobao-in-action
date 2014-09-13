@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=taobao-open/D:\/Work\/Frameworks\/GitHub\/taobao-in-action\/taobao-open\/src\/main\/webapp\/WEB-INF\/lib\/org.springframework.web.servlet-3.1.2.RELEASE.jar&lt;org.springframework.web.servlet(HandlerMapping.class[HandlerMapping" modifiers="1537" timestamp="1409902810645"/>
-<typeInfo handle="=taobao-open/src\/main\/java&lt;com.dream.item.controller{ItemController.java[ItemController" modifiers="1" timestamp="1409989780514"/>
+<typeInfo handle="=taobao-open/src\/main\/java&lt;com.dream.item.controller{ItemController.java[ItemController" modifiers="1" timestamp="1410257806486"/>
+<typeInfo handle="=taobao-open/D:\/Work\/Programming\/Java\/jre6\/lib\/rt.jar&lt;java.lang(IllegalStateException.class[IllegalStateException" modifiers="33" timestamp="1371889403889"/>
+<typeInfo handle="=taobao-open/D:\/Work\/Programming\/Java\/jre6\/lib\/rt.jar&lt;java.util(Map.class[Map" modifiers="1537" timestamp="1371889403889"/>
 </typeInfoHistroy>

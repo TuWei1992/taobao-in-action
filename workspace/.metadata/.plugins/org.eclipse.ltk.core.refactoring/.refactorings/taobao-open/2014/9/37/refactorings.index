@@ -9,3 +9,18 @@
 1410251181669	Delete elements
 1410258119809	Copy compilation unit
 1410275263780	Delete element
+1410278406989	Delete element
+1410325399404	Copy compilation unit
+1410325420806	Rename type 'ItemController'
+1410327422070	Copy compilation unit
+1410327445335	Rename type 'ItemController'
+1410328936814	Rename type 'CopyOfAPI'
+1410411575358	Copy compilation unit
+1410411583309	Rename type 'ItemController'
+1410418633771	Copy file
+1410419921315	Rename resource 'applicationContext-ehcache.xml'
+1410419928223	Rename resource 'applicationContext-email.xml'
+1410419962253	Rename resource 'applicationContext-metrics.xml'
+1410419970384	Rename resource 'applicationContext-profiler.xml'
+1410420043739	Delete element
+1410420370966	Delete element

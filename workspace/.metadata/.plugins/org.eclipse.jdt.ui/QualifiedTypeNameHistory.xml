@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.taobao.top.link.endpoint.Message"/>
+<fullyQualifiedTypeName name="com.taobao.api.internal.tmc.MessageHandler"/>
+<fullyQualifiedTypeName name="com.taobao.api.internal.tmc.TmcClient"/>
+<fullyQualifiedTypeName name="com.taobao.api.internal.tmc.Message"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="com.dream.AbstractController"/>
+<fullyQualifiedTypeName name="com.dream.Constants"/>
+</qualifiedTypeNameHistroy>

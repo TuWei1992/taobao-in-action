@@ -1,0 +1,13 @@
+package com.dream.message.controller;
+
+public class TmcClient {
+	
+	public void init(){
+		
+	}
+	
+	public void destroy(){
+		
+	}
+
+}

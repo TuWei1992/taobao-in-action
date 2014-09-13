@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package com.dream;
+
+import com.taobao.api.ApiException;
+import com.taobao.api.Constants;
+import com.taobao.api.DefaultTaobaoClient;
+import com.taobao.api.TaobaoClient;
+import com.taobao.api.request.UserSellerGetRequest;
+import com.taobao.api.response.UserSellerGetResponse;
+
+/**
+ * @author Frank
+ *
+ */
+public class Constants {}
