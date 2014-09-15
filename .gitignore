@@ -76,6 +76,7 @@ hs_err_pid*
 # Maven #
 target/
 build/
+workspace/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
