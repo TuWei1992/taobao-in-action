@@ -85,3 +85,6 @@ pom.xml.next
 release.properties
 .classpath
 .project
+taobao-open/.classpath
+*.project
+taobao-open/.classpath

@@ -430,7 +430,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- jrebel -->
+			<!-- jrebel
 			<plugin>
 				<groupId>org.zeroturnaround</groupId>
 				<artifactId>jrebel-maven-plugin</artifactId>
@@ -444,7 +444,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 
 
 			<!-- resources插件 -->
