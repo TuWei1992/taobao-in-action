@@ -1,35 +1,61 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
-<%@ taglib prefix="sitemesh" uri="http://www.opensymphony.com/sitemesh/decorator" %>  
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="ctx" value="${pageContext.request.contextPath}" />
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ include file="taglibs.jsp"%>
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<title>Taobao Open示例:<sitemesh:title/></title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta http-equiv="Cache-Control" content="no-store" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
+	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<link type="image/x-icon" href="${ctx}/static/images/favicon.ico" rel="shortcut icon">
-<link href="${ctx}/static/js/bootstrap/2.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-<link href="${ctx}/static/js/jquery-validation/1.11.1/validate.css" type="text/css" rel="stylesheet" />
-<link href="${ctx}/static/styles/default.css" type="text/css" rel="stylesheet" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
 
-<script src="${ctx}/static/js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="${ctx}/static/js/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
-<script src="${ctx}/static/js/jquery-validation/1.11.1/messages_bs_zh.js" type="text/javascript"></script>
-<script src="${ctx}/static/js/bootstrap/2.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+	<title><fmt:message key="webapp.name"/> | <sitemesh:title/></title>
+	
+	<link type="image/x-icon" href="${ctx}/static/images/favicon.ico" rel="shortcut icon">
+
+	<!-- Bootstrap Core CSS -->
+    <link href="${ctx}/static/css/bootstrap.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="${ctx}/static/css/plugins/metisMenu/metisMenu.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="${ctx}/static/css/plugins/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="${ctx}/static/css/sb-admin-2.css" rel="stylesheet">
+    <link href="${ctx}/static/css/sticky-footer.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="${ctx}/static/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="${ctx}/static/font-awesome-4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 <sitemesh:head/>
 </head>
 
 <body>
-	<div class="container">
+	<div id="wrapper">
 		<%@ include file="/WEB-INF/layouts/header.jsp"%>
-		<div id="content">
+		<div id="page-wrapper">
 			<sitemesh:body/>
 		</div>
-		<%@ include file="/WEB-INF/layouts/footer.jsp"%>
+        <!-- /#page-wrapper -->
 	</div>
+    <!-- /#wrapper -->
+	<%@ include file="/WEB-INF/layouts/footer.jsp"%>
 </body>
 </html>
