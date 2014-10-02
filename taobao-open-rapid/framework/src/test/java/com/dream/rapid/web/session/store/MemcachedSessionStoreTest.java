@@ -13,9 +13,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.thimbleware.jmemcached.Cache;
 import com.thimbleware.jmemcached.MemCacheDaemon;
-import com.thimbleware.jmemcached.storage.hash.LRUCacheStorageDelegate;
 
 
 public class MemcachedSessionStoreTest {
@@ -57,9 +55,9 @@ public class MemcachedSessionStoreTest {
 	List<MemCacheDaemon> daemons = new ArrayList();
 	private void startMemcachedServer(int port) throws IOException {
 		try {
-	        LRUCacheStorageDelegate cacheStorage = new LRUCacheStorageDelegate(Integer.MAX_VALUE, Integer.MAX_VALUE, 1024000);
+//	        LRUCacheStorageDelegate cacheStorage = new LRUCacheStorageDelegate(Integer.MAX_VALUE, Integer.MAX_VALUE, 1024000);
 	        MemCacheDaemon daemon = new MemCacheDaemon();
-	        daemon.setCache(new Cache(cacheStorage));
+//	        daemon.setCache(new Cache(cacheStorage));
 	        daemon.setAddr(new InetSocketAddress(port));
 	        daemon.setIdleTime(1000 * 600);
 	        daemon.setVerbose(true);

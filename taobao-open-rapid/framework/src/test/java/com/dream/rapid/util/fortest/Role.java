@@ -5,8 +5,6 @@
 
 package com.dream.rapid.util.fortest;
 
-import com.dream.rapid.base.BaseEntity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,7 +18,8 @@ import javax.persistence.Transient;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
-import org.hibernate.annotations.GenericGenerator;
+
+import com.dream.rapid.base.BaseEntity;
 
 /**
  * @author Frank email:46886799#163.com
@@ -65,7 +64,7 @@ public class Role extends BaseEntity {
 	}
 	
 	@Id @GeneratedValue(generator="custom-id")
-	@GenericGenerator(name="custom-id", strategy = "native")
+//	@GenericGenerator(name="custom-id", strategy = "native")
 	@Column(name = "role_id", unique = true, nullable = false, insertable = true, updatable = true, length = 20)
 	public java.lang.Long getRoleId() {
 		return this.roleId;
