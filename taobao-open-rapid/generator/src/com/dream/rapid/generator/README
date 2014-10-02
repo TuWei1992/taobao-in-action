@@ -1,0 +1,12 @@
+1.修改generator.xml的模块名
+<entry key="basepackage">com.dream.recommend</entry>
+
+2.修改generator.xml的输出根路径
+<entry key="outRoot">D:\Work\Frameworks\GitHub\taobao-in-action\taobao-open</entry>
+
+3.修改GeneratorMain.java中表名
+g.generateByTable("TOP_RECOMMEND_LOG","template");	//通过数据库表生成文件,template为模板的根目录
+
+4.手动
+
+4.运行，Enjoy it.

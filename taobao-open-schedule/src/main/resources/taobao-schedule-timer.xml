@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-lazy-init="false">
+    <bean name="quartzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="configLocation" value="classpath:timer.properties"/>
+        <property name="globalTriggerListeners">
+        	<list>
+        	</list>
+        </property>
+        <property name="globalJobListeners">
+	      	<list>
+			</list>
+        </property>
+        <property name="triggers">
+        	<list>
+        		<ref local="jobDetailManagerTrigger"/>
+        		<ref local="timerTrigger" />
+        	</list>
+        </property>
+        <property name="waitForJobsToCompleteOnShutdown" value="true"></property>
+        <property name="startupDelay" value="30"></property>
+        <property name="overwriteExistingJobs" value="false"></property>
+    </bean>
+    <!-- 以下Job Service分别用来增加Job，暂停Job，重启Job -->
+    <bean id="addJobService" class="com.dream.scheduling.service.impl.AddJobServiceImpl">
+	</bean>
+	 <bean id="pauseJobService" class="com.dream.scheduling.service.impl.PauseJobServiceImpl">
+	</bean>
+	 <bean id="resumeJobService" class="com.dream.scheduling.service.impl.ResumeJobServiceImpl">
+	</bean>
+    <!-- 以上Job Service分别用来增加Job，暂停Job，重启Job -->
+	<!-- Job Detail Manager用来定期扫描B2C_TASK表，从该表中获取尚未调度的任务 -->
+	<bean id="jobDetailManagerTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="cronExpression" value="15 * * * * ?" />
+		<property name="jobDetail" ref="jobDetailManagerJobDetail"></property>
+	</bean>
+	<bean id="jobDetailManagerJobDetail" class="com.dream.scheduling.BeanInvokingJobDetailFactoryBean">
+			<property name="concurrent" value="false" />
+			<property name="targetBean" value="jobDetailManager" />
+			<property name="targetMethod" value="manageJobDetail" />
+	</bean>
+	<bean id="jobDetailManager" class="com.dream.scheduling.service.impl.JobDetailManagerImpl" />
+	<!-- Job Detail Manager用来定期扫描B2C_TASK表，从该表中获取尚未调度的任务 -->
+	
+	<!-- ********************************以下为业务定时任务************************************** -->
+	
+	<!-- Timer式 Trigger定义-->
+	<bean id="timerTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+		<property name="jobDetail" ref="timerJobDetail" />
+		<!-- 每次执行间隔5分钟 -->
+		<property name="repeatInterval" value="30000" />
+	</bean>
+
+	<!-- JobDetail, 基于JobDetailBean实例化Job Class,可持久化到数据库实现集群 -->
+	<bean id="timerJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="durability" value="true"/>
+		<property name="jobClass" value="com.dream.scheduling.QuartzClusterableJob" />
+	</bean>
+
+	<!-- Job的可配置属性,在job中通过applicationContext动态获取 -->
+<!-- 	<util:map id="timerJobConfig"> -->
+<!-- 		<entry key="nodeName" value="${server.node_name}" /> -->
+<!-- 	</util:map> -->
+	
+	
+</beans>

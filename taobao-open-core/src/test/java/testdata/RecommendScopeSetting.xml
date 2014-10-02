@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- DBUnit flatXml DataFile -->
+<dataset>
+
+
+	  <top_recommend_scope_setting 
+			shop_id='shopid756' 
+			scope_type='2' 
+			is_enabled='1' 
+			last_modified_by='lastmodifiedby183' 
+			last_modified_time='2014-09-27 20:11:35.966' 
+	  />	
+  
+</dataset>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- DBUnit flatXml DataFile -->
+<dataset>
+
+
+	  <TOP_RECOMMEND_LOG 
+			ID='' 
+			SHOP_ID='' 
+			ITEM_ID='' 
+			ITEM_NAME='' 
+			LAST_MODIFIED_TIME='' 
+	  />	
+  
+</dataset>

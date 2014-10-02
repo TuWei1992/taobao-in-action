@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- DBUnit flatXml DataFile -->
+<dataset>
+
+
+	  <TOP_AUTH 
+			USER_ID='UserId43' 
+			TB_USER_NICK='TbUserNick638' 
+			IS_LOCK='8' 
+			IS_ENABLE='1' 
+			TAOBAO_USER_NICK='TaobaoUserNick938' 
+			TAOBAO_USER_ID='TaobaoUserId335' 
+			SUB_TAOBAO_USER_ID='SubTaobaoUserId775' 
+			SUB_TAOBAO_USER_NICK='SubTaobaoUserNick097' 
+			REFRESHED_TIME='2014-09-28 15:36:37.8' 
+	  />	
+  
+</dataset>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- DBUnit flatXml DataFile -->
+<dataset>
+
+
+	  <TOP_RECOMMEND_MODE_SETTING 
+			SHOP_ID='906' 
+			IS_SALED_FIRST='0' 
+			SALED_NUM='962' 
+			IS_STORAGE_FILTERED='0' 
+			STORAGE_NUM='818' 
+			IS_OFFSHELVES_FILTERED='2' 
+			OFFSHELVES_TIME='586' 
+			IS_ONSHELVES_FILTERED='1' 
+			LAST_MODIFIED_BY='174' 
+			LAST_MODIFIED_TIME='2014-09-29 09:06:04.033' 
+	  />	
+  
+</dataset>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- DBUnit flatXml DataFile -->
+<dataset>
+
+
+	  <TOP_SHOP 
+			SID='401' 
+			CID='612' 
+			NICK='Nick476' 
+			TITLE='Title771' 
+			DESC='Desc461' 
+			BULLETIN='Bulletin725' 
+			PIC_PATH='PicPath486' 
+			CREATED='2014-09-28 15:25:18.226' 
+			MODIFIED='2014-09-28 15:25:18.226' 
+	  />	
+  
+</dataset>

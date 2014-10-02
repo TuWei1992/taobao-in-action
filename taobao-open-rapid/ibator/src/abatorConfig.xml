@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ibatorConfiguration
+  PUBLIC "-//Apache Software Foundation//DTD Apache iBATIS Ibator Configuration 1.0//EN"
+  "http://ibatis.apache.org/dtd/ibator-config_1_0.dtd">
+<ibatorConfiguration>
+	<properties resource="abatorConfig.properties" />
+    <classPathEntry location="${jdbc.classpath}" />
+	<ibatorContext id="abator" targetRuntime="Ibatis2Java5">
+		<!-- 生成equals 和  hash code -->
+		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.EqualsHashCodePlugin"></ibatorPlugin>
+		<!-- 实现序列化接口  -->
+		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.SerializablePlugin"></ibatorPlugin>
+		<!-- 
+		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.SqlMapConfigPlugin">
+			<property name="targetProject" value="${sqlmap.target.project}"/>
+			<property name="targetPackage" value="${sqlmap.target.package}"/>
+		</ibatorPlugin>
+		 -->
+		 <!-- 重命名Example  -->
+		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$"/>
+			<property name="replaceString" value="Criteria"/>
+		</ibatorPlugin>
+		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.RenameTablePrefixPlugin">
+			<property name="searchString" value="Top"/>
+		</ibatorPlugin>
+		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.OnlyDAOImplementationPlugin">
+			<property name="annotationString" value="@Repository"/>
+		</ibatorPlugin>
+		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.ConstructorPlugin">
+		</ibatorPlugin>
+		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.ResetPrimariyKeyTypePlugin">
+		</ibatorPlugin>
+		
+        <jdbcConnection driverClass="${jdbc.driverClassName}"
+			connectionURL="${jdbc.url}" userId="${jdbc.username}"
+			password="${jdbc.password}">
+		</jdbcConnection>
+		<javaModelGenerator targetPackage="${java.model.target.package}"
+			targetProject="${java.model.target.project}"  >
+			<property name="enableSubPackages" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="${sqlmap.target.package}"
+			targetProject="${sqlmap.target.project}" >
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<daoGenerator targetPackage="${dao.target.package}"
+			targetProject="${dao.target.project}" implementationPackage="${dao.implementation.package}"  type="org.apache.ibatis.ibator.generator.ibatis2.dao.templates.CustomizedSpringDAOTemplate">
+			<property name="enableSubPackages" value="false" />
+		</daoGenerator>
+		<table schema="" tableName="${table.table.name}"
+			enableCountByExample="true" enableDeleteByExample="true"
+			enableDeleteByPrimaryKey="true" enableInsert="true"
+			enableSelectByExample="true" enableSelectByPrimaryKey="true"
+			enableUpdateByExample="true" enableUpdateByPrimaryKey="true" >
+			<generatedKey column="ID" sqlStatement="select nextval('item_id_seq')"/>
+		</table>
+   </ibatorContext>
+</ibatorConfiguration>
