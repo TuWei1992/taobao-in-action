@@ -365,6 +365,15 @@
 			    <groupId>backport-util-concurrent</groupId>
 			    <artifactId>backport-util-concurrent</artifactId>
 			</dependency>
+				<dependency>
+	<groupId>javax.persistence</groupId>
+	<artifactId>persistence-api</artifactId>
+</dependency>
+
+<dependency>
+	<groupId>com.thimbleware.jmemcached</groupId>
+	<artifactId>jmemcached-core</artifactId>
+</dependency>
 			<!-- rapid-being -->
 		</dependencies>
 	

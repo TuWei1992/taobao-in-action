@@ -22,7 +22,6 @@ import javax.persistence.Table;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
-import org.hibernate.annotations.GenericGenerator;
 
 /**
  * @author Frank email:46886799#163.com
@@ -65,7 +64,6 @@ public class Resource extends BaseEntity {
 	}
 	
 	@Id @GeneratedValue(generator="custom-id")
-	@GenericGenerator(name="custom-id", strategy = "native")
 	@Column(name = "resource_id", unique = true, nullable = false, insertable = true, updatable = true, length = 20)
 	public java.lang.Long getResourceId() {
 		return this.resourceId;

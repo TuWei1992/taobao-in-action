@@ -5,8 +5,6 @@
 
 package com.dream.rapid.util.fortest;
 
-import com.dream.rapid.base.BaseHibernateDao;
-
 import org.springframework.stereotype.Component;
 
 import com.dream.rapid.page.Page;

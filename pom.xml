@@ -717,6 +717,18 @@
 			    <version>3.1</version>
 			</dependency>
 			
+			<dependency>
+	<groupId>javax.persistence</groupId>
+	<artifactId>persistence-api</artifactId>
+	<version>1.0.2</version>
+</dependency>
+
+	<dependency>
+	<groupId>com.thimbleware.jmemcached</groupId>
+	<artifactId>jmemcached-core</artifactId>
+	<version>1.0.0</version>
+</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
