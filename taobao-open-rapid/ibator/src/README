@@ -1,0 +1,4 @@
+以下配置均指向abatorConfig.properties，不应该有直接修改abatorConfig.xml的情况。
+1.修改abatorConfig.properties中的jdbc.*中的相关配置
+2.修改需要生成的表名，主键名（当主键为单一列时），主键生成的序列SQL
+2.修改批量替换model名

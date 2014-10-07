@@ -58,6 +58,7 @@ public class OnlyDAOImplementationPlugin extends IbatorPluginAdapter {
     	prepare.setVisibility(JavaVisibility.PROTECTED);
     	prepare.setName("prepareObjectForSaveOrUpdate");
     	prepare.addParameter(new Parameter(record,"record")); //$NON-NLS-1$
+    	prepare.addParameter(new Parameter(record,"first")); 
     	prepare.addBodyLine(";"); //$NON-NLS-1$
         topLevelClass.addMethod(prepare);
         

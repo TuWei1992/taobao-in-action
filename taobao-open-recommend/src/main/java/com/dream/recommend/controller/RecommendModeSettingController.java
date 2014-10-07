@@ -31,7 +31,9 @@ import com.dream.rapid.base.BaseController;
 import com.dream.rapid.web.scope.Flash;
 import com.dream.recommend.model.RecommendModeSetting;
 import com.dream.recommend.model.RecommendModeSettingCriteria;
+import com.dream.recommend.model.RecommendStatus;
 import com.dream.recommend.service.RecommendModeSettingService;
+import com.dream.recommend.service.RecommendUpdatedEvent;
 import com.dream.recommend.vo.query.RecommendModeSettingQuery;
 
 /**
@@ -157,11 +159,16 @@ public class RecommendModeSettingController extends BaseController<RecommendMode
 	@RequestMapping(value="/edit/{id}",method=RequestMethod.POST)
 	public String edit(ModelMap model,@PathVariable java.lang.Long id,RecommendModeSetting recommendModeSetting) throws Exception {
 		recommendModeSetting.setShopId(id);
-		recommendModeSetting.setLastModifiedBy(String.valueOf(getAuth().getUserId()));
+		recommendModeSetting.setLastModifiedBy(getAuth().getUserId());
 		recommendModeSetting.setLastModifiedTime(new Date());
 		RecommendModeSettingCriteria criteria = new RecommendModeSettingCriteria();
 		criteria.createCriteria().andShopIdEqualTo(id);
 		recommendModeSettingService.saveOrUpdate(recommendModeSetting, criteria);
+		
+		RecommendStatus status = new RecommendStatus(id);
+		status.setUpdatedUserId(getAuth().getUserId());
+		getApplicationContext().publishEvent(new RecommendUpdatedEvent(status));
+		
 		return LIST_ACTION;
 	}
 	
@@ -182,12 +189,18 @@ public class RecommendModeSettingController extends BaseController<RecommendMode
 			return "/recommendmodesetting/index";
 		}
 		recommendModeSetting.setShopId(id);
-		recommendModeSetting.setLastModifiedBy(String.valueOf(getAuth().getUserId()));
+		recommendModeSetting.setLastModifiedBy(getAuth().getUserId());
 		recommendModeSetting.setLastModifiedTime(new Date());
 		RecommendModeSettingCriteria criteria = new RecommendModeSettingCriteria();
 		criteria.createCriteria().andShopIdEqualTo(id);
 		recommendModeSettingService.saveOrUpdate(recommendModeSetting, criteria);
 //		Flash.current().success(UPDATE_SUCCESS)
+		
+		
+		RecommendStatus status = new RecommendStatus(id);
+		status.setUpdatedUserId(getAuth().getUserId());
+		getApplicationContext().publishEvent(new RecommendUpdatedEvent(status));
+		
 		return LIST_ACTION;
 	}
 	

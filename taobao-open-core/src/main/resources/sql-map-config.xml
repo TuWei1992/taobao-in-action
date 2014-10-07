@@ -9,9 +9,12 @@
     <!-- Identify all SQL Map XML files to be loaded by this SQL map. Relative to classpath -->
     <sqlMap resource="com/dream/recommend/model/sqlmap/RecommendScopeSettingSQL.xml"/>
     <sqlMap resource="com/dream/recommend/model/sqlmap/RecommendModeSettingSQL.xml"/>
+    <sqlMap resource="com/dream/recommend/model/sqlmap/RecommendStatusSQL.xml"/>
+    <sqlMap resource="com/dream/recommend/model/sqlmap/RecommendSpecifiedSQL.xml"/>
     <sqlMap resource="com/dream/menu/model/sqlmap/MenuSQL.xml"/>
     <sqlMap resource="com/dream/common/model/sqlmap/SysParamSQL.xml"/>
     <sqlMap resource="com/dream/item/model/sqlmap/ItemSQL.xml"/>
     <sqlMap resource="com/dream/auth/model/sqlmap/AuthSQL.xml"/>
     <sqlMap resource="com/dream/shop/model/sqlmap/ShopSQL.xml"/>
+    
 </sqlMapConfig>

@@ -13,9 +13,10 @@ public interface EntityDao <E,PK extends Serializable,Criteria>{
 	/**
 	 * 批量插入全部列
 	 * @param entities
+	 * @return 
 	 * @throws DataAccessException
 	 */
-	public void insertBatch(Collection<E> entities) throws DataAccessException;
+	public List<Object> insertBatch(Collection<E> entities) throws DataAccessException;
 	
 	/**
 	 * 批量插入部分列
@@ -93,14 +94,14 @@ public interface EntityDao <E,PK extends Serializable,Criteria>{
 	 * @param record
 	 * @throws DataAccessException
 	 */
-    public void insert(E record)  throws DataAccessException;
+    public Object insert(E record)  throws DataAccessException;
     
 	/**
 	 * 插入部分列 
 	 * @param record
 	 * @throws DataAccessException
 	 */
-    public void insertSelective(E record) throws DataAccessException;
+    public Object insertSelective(E record) throws DataAccessException;
     
 	/**
 	 * 根据条件查询

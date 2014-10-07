@@ -534,7 +534,7 @@ public abstract class IntrospectedTable {
         sb.append(getDAOImplementationPackage());
         sb.append('.');
         sb.append(fullyQualifiedTable.getDomainObjectName());
-        sb.append("DAO"); //$NON-NLS-1$
+        sb.append("Dao"); //$NON-NLS-1$
 
         FullyQualifiedJavaType fqjt = new FullyQualifiedJavaType(sb.toString());
 
@@ -546,7 +546,7 @@ public abstract class IntrospectedTable {
         sb.append(getDAOInterfacePackage());
         sb.append('.');
         sb.append(fullyQualifiedTable.getDomainObjectName());
-        sb.append("DAO"); //$NON-NLS-1$
+        sb.append("Dao"); //$NON-NLS-1$
 
         FullyQualifiedJavaType fqjt = new FullyQualifiedJavaType(sb.toString());
 

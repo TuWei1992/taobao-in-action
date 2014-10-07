@@ -70,8 +70,8 @@ public class ConstructorPlugin extends IbatorPluginAdapter {
         String fieldNameString = introspectedColumn.getJavaProperty();
         method.addParameter(new Parameter(keyJavaType,fieldNameString)); //$NON-NLS-1$
         ibatorContext.getCommentGenerator().addGeneralMethodComment(method,introspectedTable.getFullyQualifiedTable());
-        method.addBodyLine("this."+fieldNameString+" = "+fieldNameString); //$NON-NLS-1$
-        method.addBodyLine("}"); //$NON-NLS-1$
+        method.addBodyLine("this."+fieldNameString+" = "+fieldNameString+";"); //$NON-NLS-1$
+//        method.addBodyLine("}"); //$NON-NLS-1$
         topLevelClass.addMethod(method);
     }
     
@@ -81,7 +81,8 @@ public class ConstructorPlugin extends IbatorPluginAdapter {
         method.setConstructor(true);
         method.setName(introspectedTable.getBaseRecordType().getShortName());
         ibatorContext.getCommentGenerator().addGeneralMethodComment(method,introspectedTable.getFullyQualifiedTable());
-        method.addBodyLine("}"); //$NON-NLS-1$
+        method.addBodyLine("super();"); 
+//        method.addBodyLine("}"); //$NON-NLS-1$
         topLevelClass.addMethod(method);
 	}
 

@@ -39,7 +39,7 @@ public class MessageController extends BaseController {
 		String url = Constants.TOP_URL;
 		String appkey = Constants.APP_KEY;
 		String secret = Constants.APP_SECRET;
-		String sessionKey = null;
+		String sessionKey = getOAuth().getAccessToken();
 		TaobaoClient client=new DefaultTaobaoClient(url, appkey, secret);
 		TmcUserPermitRequest req=new TmcUserPermitRequest();
 		TmcUserPermitResponse response = client.execute(req , sessionKey);

@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dream.auth.model.Auth;
 import com.dream.auth.model.AuthCriteria;
@@ -34,6 +35,9 @@ import com.dream.auth.vo.query.AuthQuery;
 import com.dream.rapid.base.BaseController;
 import com.dream.rapid.page.Page;
 import com.dream.rapid.web.scope.Flash;
+import com.taobao.api.ApiException;
+import com.taobao.api.request.TmcUserPermitRequest;
+import com.taobao.api.response.TmcUserPermitResponse;
 
 /**
  * @author Frank email:46886799#163.com
@@ -216,7 +220,25 @@ public class AuthController extends BaseController<Auth,Auth,AuthCriteria>{
 	
 	//================================********Customized code start here********==============================
 
-	
+	/**
+	 * 允许接收消息
+	 * @param model
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/permit",method = RequestMethod.GET)
+	public @ResponseBody String edit(ModelMap model) throws Exception {
+		TmcUserPermitRequest req=new TmcUserPermitRequest();
+		req.setTopics("taobao_item_ItemDownshelf");
+		TmcUserPermitResponse response = getTaobaoResponse(req,getOAuth().getAccessToken());
+		if(response.isSuccess()){
+			logger.debug("The user has permit the app to recieve the message.");	
+		}else{
+			logger.debug("The user does not has permit the app to recieve the message.");
+		}
+		return "ok";
+	}
 	
 	//================================********Customized code end here********================================
 	

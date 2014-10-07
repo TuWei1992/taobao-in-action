@@ -55,7 +55,7 @@ public class AuthService extends BaseService<Auth,Auth,AuthCriteria>{
 	 */
 	@Transactional(readOnly=true)
 	public Page findPage(AuthQuery query) {
-		return authDao.findPage(query);
+		return null;
 	}
 	
 

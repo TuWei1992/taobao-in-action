@@ -10,11 +10,11 @@
     <result column="IS_SALED_FIRST" property="isSaledFirst" jdbcType="CHAR" />
     <result column="SALED_NUM" property="saledNum" jdbcType="INTEGER" />
     <result column="IS_STORAGE_FILTERED" property="isStorageFiltered" jdbcType="CHAR" />
-    <result column="STORAGE_NUM" property="storageNum" jdbcType="CHAR" />
+    <result column="STORAGE_NUM" property="storageNum" jdbcType="INTEGER" />
     <result column="IS_OFFSHELVES_FILTERED" property="isOffshelvesFiltered" jdbcType="CHAR" />
     <result column="OFFSHELVES_TIME" property="offshelvesTime" jdbcType="INTEGER" />
     <result column="IS_ONSHELVES_FILTERED" property="isOnshelvesFiltered" jdbcType="CHAR" />
-    <result column="LAST_MODIFIED_BY" property="lastModifiedBy" jdbcType="CHAR" />
+    <result column="LAST_MODIFIED_BY" property="lastModifiedBy" jdbcType="BIGINT" />
     <result column="LAST_MODIFIED_TIME" property="lastModifiedTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Criteria_Where_Clause" >

@@ -9,7 +9,7 @@
     <result column="SHOP_ID" property="shopId" jdbcType="BIGINT" />
     <result column="SCOPE_TYPE" property="scopeType" jdbcType="CHAR" />
     <result column="IS_ENABLED" property="isEnabled" jdbcType="CHAR" />
-    <result column="LAST_MODIFIED_BY" property="lastModifiedBy" jdbcType="VARCHAR" />
+    <result column="LAST_MODIFIED_BY" property="lastModifiedBy" jdbcType="BIGINT" />
     <result column="LAST_MODIFIED_TIME" property="lastModifiedTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Criteria_Where_Clause" >

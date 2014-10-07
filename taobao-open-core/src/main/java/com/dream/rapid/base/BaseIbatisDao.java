@@ -2,6 +2,7 @@ package com.dream.rapid.base;
 
 import java.io.Serializable;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -77,12 +78,12 @@ public abstract class BaseIbatisDao<E,PK extends Serializable,Criteria> extends 
         return rows;
     }
 
-    public void insert(E record) {
-        getSqlMapClientTemplate().insert(getIbatisSqlMapNamespace()+".insert", record);
+    public Object insert(E record) {
+      return getSqlMapClientTemplate().insert(getIbatisSqlMapNamespace()+".insert", record);
     }
 
-    public void insertSelective(E record) {
-        getSqlMapClientTemplate().insert(getIbatisSqlMapNamespace()+".insertSelective", record);
+    public Object insertSelective(E record) {
+       return getSqlMapClientTemplate().insert(getIbatisSqlMapNamespace()+".insertSelective", record);
     }
     
     public List<E> selectByCriteria(Criteria criteria) {
@@ -158,15 +159,17 @@ public abstract class BaseIbatisDao<E,PK extends Serializable,Criteria> extends 
 	}
 	
 	@Override
-	public void insertBatch(final Collection<E> entities) throws DataAccessException {
-		getSqlMapClientTemplate().execute(new SqlMapClientCallback<Integer>() {
-			public Integer doInSqlMapClient(final SqlMapExecutor executor) throws SQLException {
-				Integer result = 0;
+	public List<Object> insertBatch(final Collection<E> entities) throws DataAccessException {
+		return getSqlMapClientTemplate().execute(new SqlMapClientCallback<List<Object>>() {
+			public List<Object> doInSqlMapClient(final SqlMapExecutor executor) throws SQLException {
+				Integer counter = 0;
+				List<Object> result = new ArrayList<Object>();
 				executor.startBatch();
 				for (final E entity : entities) {
 					Object o = executor.insert(getIbatisSqlMapNamespace()+".insert", entity);
+					result.add(o);
 					logger.debug("Insert OK,return the inserted primary key is {}", o);
-					result++;
+					counter++;
 				}
 				executor.executeBatch();
 				return result;
@@ -211,7 +214,7 @@ public abstract class BaseIbatisDao<E,PK extends Serializable,Criteria> extends 
 		if(result == null || result.isEmpty()){
 			this.insertSelective(record);
 		}else{
-			this.prepareObjectForSaveOrUpdate(result.get(0), record);
+			this.prepareObjectForSaveOrUpdate(record, result.get(0));
 			this.updateByPrimaryKeySelective(record);
 		}
 	}

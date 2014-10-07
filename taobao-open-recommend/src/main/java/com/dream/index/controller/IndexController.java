@@ -23,9 +23,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dream.auth.model.Auth;
+import com.dream.auth.model.AuthCriteria;
 import com.dream.auth.service.AuthService;
 import com.dream.oauth.OAuth;
 import com.dream.rapid.base.BaseController;
+import com.dream.recommend.model.RecommendStatus;
+import com.dream.recommend.service.RecommendStatusService;
 import com.dream.shop.model.Shop;
 import com.dream.shop.service.ShopService;
 import com.taobao.api.ApiException;
@@ -59,6 +62,14 @@ public class IndexController extends BaseController {
 	}
 	
 	
+	@Autowired
+	private RecommendStatusService recommendStatusService;
+	
+	public void setRecommendStatusService(RecommendStatusService recommendStatusService){
+		this.recommendStatusService = recommendStatusService;
+	}
+	
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public String index ( @RequestParam(value = "code", defaultValue = "-1") String code,HttpServletRequest request)  throws Exception {
 		String result = "redirect:dashboard";
@@ -74,7 +85,6 @@ public class IndexController extends BaseController {
 		}
 		
 		//如果是第一次授权，需要将用户信息、店铺信息同步至数据库中
-		
 		try{
 			doAuth(code, request);
 			syncAuth(request);
@@ -109,14 +119,25 @@ public class IndexController extends BaseController {
 	}
 	
 	private void syncAuth(HttpServletRequest servletRequest) throws ApiException{
+		OAuth oauth = getOAuth();
+		//仅存在淘宝ID时，不存在SubTaobaoUserId是说明是淘宝正常用户登录，否则就是子账户登录
+		AuthCriteria criteria = new AuthCriteria();
+		if(oauth.getTaobaoUserId()!=null && oauth.getSubTaobaoUserId()==null){
+			criteria.createCriteria().andTaobaoUserIdEqualTo(oauth.getTaobaoUserId());
+		}else if((oauth.getTaobaoUserId()!=null && oauth.getSubTaobaoUserId()!=null)){
+			criteria.createCriteria().andTaobaoUserIdEqualTo(oauth.getTaobaoUserId()).andSubTaobaoUserIdEqualTo(oauth.getSubTaobaoUserId());
+		}else{
+			throw new IllegalArgumentException("Wrong!!!!!!!!!!");
+		}
+		Auth result = this.authService.queryByCriteria(criteria);
 		Auth localAuth = new Auth();
-		BeanUtils.copyProperties(getOAuth(),localAuth);
+		BeanUtils.copyProperties(oauth,localAuth);
 		localAuth.setIsEnable("1");
 		localAuth.setIsLock("1");
 		localAuth.setRefreshedTime(new Date());
 		//先判断用户是否已经存在
-		Auth result = authService.getByTaobaoUserId(localAuth.getTaobaoUserId());
 		if(result == null){
+			localAuth.setCreateTime(new Date());
 			authService.save(localAuth);
 		} else {
 			localAuth.setUserId(result.getUserId());
@@ -126,21 +147,39 @@ public class IndexController extends BaseController {
 	}
 	
 	private void syncShop(HttpServletRequest servletRequest) throws ApiException{
-		ShopGetRequest request = new ShopGetRequest();
-		request.setFields("sid,cid,title,nick,desc,bulletin,pic_path,created,modified");
-		request.setNick(getOAuth().getTaobaoUserNick());
-		ShopGetResponse response = (ShopGetResponse) getTaobaoResponse(request, getOAuth().getTaobaoUserNick());
-		Shop shop = new Shop();
-		BeanUtils.copyProperties(response.getShop(), shop);
-		//先判断店铺信息是否存在
+		//无论是淘宝用户还是其子账户，都通过淘宝用户的昵称来查询其店铺信息
 		Shop result = shopService.getByNick(getOAuth().getTaobaoUserNick());
+		Shop shopInSession = result ;
+		//先判断店铺信息是否存在，如果店铺不存在，则通过接口查询并同步至本地；如果店铺存在，且同步店铺信息的开关为开时，则通过接口查询并同步至本地；否则，直接使用数据库中的店铺信息
 		if(result == null){
-			shopService.save(shop);
-		}else{
+			ShopGetRequest request = new ShopGetRequest();
+			request.setFields("sid,cid,title,nick,desc,bulletin,pic_path,created,modified");
+			request.setNick(getOAuth().getTaobaoUserNick());
+			ShopGetResponse response = (ShopGetResponse) getTaobaoResponse(request, getOAuth().getTaobaoUserNick());
+			Shop shop = new Shop();
+			BeanUtils.copyProperties(response.getShop(), shop);
+			Long sid = (Long) shopService.save(shop);
+			shopInSession = shop;
+			//判断如果默认打开自动橱窗推荐，则将相关信息记录至自动橱窗状态表
+			if("1".equals(getSysParamValue("top.default.enabled"))){
+				RecommendStatus recommendStatus = new RecommendStatus(shop.getSid());
+				recommendStatus.setStatus("1");
+				recommendStatus.setLastModifiedBy(getAuth().getUserId());
+				recommendStatus.setLastModifiedTime(new Date());
+				recommendStatusService.save(recommendStatus);
+			}
+		}else if ("1".equals(getSysParamValue("top.syncshop"))){
+			ShopGetRequest request = new ShopGetRequest();
+			request.setFields("sid,cid,title,nick,desc,bulletin,pic_path,created,modified");
+			request.setNick(getOAuth().getTaobaoUserNick());
+			ShopGetResponse response = (ShopGetResponse) getTaobaoResponse(request, getOAuth().getTaobaoUserNick());
+			Shop shop = new Shop();
+			BeanUtils.copyProperties(response.getShop(), shop);
 			shop.setSid(result.getSid());
 			shopService.update(shop);
+			shopInSession = shop;
 		}
-		servletRequest.getSession().setAttribute(TOP_SHOP, shop);
+		servletRequest.getSession().setAttribute(TOP_SHOP, shopInSession);
 	}
 
 }

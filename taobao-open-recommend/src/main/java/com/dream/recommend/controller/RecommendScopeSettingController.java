@@ -32,7 +32,9 @@ import com.dream.rapid.base.BaseController;
 import com.dream.rapid.web.scope.Flash;
 import com.dream.recommend.model.RecommendScopeSetting;
 import com.dream.recommend.model.RecommendScopeSettingCriteria;
+import com.dream.recommend.model.RecommendStatus;
 import com.dream.recommend.service.RecommendScopeSettingService;
+import com.dream.recommend.service.RecommendUpdatedEvent;
 import com.dream.recommend.vo.query.RecommendScopeSettingQuery;
 import com.taobao.api.ApiException;
 import com.taobao.api.domain.Shop;
@@ -195,11 +197,15 @@ public class RecommendScopeSettingController extends BaseController<RecommendSco
 			return "/recommendscopesetting/edit";
 		}
 		recommendScopeSetting.setShopId(id);
-		recommendScopeSetting.setLastModifiedBy(String.valueOf(getAuth().getUserId()));
+		recommendScopeSetting.setLastModifiedBy(getAuth().getUserId());
 		recommendScopeSetting.setLastModifiedTime(new Date());
 		RecommendScopeSettingCriteria criteria = new RecommendScopeSettingCriteria();
 		criteria.createCriteria().andShopIdEqualTo(id);
 		recommendScopeSettingService.saveOrUpdate(recommendScopeSetting, criteria);
+		
+		RecommendStatus status = new RecommendStatus(id);
+		status.setUpdatedUserId(getAuth().getUserId());
+		getApplicationContext().publishEvent(new RecommendUpdatedEvent(status));
 		return LIST_ACTION;
 	}
 	

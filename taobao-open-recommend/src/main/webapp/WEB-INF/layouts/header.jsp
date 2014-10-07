@@ -62,7 +62,7 @@
                                     <a href="${ctx}/recommendmodesetting"> 推荐方式设置</a>
                                 </li>
                                 <li>
-                                    <a href="${ctx}/recommendspecify"> 必推和不推设置</a>
+                                    <a href="${ctx}/recommendspecified"> 必推和不推设置</a>
                                 </li>
                                 <li>
                                     <a href="${ctx}/recommend"> 当前橱窗宝贝</a>

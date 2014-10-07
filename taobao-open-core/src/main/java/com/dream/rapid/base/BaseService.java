@@ -14,8 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dream.common.dao.SysParamDao;
 import com.dream.common.model.SysParam;
-import com.dream.item.model.Item;
-import com.dream.item.model.ItemCriteria;
 /**
  * @author Frank
  */
@@ -117,6 +115,7 @@ public abstract class BaseService <E,PK extends Serializable,Criteria> implement
 		if(entity == null || criteria == null ){
 			throw new IllegalArgumentException("Can not save or update entity with null");
 		}
+
 		getEntityDao().insertOrUpdate(entity,criteria);
 	}
 	
@@ -125,11 +124,13 @@ public abstract class BaseService <E,PK extends Serializable,Criteria> implement
 	 * @param entity
 	 * @throws DataAccessException
 	 */
-	public void save(E entity) throws DataAccessException{
+	public Object save(E entity) throws DataAccessException{
 		if(entity == null ){
 			throw new IllegalArgumentException("Can not save entity with null");
 		}
-		getEntityDao().insert(entity);
+		Object o = getEntityDao().insert(entity);
+		logger.debug("Insert a new row with primary key {}",o);
+		return o;
 	}
 	
 	/**
@@ -137,11 +138,11 @@ public abstract class BaseService <E,PK extends Serializable,Criteria> implement
 	 * @param entities
 	 * @throws DataAccessException
 	 */
-	public void saveBatch(Collection<E> entities) throws DataAccessException{
+	public List<Object> saveBatch(Collection<E> entities) throws DataAccessException{
 		if(entities == null || entities.isEmpty()){
 			throw new IllegalArgumentException("Can not save batch entities with null or empty collection.");
 		}
-		getEntityDao().insertBatch(entities);
+		return getEntityDao().insertBatch(entities);
 	}
 	
 	/**
@@ -149,11 +150,11 @@ public abstract class BaseService <E,PK extends Serializable,Criteria> implement
 	 * @param id
 	 * @throws DataAccessException
 	 */
-	public void removeById(PK id) throws DataAccessException{
+	public int removeById(PK id) throws DataAccessException{
 		if( id == null ){
 			throw new IllegalArgumentException("Can not delete entity with id.");
 		}
-		getEntityDao().deleteByPrimaryKey(id);
+		return getEntityDao().deleteByPrimaryKey(id);
 	}
 	
 	
@@ -162,11 +163,11 @@ public abstract class BaseService <E,PK extends Serializable,Criteria> implement
 	 * @param id
 	 * @throws DataAccessException
 	 */
-	public void removeByCriteria(Criteria criteria) throws DataAccessException{
+	public int removeByCriteria(Criteria criteria) throws DataAccessException{
 		if( criteria == null ){
 			throw new IllegalArgumentException("Can not delete entity with id.");
 		}
-		getEntityDao().deleteByCriteria(criteria);
+		return getEntityDao().deleteByCriteria(criteria);
 	}
 	
 	
@@ -188,12 +189,51 @@ public abstract class BaseService <E,PK extends Serializable,Criteria> implement
 	 * @param entity
 	 * @throws DataAccessException
 	 */
-	public void update(E entity) throws DataAccessException{
+	public int update(E entity) throws DataAccessException{
 		if(entity == null ){
 			throw new IllegalArgumentException("Can not update entity with null");
 		}
-		getEntityDao().updateByPrimaryKey(entity);
+		return getEntityDao().updateByPrimaryKey(entity);
 	}
+	
+	/**
+	 * 更新数据
+	 * @param entity
+	 * @throws DataAccessException
+	 */
+	public int updateSelective(E entity) throws DataAccessException{
+		if(entity == null ){
+			throw new IllegalArgumentException("Can not update entity with null");
+		}
+		return getEntityDao().updateByPrimaryKeySelective(entity);
+	}
+	
+	/**
+	 * 更新数据
+	 * @param entity
+	 * @throws DataAccessException
+	 */
+	public int updateByCriteria(E entity,Criteria criteria) throws DataAccessException{
+		if(entity == null ){
+			throw new IllegalArgumentException("Can not update entity with null");
+		}
+		return getEntityDao().updateByCriteria(entity,criteria);
+	}
+	
+	
+	/**
+	 * 更新数据
+	 * @param entity
+	 * @throws DataAccessException
+	 */
+	public int updateByCriteriaSelective(E entity,Criteria criteria) throws DataAccessException{
+		if(entity == null ){
+			throw new IllegalArgumentException("Can not update entity with null");
+		}
+		return getEntityDao().updateByCriteriaSelective(entity,criteria);
+	}
+	
+	
 	
 	/**
 	 * 批量更新数据

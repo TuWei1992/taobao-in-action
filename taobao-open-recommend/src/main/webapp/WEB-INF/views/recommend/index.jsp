@@ -37,10 +37,10 @@
                                                 	宝贝名称
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 297px;">
-                                                	宝贝价格
+                                                	上架时间
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 273px;">
-                                                	宝贝库存
+                                                	下架时间
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 201px;">
                                                 	操作
@@ -50,9 +50,9 @@
                                     <tbody>
                                     	<c:forEach var="showcase" items="${showcases}">  
 	    									<tr class="gradeA odd">
-	                                            <td class="sorting_1">${showcase.title}</td>
-	                                            <td class=" ">${showcase.price}</td>
-	                                            <td class=" ">${showcase.num}</td>
+	                                            <td class="sorting_1"><img src="${showcase.picUrl}" alt="${showcase.subTitle}" width="80px" height="74px" class="img-thumbnail"> ${showcase.title}</td>
+	                                            <td class=" "><fmt:formatDate value="${showcase.listTime}" type="both"/></td>
+	                                            <td class=" "><fmt:formatDate value="${showcase.delistTime}" type="both"/></td>
 	                                            <td class="center"><a href="#" class="btn btn-primary btn-xs active" role="button">当前橱窗</a> <a href="${ctx}/recommend/${showcase.numIid}" class="btn btn-default btn-xs active" role="button"> 取消</a></td>
 	                                        </tr>
 										</c:forEach> 

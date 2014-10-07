@@ -21,6 +21,7 @@ import com.taobao.top.link.LinkException;
 public class TmcClientServer {
 	private TmcClient client;
 	public void init() throws LinkException{
+		
 		client = new TmcClient(Constants.APP_KEY, Constants.APP_SECRET,"default");
 		client.setMessageHandler(new MessageHandler() {  
 		    public void onMessage(Message message, MessageStatus status) {  
@@ -35,7 +36,7 @@ public class TmcClientServer {
 		    }
 
 		});  
-		client.connect("ws://mc.api.tbsandbox.com/");
+		//client.connect("ws://mc.api.tbsandbox.com/");
 	}
 	
 	public void destroy(){

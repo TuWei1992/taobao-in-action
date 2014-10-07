@@ -892,32 +892,7 @@ public class Item implements Serializable {
         }
         Item other = (Item) that;
         return this.getId() == null ? other == null : this.getId().equals(other.getId())
-            && this.getNumIid() == null ? other == null : this.getNumIid().equals(other.getNumIid())
-            && this.getCid() == null ? other == null : this.getCid().equals(other.getCid())
-            && this.getSellerCids() == null ? other == null : this.getSellerCids().equals(other.getSellerCids())
-            && this.getProps() == null ? other == null : this.getProps().equals(other.getProps())
-            && this.getPicUrl() == null ? other == null : this.getPicUrl().equals(other.getPicUrl())
-            && this.getNum() == null ? other == null : this.getNum().equals(other.getNum())
-            && this.getListTime() == null ? other == null : this.getListTime().equals(other.getListTime())
-            && this.getDelistTime() == null ? other == null : this.getDelistTime().equals(other.getDelistTime())
-            && this.getPrice() == null ? other == null : this.getPrice().equals(other.getPrice())
-            && this.getHasDiscount() == null ? other == null : this.getHasDiscount().equals(other.getHasDiscount())
-            && this.getHasInvoice() == null ? other == null : this.getHasInvoice().equals(other.getHasInvoice())
-            && this.getHasWarranty() == null ? other == null : this.getHasWarranty().equals(other.getHasWarranty())
-            && this.getHasShowcase() == null ? other == null : this.getHasShowcase().equals(other.getHasShowcase())
-            && this.getModified() == null ? other == null : this.getModified().equals(other.getModified())
-            && this.getApproveStatus() == null ? other == null : this.getApproveStatus().equals(other.getApproveStatus())
-            && this.getPostageId() == null ? other == null : this.getPostageId().equals(other.getPostageId())
-            && this.getIsVirtual() == null ? other == null : this.getIsVirtual().equals(other.getIsVirtual())
-            && this.getIsTaobao() == null ? other == null : this.getIsTaobao().equals(other.getIsTaobao())
-            && this.getIsEx() == null ? other == null : this.getIsEx().equals(other.getIsEx())
-            && this.getTitle() == null ? other == null : this.getTitle().equals(other.getTitle())
-            && this.getNick() == null ? other == null : this.getNick().equals(other.getNick())
-            && this.getType() == null ? other == null : this.getType().equals(other.getType())
-            && this.getValidThru() == null ? other == null : this.getValidThru().equals(other.getValidThru())
-            && this.getOuterId() == null ? other == null : this.getOuterId().equals(other.getOuterId())
-            && this.getOnsaleStatus() == null ? other == null : this.getOnsaleStatus().equals(other.getOnsaleStatus())
-            && this.getSoldQuantity() == null ? other == null : this.getSoldQuantity().equals(other.getSoldQuantity());
+            && this.getNumIid() == null ? other == null : this.getNumIid().equals(other.getNumIid());
     }
 
     /**

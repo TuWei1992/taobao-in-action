@@ -13,7 +13,7 @@
 	<entry key="namespace">views</entry>
 
 	
-	<entry key="outRoot">D:\Work\Frameworks\GitHub\taobao-in-action\taobao-open</entry>
+	<entry key="outRoot">D:\Work\Frameworks\GitHub\taobao-in-action\taobao-open-recommend</entry>
 	
 	<!-- 需要移除的表名前缀,使用逗号进行分隔多个前缀,示例值: t_,v_ -->
 	<entry key="tableRemovePrefixes">top_</entry>

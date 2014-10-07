@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- DBUnit flatXml DataFile -->
+<dataset>
+
+
+	  <TOP_RECOMMEND_SCOPE_CATEGORY 
+			ID='Id131' 
+			SHOP_ID='ShopId612' 
+			CAT_ID='CatId631' 
+			CAT_NAME='CatName333' 
+			LAST_MODIFIED_TIME='2014-10-05 20:59:29.509' 
+			LAST_MODIFIED_BY='593' 
+	  />	
+  
+</dataset>

@@ -10,12 +10,6 @@
 		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.EqualsHashCodePlugin"></ibatorPlugin>
 		<!-- 实现序列化接口  -->
 		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.SerializablePlugin"></ibatorPlugin>
-		<!-- 
-		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.SqlMapConfigPlugin">
-			<property name="targetProject" value="${sqlmap.target.project}"/>
-			<property name="targetPackage" value="${sqlmap.target.package}"/>
-		</ibatorPlugin>
-		 -->
 		 <!-- 重命名Example  -->
 		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.RenameExampleClassPlugin">
 			<property name="searchString" value="Example$"/>
@@ -32,21 +26,16 @@
 		<ibatorPlugin type="org.apache.ibatis.ibator.plugins.ResetPrimariyKeyTypePlugin">
 		</ibatorPlugin>
 		
-        <jdbcConnection driverClass="${jdbc.driverClassName}"
-			connectionURL="${jdbc.url}" userId="${jdbc.username}"
-			password="${jdbc.password}">
+        <jdbcConnection driverClass="${jdbc.driverClassName}" connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}">
 		</jdbcConnection>
-		<javaModelGenerator targetPackage="${java.model.target.package}"
-			targetProject="${java.model.target.project}"  >
+		<javaModelGenerator targetPackage="${java.model.target.package}" targetProject="${java.model.target.project}"  >
 			<property name="enableSubPackages" value="false" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
-		<sqlMapGenerator targetPackage="${sqlmap.target.package}"
-			targetProject="${sqlmap.target.project}" >
+		<sqlMapGenerator targetPackage="${sqlmap.target.package}" targetProject="${sqlmap.target.project}" >
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
-		<daoGenerator targetPackage="${dao.target.package}"
-			targetProject="${dao.target.project}" implementationPackage="${dao.implementation.package}"  type="org.apache.ibatis.ibator.generator.ibatis2.dao.templates.CustomizedSpringDAOTemplate">
+		<daoGenerator targetPackage="${dao.target.package}" targetProject="${dao.target.project}" implementationPackage="${dao.implementation.package}"  type="org.apache.ibatis.ibator.generator.ibatis2.dao.templates.CustomizedSpringDAOTemplate">
 			<property name="enableSubPackages" value="false" />
 		</daoGenerator>
 		<table schema="" tableName="${table.table.name}"
@@ -54,7 +43,7 @@
 			enableDeleteByPrimaryKey="true" enableInsert="true"
 			enableSelectByExample="true" enableSelectByPrimaryKey="true"
 			enableUpdateByExample="true" enableUpdateByPrimaryKey="true" >
-			<generatedKey column="ID" sqlStatement="select nextval('item_id_seq')"/>
+			<generatedKey column="${table.table.primarykey}" sqlStatement="${table.table.primarykey.sequence}"/>
 		</table>
    </ibatorContext>
 </ibatorConfiguration>
