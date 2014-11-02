@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 <#include "/java_imports.include">
 @Service
 @Transactional
-public class ${className}Service extends BaseService<${className},${table.idColumn.javaType}>{
+public class ${className}Service extends BaseService<${className},${className},${className}Criteria>{
 
 	//================================********Generated code start here********================================
 	
@@ -37,7 +37,8 @@ public class ${className}Service extends BaseService<${className},${table.idColu
 	 */
 	@Transactional(readOnly=true)
 	public Page findPage(${className}Query query) {
-		return ${classNameLower}Dao.findPage(query);
+		//return ${classNameLower}Dao.findPage(query);
+		return null;
 	}
 	
 <#list table.columns as column>

@@ -6,6 +6,7 @@
 package com.dream.recommend.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -25,17 +27,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dream.item.model.ItemCriteria;
 import com.dream.item.service.ItemService;
 import com.dream.rapid.base.BaseController;
 import com.dream.rapid.web.scope.Flash;
+import com.dream.recommend.model.RecommendScopeCategory;
+import com.dream.recommend.model.RecommendScopeCategoryCriteria;
 import com.dream.recommend.model.RecommendScopeSetting;
 import com.dream.recommend.model.RecommendScopeSettingCriteria;
 import com.dream.recommend.model.RecommendStatus;
+import com.dream.recommend.service.RecommendScopeCategoryService;
 import com.dream.recommend.service.RecommendScopeSettingService;
 import com.dream.recommend.service.RecommendUpdatedEvent;
 import com.dream.recommend.vo.query.RecommendScopeSettingQuery;
+import com.dream.shop.model.ShopCategory;
+import com.dream.shop.model.ShopCategoryCriteria;
+import com.dream.shop.service.ShopCategoryService;
 import com.taobao.api.ApiException;
 import com.taobao.api.domain.Shop;
 import com.taobao.api.request.ShopRemainshowcaseGetRequest;
@@ -56,21 +65,41 @@ public class RecommendScopeSettingController extends BaseController<RecommendSco
 	//默认多列排序,example: username desc,createTime asc
 	protected static final String DEFAULT_SORT_COLUMNS = null; 
 	
+	private final String LIST_ACTION = "redirect:/recommendscopesetting";
+	
 	@Autowired
 	private RecommendScopeSettingService recommendScopeSettingService;
 	
-	
-	
-	private final String LIST_ACTION = "redirect:/recommendscopesetting";
-	
 	/**
-	 * 增加setXXXX()方法,spring就可以通过autowire自动设置对象属性,注意大小写
 	 * @param service
 	 */
 	public void setRecommendScopeSettingService(RecommendScopeSettingService service) {
 		this.recommendScopeSettingService = service;
 	}
-
+	
+	
+	@Autowired
+	private ShopCategoryService shopCategoryService;
+	
+	/**
+	 * @param service
+	 */
+	public void setShopCategoryService(ShopCategoryService service) {
+		this.shopCategoryService = service;
+	}
+	
+	
+	
+	@Autowired
+	private RecommendScopeCategoryService recommendScopeCategoryService;
+	
+	/**
+	 * @param service
+	 */
+	public void setRecommendScopeCategoryService(RecommendScopeCategoryService service) {
+		this.recommendScopeCategoryService = service;
+	}
+	
 	
 	/**
 	 * binder用于bean属性的设置
@@ -113,6 +142,17 @@ public class RecommendScopeSettingController extends BaseController<RecommendSco
 		model.addAttribute("all",all);
 		RecommendScopeSetting setting = this.recommendScopeSettingService.queryById(new RecommendScopeSetting(getShop().getSid()));
 		model.addAttribute("setting",setting);
+		//
+		ShopCategoryCriteria criteria = new ShopCategoryCriteria();
+		criteria.createCriteria().andShopIdEqualTo(getShop().getSid());
+		List<ShopCategory> shopCats = shopCategoryService.queryAllByCriteria(criteria );
+		if(shopCats==null || shopCats.isEmpty()){
+			model.addAttribute("shopcats","{}");
+		}else{
+			ObjectMapper objectMapper =  new ObjectMapper();
+			String json = objectMapper.writeValueAsString(shopCats);
+			model.addAttribute("shopcats",json);
+		}
 		return "/recommendscopesetting/index";
 	}
 	
@@ -131,7 +171,7 @@ public class RecommendScopeSettingController extends BaseController<RecommendSco
 	}
 
 	/**
-	 * 进入新增 
+	 * 
 	 * @param model
 	 * @param recommendScopeSetting
 	 * @param request
@@ -139,10 +179,16 @@ public class RecommendScopeSettingController extends BaseController<RecommendSco
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value="/new")
-	public String _new(ModelMap model,RecommendScopeSetting recommendScopeSetting,HttpServletRequest request,HttpServletResponse response) throws Exception {
-		model.addAttribute("recommendScopeSetting",recommendScopeSetting);
-		return "/recommendscopesetting/new";
+	@RequestMapping(value="/category")
+	public @ResponseBody String category(ModelMap model,RecommendScopeSetting recommendScopeSetting,HttpServletRequest request,HttpServletResponse response) throws Exception {
+		RecommendScopeCategoryCriteria rCriteria = new RecommendScopeCategoryCriteria();
+		rCriteria.createCriteria().andShopIdEqualTo(getShop().getSid());
+		List<RecommendScopeCategory> scopeCats  = recommendScopeCategoryService.queryAllByCriteria(rCriteria);
+		if(scopeCats==null || scopeCats.isEmpty()){
+			return "";
+		}else{
+			return getJsonAsString(scopeCats);
+		}
 	}
 	
 	/**
@@ -197,12 +243,30 @@ public class RecommendScopeSettingController extends BaseController<RecommendSco
 			return "/recommendscopesetting/edit";
 		}
 		recommendScopeSetting.setShopId(id);
+		recommendScopeSetting.setIsEnabled("1");
 		recommendScopeSetting.setLastModifiedBy(getAuth().getUserId());
 		recommendScopeSetting.setLastModifiedTime(new Date());
 		RecommendScopeSettingCriteria criteria = new RecommendScopeSettingCriteria();
 		criteria.createCriteria().andShopIdEqualTo(id);
 		recommendScopeSettingService.saveOrUpdate(recommendScopeSetting, criteria);
-		
+		if("1".equals(recommendScopeSetting.getScopeType())){
+			String cats = request.getParameter("cats");
+			String[] catArray = cats.split(",");
+			List<RecommendScopeCategory> catList = new ArrayList<RecommendScopeCategory>();
+			for(String catId:catArray){
+				RecommendScopeCategory cat = new RecommendScopeCategory();
+				String[] catIds = catId.split("_");
+				cat.setCatId(catIds[0]);
+				cat.setCatName(catIds[1]);
+				cat.setShopId(id);
+				cat.setLastModifiedBy(getAuth().getUserId());
+				cat.setLastModifiedTime(new Date());
+				catList.add(cat);
+			}
+			RecommendScopeCategoryCriteria rCriteria = new RecommendScopeCategoryCriteria();
+			rCriteria.createCriteria().andShopIdEqualTo(id);
+			this.recommendScopeCategoryService.removeSaveBatch(rCriteria , catList);
+		}
 		RecommendStatus status = new RecommendStatus(id);
 		status.setUpdatedUserId(getAuth().getUserId());
 		getApplicationContext().publishEvent(new RecommendUpdatedEvent(status));
@@ -250,13 +314,13 @@ public class RecommendScopeSettingController extends BaseController<RecommendSco
 	
 	private List queryOnSaleItems(){
 		ItemCriteria criteria = new ItemCriteria();
-		criteria.createCriteria().andNickEqualTo(getOAuth().getTaobaoUserNick()).andTypeEqualTo("1");
+		criteria.createCriteria().andNickEqualTo(getOAuth().getTaobaoUserNick()).andApproveStatusEqualTo("onsale");
 		return itemService.queryAllByCriteria(criteria);
 	}
 	
 	private List queryInventoryItems(){
 		ItemCriteria criteria = new ItemCriteria();
-		criteria.createCriteria().andNickEqualTo(getOAuth().getTaobaoUserNick()).andTypeEqualTo("0");
+		criteria.createCriteria().andNickEqualTo(getOAuth().getTaobaoUserNick()).andApproveStatusEqualTo("instock");
 		return itemService.queryAllByCriteria(criteria);
 	}
 	

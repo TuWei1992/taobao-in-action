@@ -1,7 +1,12 @@
 package com.dream.rapid.base;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.ModelMap;
@@ -161,6 +166,13 @@ public abstract class BaseController<Entity,PK,Criteria> extends WebContentGener
 		SysParamService service = this.getApplicationContext().getBean("sysParamService", SysParamService.class);
 		SysParam param  = service.getByKey(key);
 		return param.getValue();
+	}
+	
+	
+	protected String getJsonAsString(Object object) throws Exception {
+		ObjectMapper objectMapper =  new ObjectMapper();
+		String json = objectMapper.writeValueAsString(object);
+		return json;
 	}
 	
 }

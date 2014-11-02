@@ -38,7 +38,7 @@ import com.dream.rapid.web.scope.Flash;
 <#include "/java_imports.include">
 @Controller
 @RequestMapping("/${classNameLowerCase}")
-public class ${className}Controller extends BaseController<${className},${pkJavaType}>{
+public class ${className}Controller extends BaseController<${className},${className},${className}Criteria>{
 
 	//================================********Generated code start here********================================
 	
@@ -86,9 +86,9 @@ public class ${className}Controller extends BaseController<${className},${pkJava
 	 */
 	@RequestMapping
 	public String index(ModelMap model,${className}Query query,HttpServletRequest request,HttpServletResponse response) throws Exception {
-		Page page = this.${classNameFirstLower}Service.findPage(query);
-		
-		model.addAllAttributes(toModelMap(page, query));
+//		Page page = this.${classNameFirstLower}Service.findPage(query);
+//		
+//		model.addAllAttributes(toModelMap(page, query));
 		return "/${classNameLowerCase}/index";
 	}
 	
@@ -101,8 +101,8 @@ public class ${className}Controller extends BaseController<${className},${pkJava
 	 */
 	@RequestMapping(value="/{id}")
 	public String show(ModelMap model,@PathVariable ${pkJavaType} id) throws Exception {
-		${className} ${classNameFirstLower} = (${className})${classNameFirstLower}Service.getById(id);
-		model.addAttribute("${classNameFirstLower}",${classNameFirstLower});
+//		${className} ${classNameFirstLower} = (${className})${classNameFirstLower}Service.getById(id);
+//		model.addAttribute("${classNameFirstLower}",${classNameFirstLower});
 		return "/${classNameLowerCase}/show";
 	}
 
@@ -151,8 +151,8 @@ public class ${className}Controller extends BaseController<${className},${pkJava
 	 */
 	@RequestMapping(value="/{id}/edit")
 	public String edit(ModelMap model,@PathVariable ${pkJavaType} id) throws Exception {
-		${className} ${classNameFirstLower} = (${className})${classNameFirstLower}Service.getById(id);
-		model.addAttribute("${classNameFirstLower}",${classNameFirstLower});
+//		${className} ${classNameFirstLower} = (${className})${classNameFirstLower}Service.getById(id);
+//		model.addAttribute("${classNameFirstLower}",${classNameFirstLower});
 		return "/${classNameLowerCase}/edit";
 	}
 	
@@ -186,7 +186,7 @@ public class ${className}Controller extends BaseController<${className},${pkJava
 	 */
 	@RequestMapping(value="/{id}",method=RequestMethod.DELETE)
 	public String delete(ModelMap model,@PathVariable ${pkJavaType} id) {
-		${classNameFirstLower}Service.removeById(id);
+//		${classNameFirstLower}Service.removeById(id);
 		Flash.current().success(DELETE_SUCCESS);
 		return LIST_ACTION;
 	}
@@ -200,7 +200,7 @@ public class ${className}Controller extends BaseController<${className},${pkJava
 	@RequestMapping(method=RequestMethod.DELETE)
 	public String batchDelete(ModelMap model,@RequestParam("items") ${pkJavaType}[] items) {
 		for(int i = 0; i < items.length; i++) {
-			${classNameFirstLower}Service.removeById(items[i]);
+//			${classNameFirstLower}Service.removeById(items[i]);
 		}
 		Flash.current().success(DELETE_SUCCESS);
 		return LIST_ACTION;

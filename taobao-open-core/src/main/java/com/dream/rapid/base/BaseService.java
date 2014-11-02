@@ -14,6 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dream.common.dao.SysParamDao;
 import com.dream.common.model.SysParam;
+import com.taobao.api.ApiException;
+import com.taobao.api.DefaultTaobaoClient;
+import com.taobao.api.TaobaoClient;
+import com.taobao.api.TaobaoRequest;
+import com.taobao.api.TaobaoResponse;
 /**
  * @author Frank
  */
@@ -264,4 +269,35 @@ public abstract class BaseService <E,PK extends Serializable,Criteria> implement
 		}
 		return sysParam.getValue();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	protected TaobaoClient getTaobaoClient(){
+		String serverUrl = getSysParamValue("top.serverurl");
+		String appKey = getSysParamValue("top.appkey");
+		String appSecret = getSysParamValue("top.appsecret");
+		TaobaoClient client=new DefaultTaobaoClient(serverUrl, appKey, appSecret);
+		return client;
+	}
+	
+	protected <T extends TaobaoResponse> T getTaobaoResponse(TaobaoRequest<T> request) throws ApiException{
+		logger.debug("Start sending top request:{}",request);
+		T response = getTaobaoClient().execute(request);
+		logger.debug("End sending top request:{},We get top response:{}",new Object[]{request,response});
+		return response;
+	}
+	
+	protected <T extends TaobaoResponse> T getTaobaoResponse(TaobaoRequest<T> request,String session) throws ApiException{
+		logger.debug("Start sending top request:{} with session:{}",request,session);
+		T response = getTaobaoClient().execute(request,session);
+		logger.debug("End sending top request:{} with session:{},We get top response:{}",new Object[]{request,session,response});
+		return response;
+	}
+	
+	
 }

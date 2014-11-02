@@ -7,8 +7,10 @@ package com.dream.index.controller;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -25,15 +27,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dream.auth.model.Auth;
 import com.dream.auth.model.AuthCriteria;
 import com.dream.auth.service.AuthService;
+import com.dream.item.service.ItemService;
 import com.dream.oauth.OAuth;
 import com.dream.rapid.base.BaseController;
 import com.dream.recommend.model.RecommendStatus;
 import com.dream.recommend.service.RecommendStatusService;
 import com.dream.shop.model.Shop;
+import com.dream.shop.model.ShopCategory;
+import com.dream.shop.service.ShopCategoryService;
 import com.dream.shop.service.ShopService;
 import com.taobao.api.ApiException;
+import com.taobao.api.domain.SellerCat;
 import com.taobao.api.internal.util.WebUtils;
+import com.taobao.api.request.SellercatsListGetRequest;
 import com.taobao.api.request.ShopGetRequest;
+import com.taobao.api.response.SellercatsListGetResponse;
 import com.taobao.api.response.ShopGetResponse;
 
 /**
@@ -61,12 +69,27 @@ public class IndexController extends BaseController {
 		this.shopService = shopService;
 	}
 	
+	@Autowired
+	private ShopCategoryService shopCategoryService;
+	
+	public void setShopCategoryService(ShopCategoryService shopCategoryService){
+		this.shopCategoryService = shopCategoryService;
+	}
+	
 	
 	@Autowired
 	private RecommendStatusService recommendStatusService;
 	
 	public void setRecommendStatusService(RecommendStatusService recommendStatusService){
 		this.recommendStatusService = recommendStatusService;
+	}
+	
+	
+	@Autowired
+	private ItemService itemService;
+	
+	public void setItemService(ItemService itemService){
+		this.itemService = itemService;
 	}
 	
 	
@@ -84,7 +107,7 @@ public class IndexController extends BaseController {
 			return "redirect:t";
 		}
 		
-		//如果是第一次授权，需要将用户信息、店铺信息同步至数据库中
+		//如果是第一次授权，需要将用户信息、店铺信息、分类信息、商品信息同步至数据库中
 		try{
 			doAuth(code, request);
 			syncAuth(request);
@@ -151,14 +174,36 @@ public class IndexController extends BaseController {
 		Shop result = shopService.getByNick(getOAuth().getTaobaoUserNick());
 		Shop shopInSession = result ;
 		//先判断店铺信息是否存在，如果店铺不存在，则通过接口查询并同步至本地；如果店铺存在，且同步店铺信息的开关为开时，则通过接口查询并同步至本地；否则，直接使用数据库中的店铺信息
+		//如果是第一次授权，需要将用户信息、店铺信息、分类信息、商品信息同步至数据库中
 		if(result == null){
+			//店铺信息店铺信息同步
 			ShopGetRequest request = new ShopGetRequest();
 			request.setFields("sid,cid,title,nick,desc,bulletin,pic_path,created,modified");
 			request.setNick(getOAuth().getTaobaoUserNick());
 			ShopGetResponse response = (ShopGetResponse) getTaobaoResponse(request, getOAuth().getTaobaoUserNick());
 			Shop shop = new Shop();
 			BeanUtils.copyProperties(response.getShop(), shop);
-			Long sid = (Long) shopService.save(shop);
+			shopService.save(shop);
+			//店铺分类信息同步
+			SellercatsListGetRequest req=new SellercatsListGetRequest();
+			req.setNick(getOAuth().getTaobaoUserNick());
+			SellercatsListGetResponse resp = (SellercatsListGetResponse) getTaobaoResponse(req);
+			if(resp.isSuccess()){
+				List<SellerCat> shopCats = resp.getSellerCats();
+				List<ShopCategory> shopCategories = new ArrayList<ShopCategory>();
+				for(SellerCat sc : shopCats){
+					ShopCategory cat = new ShopCategory();
+					BeanUtils.copyProperties(sc, cat);
+					cat.setShopId(shop.getSid());
+					cat.setCreateTime(new Date());
+					cat.setRefreshTime(new Date());
+				}
+				shopCategoryService.saveBatch(shopCategories);
+			}
+			//商品信息同步
+			itemService.syncItems(getOAuth());
+			
+			
 			shopInSession = shop;
 			//判断如果默认打开自动橱窗推荐，则将相关信息记录至自动橱窗状态表
 			if("1".equals(getSysParamValue("top.default.enabled"))){

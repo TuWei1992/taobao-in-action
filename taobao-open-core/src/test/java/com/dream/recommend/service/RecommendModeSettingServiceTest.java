@@ -70,12 +70,12 @@ public class RecommendModeSettingServiceTest extends BaseServiceTestCase{
 	  	obj.setIsSaledFirst(new java.lang.String("1"));
 	  	obj.setSaledNum(new java.lang.Integer("1"));
 	  	obj.setIsStorageFiltered(new java.lang.String("1"));
-	  	obj.setStorageNum(new java.lang.String("1"));
-	  	obj.setIsOffshelvesFiltered(new java.lang.String("1"));
-	  	obj.setOffshelvesTime(new java.lang.Integer("1"));
-	  	obj.setIsOnshelvesFiltered(new java.lang.String("1"));
-	  	obj.setLastModifiedBy(new java.lang.String("1"));
-	  	obj.setLastModifiedTime(new java.util.Date(System.currentTimeMillis()));
+//	  	obj.setStorageNum(new java.lang.String("1"));
+//	  	obj.setIsOffshelvesFiltered(new java.lang.String("1"));
+//	  	obj.setOffshelvesTime(new java.lang.Integer("1"));
+//	  	obj.setIsOnshelvesFiltered(new java.lang.String("1"));
+//	  	obj.setLastModifiedBy(new java.lang.String("1"));
+//	  	obj.setLastModifiedTime(new java.util.Date(System.currentTimeMillis()));
 		return obj;
 	}
 }

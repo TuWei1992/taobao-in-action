@@ -43,7 +43,7 @@
 			enableDeleteByPrimaryKey="true" enableInsert="true"
 			enableSelectByExample="true" enableSelectByPrimaryKey="true"
 			enableUpdateByExample="true" enableUpdateByPrimaryKey="true" >
-			<generatedKey column="${table.table.primarykey}" sqlStatement="${table.table.primarykey.sequence}"/>
+<!-- 			<generatedKey column="${table.table.primarykey}" sqlStatement="${table.table.primarykey.sequence}"/> -->
 		</table>
    </ibatorContext>
 </ibatorConfiguration>

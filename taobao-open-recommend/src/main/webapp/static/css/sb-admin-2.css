@@ -343,3 +343,14 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+
+.tool{
+    position: fixed;
+    right:20px;
+    bottom:20px;
+    z-index: 9997;
+    width: 32px;
+    height: 66px;
+    background: url(../images/top.png) no-repeat;
+}

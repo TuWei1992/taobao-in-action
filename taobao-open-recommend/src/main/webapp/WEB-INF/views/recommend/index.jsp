@@ -5,6 +5,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+     <!-- DataTables CSS -->
+    <link href="${ctx}/static/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables JavaScript -->
+    <script src="${ctx}/static/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="${ctx}/static/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="${ctx}/static/js/plugins/dataTables/dataTables.bootstrap_zh_CN.js"></script>
+
+  <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables').dataTable({
+            "sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>" + "t" + "<'row'<'col-sm-6'i><'col-sm-6'p>>",
+            "oLanguage": dataTable_zh
+        });
+    });
+    </script>
 </head>
 <body>
 
@@ -25,24 +41,19 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
-                                <div class="row">
-                                <div class="col-sm-6">
-                                <div class="dataTables_length" id="dataTables-example_length">
-                                <label><select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> records per page</label></div></div><div class="col-sm-6"><div id="dataTables-example_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" aria-controls="dataTables-example"></label></div></div></div>
-                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables">
                                     <thead>
                                         <tr role="row">
-                                            <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 232px;">
+                                            <th>
                                                 	宝贝名称
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 297px;">
+                                            <th>
                                                 	上架时间
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 273px;">
+                                            <th>
                                                 	下架时间
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 201px;">
+                                            <th>
                                                 	操作
                                             </th>
                                         </tr>
@@ -50,21 +61,18 @@
                                     <tbody>
                                     	<c:forEach var="showcase" items="${showcases}">  
 	    									<tr class="gradeA odd">
-	                                            <td class="sorting_1"><img src="${showcase.picUrl}" alt="${showcase.subTitle}" width="80px" height="74px" class="img-thumbnail"> ${showcase.title}</td>
-	                                            <td class=" "><fmt:formatDate value="${showcase.listTime}" type="both"/></td>
-	                                            <td class=" "><fmt:formatDate value="${showcase.delistTime}" type="both"/></td>
-	                                            <td class="center"><a href="#" class="btn btn-primary btn-xs active" role="button">当前橱窗</a> <a href="${ctx}/recommend/${showcase.numIid}" class="btn btn-default btn-xs active" role="button"> 取消</a></td>
+	                                            <td><img src="${showcase.picUrl}" alt="${showcase.subTitle}" width="60px" height="65px"  class="img-thumbnail"> ${showcase.title}</td>
+	                                            <td><fmt:formatDate value="${showcase.listTime}" type="both"/></td>
+	                                            <td><fmt:formatDate value="${showcase.delistTime}" type="both"/></td>
+	                                            <td><a href="${ctx}/recommend/${showcase.numIid}" class="btn btn-default btn-xs active" role="button"> 取消推荐</a></td>
 	                                        </tr>
 										</c:forEach> 
                                     </tbody>
                                 </table>
-                                <div class="row"><div class="col-sm-6"><div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Previous</a></li><li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">1</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">2</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">3</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">4</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">5</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">6</a></li><li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Next</a></li></ul></div></div></div></div>
+                                
                             </div>
                             <!-- /.table-responsive -->
-                            <div class="well">
-                                <h4>DataTables Usage Information</h4>
-                                <p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are using a specialized version of DataTables built for Bootstrap 3. We have also customized the table headings to use Font Awesome icons in place of images. For complete documentation on DataTables, visit their website at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.</p>
-                            </div>
+                            
                         </div>
                         <!-- /.panel-body -->
                     </div>

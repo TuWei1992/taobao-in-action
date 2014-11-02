@@ -5,13 +5,7 @@
 		<!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">最强掌柜 - 七种武器之长生剑</a>
+                <a class="navbar-brand" href="${ctx}">最强掌柜 - 七种武器之长生剑</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -55,6 +49,9 @@
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> 自动橱窗<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="${ctx}/wizard"> 自动橱窗向导</a>
+                                </li>
                                 <li>
                                     <a href="${ctx}/recommendscopesetting"> 推荐范围设置</a>
                                 </li>
@@ -67,12 +64,11 @@
                                 <li>
                                     <a href="${ctx}/recommend"> 当前橱窗宝贝</a>
                                 </li>
-                                <li>
-                                    <a href="${ctx}/recommendlog"> 自动橱窗日志</a>
-                                </li>
+                                <%--
+                               
                                 <li>
                                     <a href="${ctx}/recommend/offsale"> 查看快下架宝贝</a>
-                                </li>
+                                </li>--%>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

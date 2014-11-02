@@ -67,7 +67,7 @@ public class RecommendScopeCategoryServiceTest extends BaseServiceTestCase{
 	public static RecommendScopeCategory newRecommendScopeCategory() {
 		RecommendScopeCategory obj = new RecommendScopeCategory();
 		
-	  	obj.setShopId(new java.lang.String("1"));
+//	  	obj.setShopId(new java.lang.String("1"));
 	  	obj.setCatId(new java.lang.String("1"));
 	  	obj.setCatName(new java.lang.String("1"));
 	  	obj.setLastModifiedTime(new java.util.Date(System.currentTimeMillis()));

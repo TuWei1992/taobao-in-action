@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- DBUnit flatXml DataFile -->
+<dataset>
+
+
+	  <TOP_SHOP_CATEGORY 
+			CID='936' 
+			PARENT_CID='459' 
+			NAME='Name863' 
+			PIC_URL='PicUrl006' 
+			SORT_ORDER='350' 
+			TYPE='Type388' 
+			SHOP_ID='239' 
+			CREATE_TIME='2014-10-07 17:53:56.753' 
+			REFRESH_TIME='2014-10-07 17:53:56.753' 
+	  />	
+  
+</dataset>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <class name="com.dream.Book">
+        <map-to xml="BOSFXII" ns-uri="http://www.bankofshanghai.com/BOSFX/2010/08" />
+        <field name="authorName" >
+            <bind-xml name="authorName" node="element" location="CBIB0002Rq/CommonRqHdr"  />
+        </field>
+         <field name="isbn" >
+            <bind-xml name="isbn" node="element" location="CBIB0002Rq/CommonRqHdr"  />
+        </field>
+         <field name="title" >
+            <bind-xml name="title" node="element" location="CBIB0002Rq/CommonRqHdr"  />
+        </field>
+    </class>
+</mapping>

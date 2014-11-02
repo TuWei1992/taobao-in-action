@@ -173,15 +173,21 @@ public class RecommendStatusController extends BaseController<RecommendStatus,Re
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping(value="/{id}",method=RequestMethod.PUT)
-	public String update(ModelMap model,@PathVariable java.lang.Long id,@Valid RecommendStatus recommendStatus,BindingResult errors,HttpServletRequest request,HttpServletResponse response) throws Exception {
-		if(errors.hasErrors()) {
-			return "/recommendstatus/edit";
+	@RequestMapping(value="/update",method=RequestMethod.GET)
+	public String update(ModelMap model,HttpServletRequest request,HttpServletResponse response) throws Exception {
+		Long sid = getShop().getSid();
+		RecommendStatus recommendStatus = new RecommendStatus(sid);
+		RecommendStatus status =  recommendStatusService.queryById(recommendStatus);
+		String sts = status.getStatus();
+		if("0".equals(sts)){
+			status.setStatus("1");
+		}
+		if("1".equals(sts)){
+			status.setStatus("0");
 		}
 		
-		recommendStatusService.update(recommendStatus);
-		Flash.current().success(UPDATE_SUCCESS);
-		return LIST_ACTION;
+		recommendStatusService.updateSelective(status);
+		return "redirect:/dashboard";
 	}
 	
 	/**

@@ -150,6 +150,11 @@
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 		</dependency>
+		
+		<dependency>
+		  <groupId>commons-validator</groupId>
+  		  <artifactId>commons-validator</artifactId>
+		</dependency>
 		<!--Apache Commons相关的版本定义 End -->
 
 		<!--其他类库 Start -->
@@ -245,9 +250,19 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
-			<scope>provided</scope>
 		</dependency>
-		
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.extrema-sistemas</groupId>
+			<artifactId>tldgen</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

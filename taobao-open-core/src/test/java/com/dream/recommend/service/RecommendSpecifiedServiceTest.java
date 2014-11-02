@@ -59,7 +59,7 @@ public class RecommendSpecifiedServiceTest extends BaseServiceTestCase{
 		
 		assertNotNull(obj.getId());
 		
-		service.removeById(obj.getId());
+//		service.removeById(obj.getId());
 		service.getEntityDao().flush();
 	
 	}
@@ -67,9 +67,9 @@ public class RecommendSpecifiedServiceTest extends BaseServiceTestCase{
 	public static RecommendSpecified newRecommendSpecified() {
 		RecommendSpecified obj = new RecommendSpecified();
 		
-	  	obj.setShopId(new java.lang.String("1"));
+//	  	obj.setShopId(new java.lang.String("1"));
 	  	obj.setType(new java.lang.String("1"));
-	  	obj.setItemId(new java.lang.String("1"));
+//	  	obj.setItemId(new java.lang.String("1"));
 	  	obj.setItemName(new java.lang.String("1"));
 	  	obj.setLastModifiedBy(new java.lang.Long("1"));
 	  	obj.setLastModifiedTime(new java.util.Date(System.currentTimeMillis()));

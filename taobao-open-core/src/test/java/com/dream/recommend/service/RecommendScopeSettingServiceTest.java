@@ -61,7 +61,7 @@ public class RecommendScopeSettingServiceTest extends BaseServiceTestCase{
 		obj.setShopId(1234L);
 	  	obj.setScopeType(new java.lang.String("1"));
 	  	obj.setIsEnabled(new java.lang.String("1"));
-	  	obj.setLastModifiedBy(new java.lang.String("1"));
+//	  	obj.setLastModifiedBy(new java.lang.String("1"));
 	  	obj.setLastModifiedTime(new java.util.Date(System.currentTimeMillis()));
 		return obj;
 	}

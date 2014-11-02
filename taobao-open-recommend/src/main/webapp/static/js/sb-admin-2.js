@@ -1,6 +1,14 @@
 $(function() {
 
-    $('#side-menu').metisMenu();
+    $('#side-menu').metisMenu({
+                toggle: false
+    });
+
+    $('#side-menu').find("li").has("ul").children("a").click();
+
+    $("img.lazy").lazyload({
+         effect : "fadeIn"
+     });
 
 });
 

@@ -195,7 +195,7 @@ public class RecommendSpecifiedController extends BaseController<RecommendSpecif
 		status.setUpdatedUserId(getAuth().getUserId());
 		getApplicationContext().publishEvent(new RecommendUpdatedEvent(status));
 		
-		return "/recommendspecified/edit";
+		return "redirect:/recommendspecified";
 	}
 	
 	/**

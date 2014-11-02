@@ -96,63 +96,25 @@ public class ItemController extends BaseController<Item,Item,ItemCriteria> {
 	
 	@RequestMapping(value = "/sync",method = RequestMethod.GET)
 	public @ResponseBody String sync() throws Exception {
-		syncOnSaleItemsInternal();
-		syncInventoryItemsInternal();
+		itemService.syncOnSaleItems(getOAuth());
+		itemService.syncInventoryItems(getOAuth());
 		return "ok";
 	}
 	
 	@RequestMapping(value = "/synconsale",method = RequestMethod.GET)
 	public @ResponseBody String syncOnSaleItems() throws ApiException{
-		syncOnSaleItemsInternal();
+		itemService.syncOnSaleItems(getOAuth());
 		return "ok";
 	}
 	
 	@RequestMapping(value = "/syncinventory",method = RequestMethod.GET)
 	public @ResponseBody String syncInventoryItems() throws ApiException{
-		syncInventoryItemsInternal() ;
+		itemService.syncInventoryItems(getOAuth());
 		return "ok";
 	}
 	
 	
 
-	private void syncOnSaleItemsInternal() throws ApiException{
-		ItemsOnsaleGetRequest request = new ItemsOnsaleGetRequest();
-		request.setFields("approve_status,num_iid,title,nick,type,cid,pic_url,num,props,valid_thru,list_time,price,has_discount,has_invoice,has_warranty,has_showcase,modified,delist_time,postage_id,seller_cids,outer_id");
-		ItemsOnsaleGetResponse response =  (ItemsOnsaleGetResponse) getTaobaoResponse(request, getOAuth().getAccessToken());
-		List<Item> items = response.getItems();
-		List<com.dream.item.model.Item> localItems = new ArrayList<com.dream.item.model.Item>(items.size());
-		for(Item item : items){
-			com.dream.item.model.Item dest =  new com.dream.item.model.Item();
-			if(item == null|| item.getNumIid() == null){
-				continue;
-			}
-			BeanUtils.copyProperties(dest,item);
-			dest.setType("1");
-			localItems.add(dest);
-		}
-		ItemCriteria criteria = new ItemCriteria();
-		criteria.createCriteria().andNickEqualTo(getOAuth().getTaobaoUserNick()).andTypeEqualTo("1");
-		this.itemService.removeSaveBatch(criteria,localItems);
-	}
 	
-	private void syncInventoryItemsInternal() throws ApiException{
-		ItemsInventoryGetRequest request=new ItemsInventoryGetRequest();
-		request.setFields("approve_status,num_iid,title,nick,type,cid,pic_url,num,props,valid_thru,list_time,price,has_discount,has_invoice,has_warranty,has_showcase,modified,delist_time,postage_id,seller_cids,outer_id");
-		ItemsInventoryGetResponse response =  (ItemsInventoryGetResponse) getTaobaoResponse(request, getOAuth().getAccessToken());
-		List<Item> items = response.getItems();
-		List<com.dream.item.model.Item> localItems = new ArrayList<com.dream.item.model.Item>(items.size());
-		for(Item item : items){
-			com.dream.item.model.Item dest =  new com.dream.item.model.Item();
-			if(item == null|| item.getNumIid() == null){
-				continue;
-			}
-			BeanUtils.copyProperties(dest ,item);
-			dest.setType("0");
-			localItems.add(dest);
-		}
-		ItemCriteria criteria = new ItemCriteria();
-		criteria.createCriteria().andNickEqualTo(getOAuth().getTaobaoUserNick()).andTypeEqualTo("0");
-		this.itemService.removeSaveBatch(criteria,localItems);
-	}
 
 }

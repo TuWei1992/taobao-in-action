@@ -23,7 +23,7 @@ import com.dream.rapid.base.BaseQuery;
 public class ShopQuery extends BaseQuery implements Serializable {
     private static final long serialVersionUID = 3148176768559230877L;
     
-
+    int[] a = {1,2,3,4,5,6,7};
 	/** sid */
 	private java.lang.Long sid;
 	/** cid */
