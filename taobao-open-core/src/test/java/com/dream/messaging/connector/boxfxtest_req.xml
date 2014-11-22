@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <!-- All your mappings go here -->
+    <class name="com.dream.messaging.connector.TDpCorpStmtInqRq">
+        <map-to xml="BOSFXII" ns-uri="http://www.bankofshanghai.com/BOSFX/2010/05" />
+        <field name="rqUID" >
+            <bind-xml name="RqUID" node="element" location="TDpCorpStmtInqRq/CommonRqHdr"  />
+        </field>
+        <field name="numTranCode" >
+            <bind-xml name="NumTranCode" node="element" location="TDpCorpStmtInqRq/CommonRqHdr"  />
+        </field>
+        <field name="clearDate" >
+            <bind-xml name="ClearDate" node="element" location="TDpCorpStmtInqRq/CommonRqHdr"  />
+        </field>
+        <field name="tranDate" >
+            <bind-xml name="TranDate" node="element" location="TDpCorpStmtInqRq/CommonRqHdr"  />
+        </field>
+        <field name="tranTime" >
+            <bind-xml name="TranTime" node="element" location="TDpCorpStmtInqRq/CommonRqHdr"  />
+        </field>
+        <field name="directSendFlag" >
+            <bind-xml name="DirectSendFlag" node="element" location="TDpCorpStmtInqRq/CommonRqHdr"  />
+        </field>
+        <field name="channelId" >
+            <bind-xml name="ChannelId" node="element" location="TDpCorpStmtInqRq/CommonRqHdr"  />
+        </field>
+        <field name="version" >
+            <bind-xml name="Version" node="element" location="TDpCorpStmtInqRq/CommonRqHdr"  />
+        </field>
+        <field name="mediumType" type="java.lang.String">
+            <bind-xml name="MediumType" node="element" location="TDpCorpStmtInqRq" />
+        </field>
+        <field name="acctNo" type="java.lang.String">
+            <bind-xml name="AcctNo" node="element" location="TDpCorpStmtInqRq" />
+        </field>
+        <field name="currency" type="java.lang.String">
+            <bind-xml name="Currency" node="element" location="TDpCorpStmtInqRq" />
+        </field>
+        <field name="fcyType" type="java.lang.String">
+            <bind-xml name="FcyType" node="element" location="TDpCorpStmtInqRq" />
+        </field>
+        <field name="pwd" type="java.lang.String">
+            <bind-xml name="Pwd" node="element" location="TDpCorpStmtInqRq" />
+        </field>
+        <field name="beginDt" type="java.lang.String">
+            <bind-xml name="BeginDt" node="element" location="TDpCorpStmtInqRq" />
+        </field>
+        <field name="endDt" type="java.lang.String">
+            <bind-xml name="EndDt" node="element" location="TDpCorpStmtInqRq" />
+        </field>
+        <field name="mode" type="java.lang.String">
+            <bind-xml name="Mode" node="element" location="TDpCorpStmtInqRq" />
+        </field>
+    </class>
+</mapping>

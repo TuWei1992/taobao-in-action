@@ -1,0 +1,39 @@
+<message version="1.0" transcode="TIA" class="com.dream.messaging.connector.TIA"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="message.xsd" desc="请求报文头">
+	<!-- 1000209813209813                           PCCCLUBT00                          00                                                             000000000003159970           C0123456                          -->
+	<property name="CICSTranCode" class="string" length="4" status="M" /><!--CICS交易码	X(4)	-->
+	<property name="appCode" class="int" length="2" status="M" /><!--应用码	9(2)	必填（交易码前两位， 如果交易码是209813，这里就填20）	-->
+	<property name="tranCode" class="int" length="4" status="M" /><!--交易码	9(4)	必填（交易码后四位，如果交易码是209813，这里就填9813）-->
+	<property name="frontEndTranCode" class="int" length="6" status="M" /><!--前置交易码	9(6)	必填（这个就是交易码）-->
+	<property name="terminalSN" class="string" length="7"  /><!--终端序列号	X(7)	-->
+	<property name="tranSource" class="string" length="5" /><!--交易来源	X(5)-->
+	<property name="frontEndSN" class="string" length="15" /><!--前置流水号	X(15)-->
+	<property name="counterNo" class="string" length="7" status="M" default="PCCCLUB" /><!--柜员号	X(7)	交易发起柜员号码(必填)（这里填操作员编号，即是谁发起了这笔交易）-->
+	<property name="requestType" class="string" length="1" default="T" /><!--请求类型	X(1)	T＝原始交易；P＝请求下一页输出(必填)-->
+	<property name="authLevel" class="int" length="2" default="00" /><!--授权级别	9(2)	-->
+	<property name="manager1" class="string" length="7" /><!--主管1	X(7)	-->
+	<property name="manager2" class="string" length="7" /><!--主管2	X(7)	-->
+	<property name="managerPwd1" class="string" length="6" /><!--主管1的密码	X(6)	-->
+	<property name="managerPwd2" class="string" length="6" /><!--主管1的密码	X(6)	-->
+	<property name="managerPwdInput1" class="int" length="1" default="0" /><!--主管1的密码输入设备	9(1)		-->
+	<property name="managerPwdInput2" class="int" length="1" default="0" /><!--主管2的密码输入设备	9(1)			-->
+	<property name="authCode1" class="string" length="6" /><!--授权原因码1	X(6)				-->
+	<property name="authCode2" class="string" length="6" /><!--授权原因码2	X(6)				-->
+	<property name="authCode3" class="string" length="6" /><!--授权原因码2	X(6)				-->
+	<property name="authCode4" class="string" length="6" /><!--授权原因码2	X(6)				-->
+	<property name="authCode5" class="string" length="6" /><!--授权原因码2	X(6)				-->
+	<property name="authCode6" class="string" length="6" /><!--授权原因码2	X(6)				-->
+	<property name="authCode7" class="string" length="6" /><!--授权原因码2	X(6)				-->
+	<property name="authCode8" class="string" length="6" /><!--授权原因码2	X(6)				-->
+	<property name="authCode9" class="string" length="6" /><!--授权原因码2	X(6)				-->
+	<property name="authCode10" class="string" length="6" /><!--授权原因码2	X(6)				-->
+	<property name="authLogFlag" class="string" length="1" /><!--授权LOG标志(L/ )	X(1)			-->
+	<property name="lastTranLogNo" class="int" length="9" default="000000000" /><!--最后一笔交易日志号	X(9)			-->
+	<property name="dataCompressedFlag" class="int" length="1" default="0" /><!--数据压缩标志(0/1)	9(1)				-->
+	<property name="dataEncryptedFlag" class="int" length="1" default="0"/><!--数据加密标志(0/1)	9(1)				-->
+	<property name="tranOrgCode" class="int" length="6" status="M" default="315997"/><!--交易机构号(前置专用)	9(6)	必填（这里都填写为001997即可）				-->
+	<property name="counterLevel" class="int" length="1" default="0" /><!--柜员级别(前置专用)	9(1)					-->
+	<property name="terminalVersion" class="int" length="8" /><!--终端版本号	9(8)-->
+	<property name="realCounter" class="string" length="1" /><!--外挂系统真实柜员	X(1)	-->
+	<property name="TIAFilter" class="string" length="2" /><!--TIA-FILLER(CICS交易码)	X(2)-->
+</message>

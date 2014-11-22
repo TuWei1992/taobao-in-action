@@ -5,5 +5,144 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
 	default-lazy-init="false">
 	
-	<bean id="tmcClientServer" class="com.dream.message.controller.TmcClientServer" init-method="init" destroy-method="destroy"></bean>
+<!-- 	<bean id="tmcClientServer" class="com.dream.message.controller.TmcClientServer" init-method="init" destroy-method="destroy"></bean> -->
+
+
+
+	<bean id="configLoader" name="configLoader" class="com.dream.messaging.utils.ConfigLoader">
+		<property name="configPath" value="classpath:com/dream/messaging/config"></property>
+	</bean>
+	
+	<!-- XML -->
+	
+	<bean id="messagingDataConnector" name="messagingDataConnector" class="com.dream.messaging.connector.MessagingDataConnector">
+		<property name="version" value="1.0"></property>
+		<property name="engine" ref="messageEngine"></property>
+		<property name="sender" ref="messageSender"></property>
+	</bean>
+	
+	<bean id="messageSender" name="messageSender" class="com.dream.messaging.sender.http.HTTPMessageSender">
+		<property name="httpClientTemplate" ref="httpClientTemplate"></property>
+		<property name="responseHandler" ref="responseHandler"></property>
+		<property name="commonUri" value="http://localhost"></property>
+		<property name="headers">
+			<map>
+				<entry key="content-encoding" value="UTF-8"></entry>
+				<entry key="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"></entry>
+			</map>
+		</property>
+	</bean>
+	
+
+
+	<bean id="messageEngine" name="messageEngine" class="com.dream.messaging.engine.xml.XMLMessageEngine">
+		<property name="requestXMLContexts">
+			<map>
+				<entry key="T24" value-ref="XMLContext_T24_Request" />
+			</map>
+		</property>
+		<property name="responseXMLContexts">
+			<map>
+				<entry key="T24" value-ref="XMLContext_T24_Response" />
+			</map>
+		</property>
+		<property name="properties">
+			<map>
+				<entry key="encoding" value="UTF-8"></entry>
+				<entry key="hasLength" value="true"></entry>
+				<entry key="msgBodyLength" value="4"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- T24请求 -->
+	<bean id="XMLContext_T24_Request" class="org.castor.spring.xml.XMLContextFactoryBean">
+		<property name="mappingLocations">
+			<list>
+				<value>com/dream/messaging/connector/boxfxtest_req.xml</value>
+			</list>
+		</property>
+	</bean>
+	<!-- T24响应 -->
+	<bean id="XMLContext_T24_Response" class="org.castor.spring.xml.XMLContextFactoryBean">
+		<property name="mappingLocations">
+			<list>
+				<value>com/dream/messaging/connector/boxfxtest_res.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="httpClientTemplate" name="httpClientTemplate" class="com.dream.messaging.sender.http.HttpClientTemplate">
+		<property name="httpClient" ref="httpClient"></property>
+		<property name="defaultUri" value="http://localhost"></property>
+	</bean>
+	<bean id="httpClient" name="httpClient" class="com.dream.messaging.sender.http.HttpClientFacotryBean">
+		<property name="params">
+			<map>
+				<!-- 读取超时时间 30秒 -->
+				<entry key="http.socket.timeout" value="30000" />
+				<!-- 连接超时时间 30秒 -->
+				<entry key="http.connection.timeout" value="30000" />
+				<!-- 连接池超时时间 30秒 -->
+				<entry key="http.conn-manager.timeout" value="30000" />
+				<!-- 每个地址允许最大连接数 -->
+				<entry key="maxConnsPerHost" value="250"/>
+				<!-- 最大允许连接数 -->
+				<entry key="maxTotalConns" value="1000"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="responseHandler" name="responseHandler" class="org.apache.http.impl.client.BasicResponseHandler"></bean>
+	<!-- XML -->
+	
+	<!-- FixFormat -->
+	
+	<bean id="fixFormatMessagingDataConnector" name="fixFormatMessagingDataConnector" class="com.dream.messaging.connector.MessagingDataConnector">
+		<property name="version" value="1.0"></property>
+		<property name="engine" ref="fixFormatMessageEngine"></property>
+		<property name="sender" ref="fixFormatMessageSender"></property>
+	</bean>
+	
+	<bean id="fixFormatMessageSender" name="fixFormatMessageSender" class="com.dream.messaging.sender.socket.SocketMessageSender">
+		<property name="server" value="localhost"></property>
+		<property name="port" value="10001"></property>
+		<property name="encoding" value="UTF-8"></property>
+        <property name="timeout" value="9000"></property>
+	</bean>
+
+	<bean id="fixFormatMessageEngine" name="fixFormatMessageEngine" class="com.dream.messaging.engine.fixformat.FixformatMessageEngine">
+		<property name="systemId" value="fix"></property>
+		<property name="properties">
+			<map>
+				<entry key="encoding" value="UTF-8"></entry>
+                <entry key="t_startFromLeft" value="true"></entry>
+                <entry key="t_fillUpWith" value=" "></entry>
+                <entry key="n_startFromLeft" value="false"></entry>
+                <entry key="n_fillUpWith" value="0"></entry>
+            </map>
+		</property>
+	</bean>
+	
+	<!-- FixFormat -->
+	
+	<bean id="simulatorMessageSender" name="simulatorMessageSender" class="com.dream.messaging.sender.SimulatorMessageSender">
+		<property name="properties">
+			<map>
+				<entry key="encoding" value="UTF-8"></entry>
+				<entry key="directory" value="D:\Temp"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="socketMessagingServer" class="com.dream.messaging.server.SocketMessagingServer" init-method="start" destroy-method="stop">
+		<property name="port" value="10001"></property>
+		<property name="socketMessagingHandler" ref="socketMessagingHandler"></property>
+	</bean>
+	<bean id="socketMessagingHandler" class="com.dream.messaging.server.SimulatorSocketMessagingHandler">
+		<property name="engine" ref="fixFormatMessageEngine"></property>
+		<property name="properties">
+			<props>
+				<prop key="directory">D:\Temp</prop>
+			</props>
+		</property>
+	</bean>
 </beans>

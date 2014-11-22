@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <!-- All your mappings go here -->
+    <class name="com.dream.messaging.connector.TDpCorpStmtInqRs">
+        <map-to xml="BOSFXII" ns-uri="http://www.bankofshanghai.com/BOSFX/2010/05" />
+        <field name="statusCode" >
+            <bind-xml name="StatusCode" node="element" location="TDpCorpStmtInqRs/CommonRsHdr"  />
+        </field>
+        <field name="serverStatusCode" >
+            <bind-xml name="ServerStatusCode" node="element" location="TDpCorpStmtInqRs/CommonRsHdr"  />
+        </field>
+        <field name="rqUID" >
+            <bind-xml name="RqUID" node="element" location="TDpCorpStmtInqRs/CommonRsHdr"  />
+        </field>
+        <field name="numTranCode" >
+            <bind-xml name="NumTranCode" node="element" location="TDpCorpStmtInqRs/CommonRsHdr"  />
+        </field>
+    </class>
+</mapping>

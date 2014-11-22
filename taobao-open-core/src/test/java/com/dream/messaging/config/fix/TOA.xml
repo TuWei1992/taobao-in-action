@@ -1,0 +1,30 @@
+<message version="1.0" transcode="TOA" class="com.dream.messaging.connector.TOA"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="message.xsd" desc="响应报文头">
+	<property name="CICSHeader" class="string" length="3"/><!--CICS功能信息头	X(3)-->
+	<property name="outPutMessageType" class="string" length="1" setcondition="outPutMessageType"/><!--输出信息类型（N/A/E）	X(1)	执行结果类型 N＝正常，A＝需授权，E＝错误，Ｃ＝待复核确认。-->
+	<property name="applicationType" class="string" length="2" /><!--信息码所属应用符	X(2)	必填（错误码前两位）-->
+	<property name="infomationCode" class="int" length="4" /><!--信息码	9(4)	必填（错误码后四位）-->
+	<property name="position" class="int" length="4" /><!--出错栏位光标位置	9(4)	多页查询时，如果没有下一页数据则此域填“6402”-->
+	<property name="terminalNo" class="string" length="7" /><!--终端号（inHost）	X(7)	-->
+	<property name="terminalSN" class="string" length="6" /><!--终端序列号（fromWorkstation）	9(6)	-->
+	<property name="followingTranCode" class="int" length="4" /><!--后继交易码	9(4)	-->
+	<property name="followingAppCode" class="int" length="2" /><!--后继交易的应用码	9(02)		-->
+	<property name="tranFlag" class="string" length="3" /><!--交易符	X(3)			-->
+	<property name="tranDate" class="int" length="8" /><!--交易日期	9(8)				-->
+	<property name="tranTime" class="int" length="6" /><!--交易时间	9(6)				-->
+	<property name="accountingDate" class="int" length="8" /><!--会计日期	9(8)					-->
+	<property name="tranLogNo" class="int" length="9" /><!--交易日志号	9(9)						-->
+	<property name="counterNo" class="string" length="7" /><!--柜员号	X(7)					-->
+	<property name="seqNo" class="string" length="4" /><!--顺序号	9(4)					-->
+	<property name="pageFlag" class="int" length="1" /><!--多页/印鉴输出标志（0/1/2）	9(1)						-->
+	<property name="dataCompressedFlag" class="int" length="1" /><!--数据压缩标志（0/1）	9(1)							-->
+	<property name="dataEncryptedFlag" class="int" length="1" /><!--数据加密标志（0/1）	9(1)							-->
+	<property name="tranOrgCode" class="int" length="6" /><!--交易网点号	9(6)							-->
+	<property name="authLog" class="string" length="1" /><!--授权LOG	X(1)							-->
+	<property name="billFlag" class="string" length="1" /><!--金融传票标志	X(1)						-->
+	<property name="authLevel" class="int" length="2" /><!--授权级别 9(2)							-->
+	<property name="manager1" class="string" length="7" /><!--授权主管1	X(7)							-->
+	<property name="manager2" class="string" length="7" /><!--授权主管2	X(7)						-->
+	<property name="unused" class="string" length="5" /><!--	无效字段	X(5)						-->
+	<property name="totalLength" class="int" length="4" /><!--	数据总长度	9(4)	长度包含自身字段的4字节长度在内。						-->
+</message>
