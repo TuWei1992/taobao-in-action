@@ -1,45 +1,69 @@
-$(function() {
-  var $window = $(window);
-  var $stateSwitch = $('#state-switch');
-  var sectionTop = $('.top').outerHeight() + 20;
+require.config({
+　　　　baseUrl: "/static/js/",
+　　　　paths: {
+          "jquery": "jquery-1.11.0",
+　　　    "jquery.lazyload": "plugins/jquery-lazyload/jquery.lazyload",
+          "jquery.validate": "plugins/jquery-validation/jquery.validate",
+          "bootstrap": "bootstrap",
+          "bootstrap-switch": "bootstrap-switch",
+          "bootstrapValidator": "plugins/bootstrapvalidator/js/bootstrapvalidator",
+          "metisMenu": "plugins/metisMenu/metisMenu",
+          "sb-admin-2": "sb-admin-2",
+          "gotop","gotop"
+　　　　},
+    shim: {
+        'jquery.lazyload': {
+                deps: ['jquery'],
+                exports: 'jQuery.fn.lazyload'
+        },
+        'jquery.validate': {
+              deps: ['jquery'],
+              exports: 'jQuery.fn.validate'
+          }
+　　　　},
+        'bootstrap': {
+              deps: ['jquery'],
+              exports: 'bootstrap'
+          }
+　　　　},
+        'bootstrap-switch': {
+              deps: ['jquery'],
+              exports: 'bootstrap-switch'
+          }
+　　　　},
+        'bootstrapValidator': {
+              deps: ['jquery'],
+              exports: 'bootstrapValidator'
+          }
+　　　　},
+        'metisMenu': {
+              deps: ['jquery'],
+              exports: 'metisMenu'
+          }
+　　　　},
+        'sb-admin-2': {
+              deps: ['jquery'],
+              exports: 'sb-admin-2'
+          }
+　　　　},
+        'gotop': {
+              deps: ['jquery'],
+              exports: 'gotop'
+          }
+　　　　}
+});
 
-  // initialize highlight.js
-  hljs.initHighlightingOnLoad();
+require(['jquery'], function($) {
+  alert($().jquery);
 
-  // navigation
-  $('a[href^="#"]').on('click', function(event) {
-    event.preventDefault();
-    var $target = $($(this).attr('href'));
-
-    if ($target.length) {
-      $window.scrollTop($target.offset().top - sectionTop);
-    }
+  $(document).goTop({
+        showAfter:'#goTop', //必选 需执行返回顶部的元素
+        debug:true,         //开启调试状态
+        showPixels:10,     //滚动条滚动高度 单位 px
+        scrollSpeed:1000,   //返回顶部速度
+        callback:function(e){ //回调执行函数
+            //alert(e);
+        }
   });
-
-  $('input[name="download-version"]').on({
-    'init.bootstrapSwitch': function() {
-      $('#download-' + ($(this).is(':checked') ? '2' : '3')).hide();
-    },
-    'switchChange.bootstrapSwitch': function(event, state) {
-      $('#download-3')[state ? 'show' : 'hide']();
-      $('#download-2')[state ? 'hide' : 'show']();
-    }
-  });
-
-  // initialize all the inputs
-  $('input[type="checkbox"],[type="radio"]').not('#create-switch').not('#events-switch').bootstrapSwitch();
-
-  // state
-  $('#state-switch-toggle').on('click', function () {
-    $stateSwitch.bootstrapSwitch('toggleState');
-  });
-  $('#state-switch-on').on('click', function () {
-    $stateSwitch.bootstrapSwitch('state', true);
-  });
-  $('#state-switch-off').on('click', function () {
-    $stateSwitch.bootstrapSwitch('state', false);
-  });
-  $('#state-switch-state').on('click', function () {
-    alert($stateSwitch.bootstrapSwitch('state'));
-  });
+  
 });

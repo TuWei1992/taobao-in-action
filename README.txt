@@ -17,8 +17,12 @@ http://blog.yadgen.com/?p=934
 8.Javascript Unit Test：
 
 
-
+9.Review
 mvn findbugs:help       查看findbugs插件的帮助
 mvn findbugs:check      检查代码是否通过findbugs检查，如果没有通过检查，检查会失败，但检查不会生成结果报表
 mvn findbugs:findbugs   检查代码是否通过findbugs检查，如果没有通过检查，检查不会失败，会生成结果报表保存在target/findbugsXml.xml文件中
 mvn findbugs:gui        检查代码并启动gui界面来查看结果
+
+
+10.J2EE
+$TOMCAT_HOME\Catalina\localhost
