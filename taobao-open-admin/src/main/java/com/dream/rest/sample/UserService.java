@@ -211,12 +211,58 @@ public class UserService extends AbstractUserService{
      * @throws Throwable
      */
     @ServiceMethod(method = "user.get", version = "1.0", httpAction = HttpAction.GET ,needInSession = NeedInSessionType.NO)
-    
-    public Object getUser(RopRequest request) throws Throwable {
+    public Object getUser1(RopRequest request) throws Throwable {
         String userId = request.getRopRequestContext().getParamValue("userId");
         if("9999".equals(userId)){
             return new NotExistErrorResponse("user","userId","9999",request.getRopRequestContext().getLocale());
         }else{
+            CreateUserResponse response = new CreateUserResponse();
+            //add creaet new user here...
+            response.setCreateTime("20120101010102");
+            response.setUserId(userId);
+            response.setFeedback("user.get");
+            return response;
+        }
+    }
+    
+    /**
+     * 当userId为9999时，模拟一个NotExistErrorResponse的响应，否则通过一个长连接与长连接挡板进行通信，基于MINA
+     * @param request
+     * @return
+     * @throws Throwable
+     */
+    @ServiceMethod(method = "user.get", version = "2.0", httpAction = HttpAction.GET ,needInSession = NeedInSessionType.NO)
+    public Object getUser2(RopRequest request) throws Throwable {
+        String userId = request.getRopRequestContext().getParamValue("userId");
+        if("9999".equals(userId)){
+            return new NotExistErrorResponse("user","userId","9999",request.getRopRequestContext().getLocale());
+        }else{
+            CreateUserResponse response = new CreateUserResponse();
+            //add creaet new user here...
+            response.setCreateTime("20120101010102");
+            response.setUserId(userId);
+            response.setFeedback("user.get");
+            return response;
+        }
+    }
+    
+    
+    /**
+     * 当userId为9999时，模拟一个NotExistErrorResponse的响应，否则通过一个短连接与短连接挡板进行通信，基于MINA
+     * @param request
+     * @return
+     * @throws Throwable
+     */
+    @ServiceMethod(method = "user.get", version = "3.0", httpAction = HttpAction.GET ,needInSession = NeedInSessionType.NO)
+    public Object getUser3(RopRequest request) throws Throwable {
+        String userId = request.getRopRequestContext().getParamValue("userId");
+        if("9999".equals(userId)){
+            return new NotExistErrorResponse("user","userId","9999",request.getRopRequestContext().getLocale());
+        }else{
+        	
+        	
+        	
+        	
             CreateUserResponse response = new CreateUserResponse();
             //add creaet new user here...
             response.setCreateTime("20120101010102");

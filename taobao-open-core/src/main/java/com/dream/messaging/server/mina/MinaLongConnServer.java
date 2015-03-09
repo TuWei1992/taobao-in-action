@@ -28,8 +28,11 @@ public class MinaLongConnServer {
        //acceptor.getFilterChain().addLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
        //acceptor.getSessionConfig().setReadBufferSize(2048);
        acceptor.bind(new InetSocketAddress(PORT));
-       logger.debug("Listeningon port {}", PORT);
-
+       logger.debug("Listening on port {}", PORT);
     }
+    
+    public void stop()throws IOException{
+          logger.debug("Stop listening on port {}", PORT);
+     }
 
 }

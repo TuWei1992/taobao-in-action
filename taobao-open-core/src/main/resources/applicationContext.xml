@@ -10,9 +10,9 @@
 
 	<!-- required -->
 	<import resource="tbo/taobao-common.xml" />
-
+	
 	<!-- optional -->
 	<import resource="tbo/taobao-dao.xml" />
-<!-- 	<import resource="tbo/taobao-message.xml" /> -->
+	<import resource="tbo/taobao-message-server.xml" />
 	
    </beans>

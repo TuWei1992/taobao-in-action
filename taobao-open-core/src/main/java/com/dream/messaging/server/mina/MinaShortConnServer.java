@@ -18,29 +18,18 @@ public class MinaShortConnServer {
 	private final Logger logger = (Logger) LoggerFactory.getLogger(getClass());
 	private static final int PORT = 8001;
 
-	   
-
     public void start()throws IOException{
-
        IoAcceptor acceptor = new NioSocketAcceptor();
-
- 
-
        acceptor.getFilterChain().addLast("logger", new LoggingFilter());
-
        acceptor.getFilterChain().addLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
-
- 
-
        acceptor.setHandler(new MinaShortConnServerHandler());
-
        acceptor.getSessionConfig().setReadBufferSize(2048);
-
        acceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 3);
-
        acceptor.bind(new InetSocketAddress(PORT));
-
-       logger.debug("Listeningon port " + PORT);
-
+       logger.debug("Listening on port " + PORT);
     }
+    
+    public void stop()throws IOException{
+        logger.debug("Stop listening on port " + PORT);
+     }
 }
