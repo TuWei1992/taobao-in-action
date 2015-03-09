@@ -30,7 +30,7 @@ public class OpenAuth {
 		String s = "";
 		try {
 			s = WebUtils.doPost(url, props, 30000, 30000);
-			System.out.println(s);
+//			logger.debug(s);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

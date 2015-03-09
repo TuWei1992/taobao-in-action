@@ -6,25 +6,12 @@
 
 package com.dream.common.dao;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.dream.common.vo.query.AppCodeQuery;
+import com.dream.rapid.base.BaseDaoTestCase;
 import com.dream.rapid.test.context.TestMethodContext;
-
-import static junit.framework.Assert.*;
-
-import java.util.*;
-
-import com.dream.rapid.base.*;
-import com.dream.rapid.util.*;
-import com.dream.rapid.page.*;
-
-import com.dream.common.model.*;
-import com.dream.common.dao.*;
-import com.dream.common.service.*;
-import com.dream.common.vo.query.*;
 
 /**
  * @author Frank email:46886799#163.com

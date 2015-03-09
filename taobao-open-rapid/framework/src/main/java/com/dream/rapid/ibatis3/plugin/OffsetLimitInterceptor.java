@@ -16,6 +16,8 @@ import org.apache.ibatis.plugin.Plugin;
 import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.ReflectionUtils;
 
 import com.dream.rapid.jdbc.dialect.Dialect;
@@ -121,8 +123,9 @@ public class OffsetLimitInterceptor implements Interceptor{
 		} catch (Exception e) {
 			throw new RuntimeException("cannot create dialect instance by dialectClass:"+dialectClass,e);
 		} 
-		System.out.println(OffsetLimitInterceptor.class.getSimpleName()+".dialect="+dialectClass);
+		logger.debug(OffsetLimitInterceptor.class.getSimpleName()+".dialect="+dialectClass);
 	}
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	public static class BoundSqlSqlSource implements SqlSource {
 		BoundSql boundSql;

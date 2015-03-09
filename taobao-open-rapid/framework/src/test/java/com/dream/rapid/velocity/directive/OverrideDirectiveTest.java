@@ -18,12 +18,14 @@ import org.apache.velocity.exception.ParseErrorException;
 import org.apache.velocity.exception.ResourceNotFoundException;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.ui.velocity.VelocityEngineUtils;
 import org.springframework.util.ResourceUtils;
 
 
 public class OverrideDirectiveTest {
-	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	VelocityEngine engine;
 	
 	@Before
@@ -40,9 +42,9 @@ public class OverrideDirectiveTest {
 	@Test
 	public void test_override() throws Exception {
 		
-		System.out.println(VelocityEngineUtils.mergeTemplateIntoString(engine,"base.vm",new HashMap()));
-		System.out.println(VelocityEngineUtils.mergeTemplateIntoString(engine,"child.vm",new HashMap()));
-		System.out.println(VelocityEngineUtils.mergeTemplateIntoString(engine,"grandchild.vm",new HashMap()));
+		logger.debug(VelocityEngineUtils.mergeTemplateIntoString(engine,"base.vm",new HashMap()));
+		logger.debug(VelocityEngineUtils.mergeTemplateIntoString(engine,"child.vm",new HashMap()));
+		logger.debug(VelocityEngineUtils.mergeTemplateIntoString(engine,"grandchild.vm",new HashMap()));
 		 
 		assertEquals("<html><head>base_head_content</head><body>base_body_content</body></html>",processTemplate("base.vm"));
 		assertEquals("<html><head>base_head_content</head><body><divclass='content'>PoweredByrapid-framework</div></body></html>",processTemplate("child.vm"));
@@ -77,7 +79,7 @@ public class OverrideDirectiveTest {
 		VelocityContext context = new VelocityContext();
 		StringWriter out = new StringWriter();
 		engine.evaluate(context,out , "test.vm", "#override() diy \n #end");
-		System.out.println(out.toString());
+		logger.debug(out.toString());
 	}
 	
 	@Test(expected=ParseErrorException.class)
@@ -85,7 +87,7 @@ public class OverrideDirectiveTest {
 		VelocityContext context = new VelocityContext();
 		StringWriter out = new StringWriter();
 		engine.evaluate(context,out , "test.vm", "#block() diy \n #end");
-		System.out.println(out.toString());
+		logger.debug(out.toString());
 	}
 	
 	@Test
@@ -94,8 +96,8 @@ public class OverrideDirectiveTest {
 		VelocityContext context = new VelocityContext(map);
 		StringWriter out = new StringWriter();
 		engine.evaluate(context,out , "test.vm", "#set($v = '123')");
-		System.out.println(out.toString());
-		System.out.println("testSetDirective() map:"+map);
+		logger.debug(out.toString());
+		logger.debug("testSetDirective() map:"+map);
 		assertEquals("123",map.get("v"));
 	}
 	
@@ -111,19 +113,19 @@ public class OverrideDirectiveTest {
 			hashMap.put("content", content);
 			hashMap.put("data", new String[]{"1","2"});
 			if(i % 1000 == 0) {
-				System.out.println("current:"+i);
+				logger.debug("current:"+i);
 			}
 			Template t = engine.getTemplate("performance.vm");
 			if( i == count - 2) {
 				StringWriter out = new StringWriter();
 				t.merge(new VelocityContext(hashMap), out);
-				System.out.println(out.toString());
+				logger.debug(out.toString());
 			}else {
 				t.merge(new VelocityContext(hashMap),NULL_WRITER);
 			}
 		}
 		float cost = System.currentTimeMillis() - start;
-		System.out.println("testPerformance() cost:"+cost+" "+ (count/(cost/1000))+" ");
+		logger.debug("testPerformance() cost:"+cost+" "+ (count/(cost/1000))+" ");
 	}
 
 	private String processTemplate(String name) throws ResourceNotFoundException, ParseErrorException, Exception {

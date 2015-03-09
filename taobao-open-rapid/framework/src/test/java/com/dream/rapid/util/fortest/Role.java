@@ -18,6 +18,8 @@ import javax.persistence.Transient;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.dream.rapid.base.BaseEntity;
 
@@ -110,10 +112,10 @@ public class Role extends BaseEntity {
 	public String getReadonly() {
 		return "Readonly from Role.java";
 	}
-	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	@Transient
 	public void setWriteonly(String s) {
-		 System.out.println("Role.setWriteonly() from Role.java,str:"+s);
+		 logger.debug("Role.setWriteonly() from Role.java,str:"+s);
 	}
 
 	public String toString() {

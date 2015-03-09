@@ -6,10 +6,14 @@ import java.util.TreeMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import junit.framework.TestCase;
 import edu.emory.mathcs.backport.java.util.concurrent.atomic.AtomicInteger;
 
 public class MultiThreadTestUtilsTest extends TestCase {
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	private AtomicInteger executedCount = new AtomicInteger();
 	int expectedCount = 2000;
 	public void testExecute() throws InterruptedException {
@@ -31,7 +35,7 @@ public class MultiThreadTestUtilsTest extends TestCase {
 			}
 		});
 		
-		System.out.println(executedCount);
+//		logger.debug(executedCount);
 		assertTrue(executedCount.intValue() < expectedCount);
 	}
 	
@@ -47,7 +51,7 @@ public class MultiThreadTestUtilsTest extends TestCase {
 			}
 		});
 		
-		System.out.println("costTime:"+costTime);
+		logger.debug("costTime:"+costTime);
 		assertTrue(costTime > 0);
 	}
 	
@@ -58,10 +62,10 @@ public class MultiThreadTestUtilsTest extends TestCase {
 		for(int i = 1; i < 3000; i = i + steps) {
 			steps = steps + (int)(steps * 0.2);
 			long costTime = execute(i);
-			System.out.println("threadCount:"+ i +" costTime:"+costTime+" nextStep:"+steps);
+			logger.debug("threadCount:"+ i +" costTime:"+costTime+" nextStep:"+steps);
 			map.put(costTime,i);
 		}
-		System.out.println(map);
+//		logger.debug(map);
 	}
 
 	long MAX_COUNT = 10000;

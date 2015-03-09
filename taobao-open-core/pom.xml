@@ -138,6 +138,10 @@
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+		</dependency>
 		<!--Apache Commons相关的版本定义 End -->
 
 		<!--其他类库 Start -->
@@ -274,6 +278,14 @@
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
 			</dependency>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+			</dependency>
+			<dependency>
+		        <groupId>org.springframework.data</groupId>
+		        <artifactId>spring-data-redis</artifactId>
+	    	</dependency>
 	</dependencies>
 
 	<build>
@@ -301,36 +313,6 @@
 					<argLine>-Xmx256M</argLine>
 				</configuration>
 			</plugin>
-
-			<!-- 增加functional test的Source目录 -->
-			<!--<plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>build-helper-maven-plugin</artifactId> 
-				<version>1.8</version> <executions> <execution> <id>add-functional-source</id> 
-				<phase>generate-sources</phase> <goals> <goal>add-test-source</goal> </goals> 
-				<configuration> <sources> <source>src/test/functional</source> </sources> 
-				</configuration> </execution> </executions> </plugin> -->
-
-			<!-- cobertura插件, 设置不需要计算覆盖率的类 -->
-			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>cobertura-maven-plugin</artifactId> 
-				<version>2.6</version> <configuration> <instrumentation> <excludes> <exclude>**/entity/**/*.class</exclude> 
-				<exclude>**/*Controller.class</exclude> </excludes> </instrumentation> </configuration> 
-				</plugin> -->
-
-			<!-- jrebel
-			<plugin>
-				<groupId>org.zeroturnaround</groupId>
-				<artifactId>jrebel-maven-plugin</artifactId>
-				<version>1.1.5</version>
-				<executions>
-					<execution>
-						<id>generate-rebel-xml</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
-
 
 			<!-- resources插件 -->
 			<plugin>
@@ -366,6 +348,24 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            
+           <!-- 增加functional test的Source目录 -->
+			<plugin> 
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId> 
+			</plugin>
+
+			<!-- cobertura插件, 设置不需要计算覆盖率的类 -->
+			<plugin> 
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId> 
+			</plugin> 
+			
+			<!-- jrebel -->
+			<plugin>
+				<groupId>org.zeroturnaround</groupId>
+				<artifactId>jrebel-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
 	</build>
 

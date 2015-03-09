@@ -7,6 +7,8 @@ import java.util.Map;
 
 import junit.framework.TestCase;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
 
 
@@ -86,7 +88,7 @@ public class OgnlTest extends TestCase {
 		assertTrue(Ognl.isNotEmpty("a"));
 	}
 	
-	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	public void test_isNumber() {
 		assertFalse(Ognl.isNumber(""));
 		assertFalse(Ognl.isNumber(null));
@@ -104,7 +106,7 @@ public class OgnlTest extends TestCase {
 		assertTrue(Ognl.isNumber((double)1));
 		assertTrue(Ognl.isNumber(1.1));
 		assertTrue(Ognl.isNumber(new Integer(1)));
-		System.out.println(Double.POSITIVE_INFINITY);
+//		logger.debug(Double.POSITIVE_INFINITY);
 	}
 	
 	

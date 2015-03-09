@@ -90,7 +90,7 @@ public class ActionScriptDataTypesUtils {
 
 	public static void main(String[] args) {
 		String bb = ActionScriptDataTypesUtils.getPreferredAsType(List.class.getName());
-		System.out.println(bb);
+//		logger.debug(bb);
 	}
 
 }

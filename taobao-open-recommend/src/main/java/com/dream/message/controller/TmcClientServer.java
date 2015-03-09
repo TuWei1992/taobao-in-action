@@ -5,6 +5,9 @@
  *******************************************************************************/
 package com.dream.message.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.dream.Constants;
 import com.taobao.api.internal.tmc.Message;
 import com.taobao.api.internal.tmc.MessageHandler;
@@ -19,6 +22,8 @@ import com.taobao.top.link.LinkException;
  * @author Frank
  */
 public class TmcClientServer {
+	
+	protected final Logger logger = LoggerFactory.getLogger(getClass());
 	private TmcClient client;
 	public void init() throws LinkException{
 		
@@ -26,8 +31,8 @@ public class TmcClientServer {
 		client.setMessageHandler(new MessageHandler() {  
 		    public void onMessage(Message message, MessageStatus status) {  
 		        try {  
-		            System.out.println(message.getContent());  
-		            System.out.println(message.getTopic());
+		            logger.debug(message.getContent());  
+		            logger.debug(message.getTopic());
 		            // 默认不抛出异常则认为消息处理成功  
 		        } catch (Exception e) {  
 		            e.printStackTrace();  

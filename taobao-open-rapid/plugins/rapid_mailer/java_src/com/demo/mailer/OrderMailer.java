@@ -59,10 +59,10 @@ public class OrderMailer extends BaseMailer{
 		//处理邮件发送结果
 		token.addResponder(new IResponder() {
 			public void onFault(Exception fault) {
-				System.out.println("[ERROR] confirmOrder mail send fail,cause:"+fault);
+				logger.debug("[ERROR] confirmOrder mail send fail,cause:"+fault);
 			}
 			public void onResult(Object result) {
-				System.out.println("[INFO] confirmOrder mail send success");
+				logger.debug("[INFO] confirmOrder mail send success");
 			}
 		});
 		

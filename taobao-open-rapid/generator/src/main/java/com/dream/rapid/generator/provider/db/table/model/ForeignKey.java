@@ -55,10 +55,10 @@ public class ForeignKey implements java.io.Serializable{
 		// return the associated column given the parent column
 		Object key = parentColumns.getKeyForValue(parentCol);
 		String col = (String) columns.get(key);
-		//System.out.println("get Column for" +parentCol);
-		//System.out.println("key = "+key);
-		//System.out.println("col="+col);
-		//System.out.println("ParentColumns = "+parentColumns.toString());
+		//logger.debug("get Column for" +parentCol);
+		//logger.debug("key = "+key);
+		//logger.debug("col="+col);
+		//logger.debug("ParentColumns = "+parentColumns.toString());
 		return col;
 	}
 	public ListHashtable getColumns() {

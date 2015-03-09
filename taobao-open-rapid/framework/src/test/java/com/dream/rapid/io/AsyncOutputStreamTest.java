@@ -5,10 +5,15 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.StringWriter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import junit.framework.TestCase;
 import edu.emory.mathcs.backport.java.util.concurrent.ArrayBlockingQueue;
 
 public class AsyncOutputStreamTest extends TestCase {
+	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 
 	ByteArrayOutputStream targetOutput = new ByteArrayOutputStream();
 	AsyncOutputStream asyncOutput = new AsyncOutputStream(targetOutput);
@@ -47,7 +52,7 @@ public class AsyncOutputStreamTest extends TestCase {
 			asyncOutput.write("c".getBytes());
 		}
 		asyncOutput.close();
-		System.out.println(new String(targetOutput.toByteArray()));
+		logger.debug(new String(targetOutput.toByteArray()));
 		assertEquals(200000,new String(targetOutput.toByteArray()).length());
 	}
 	
@@ -58,7 +63,7 @@ public class AsyncOutputStreamTest extends TestCase {
 			asyncOutput.write(1);
 			fail();
 		}catch(IOException e) {
-			System.out.println(e.getMessage());
+			logger.debug(e.getMessage());
 			assertEquals(e.getMessage(),"must start() before wirte()");
 		}
 		
@@ -68,7 +73,7 @@ public class AsyncOutputStreamTest extends TestCase {
 			asyncOutput.write(new byte[]{1,2});
 			fail();
 		}catch(IOException e) {
-			System.out.println(e.getMessage());
+			logger.debug(e.getMessage());
 			assertEquals(e.getMessage(),"must start() before wirte()");
 		}
 	}

@@ -1,5 +1,8 @@
 package com.dream.rapid.generator;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * 
@@ -8,11 +11,13 @@ package com.dream.rapid.generator;
  */
 
 public class GeneratorMain {
+	
+	protected static  final Logger logger = LoggerFactory.getLogger(GeneratorMain.class);
 	/**
 	 * 请直接修改以下代码调用不同的方法以执行相关生成任务.
 	 */
 	public static void main(String[] args) throws Exception {
-		System.out.println(System.getProperty("java.class.path"));
+		logger.debug(System.getProperty("java.class.path"));
 		GeneratorFacade g = new GeneratorFacade();
 //		g.printAllTableNames();				//打印数据库中的表名称
 		

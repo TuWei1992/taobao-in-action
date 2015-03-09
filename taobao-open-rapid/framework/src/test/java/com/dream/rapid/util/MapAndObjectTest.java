@@ -10,10 +10,13 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.math.RandomUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.dream.rapid.util.fortest.Role;
 
 public class MapAndObjectTest extends TestCase {
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	Map map = new HashMap();
 	Role role = new Role();
 	public void setUp() {
@@ -60,7 +63,7 @@ public class MapAndObjectTest extends TestCase {
 			assertNull(m.get(random));
 		}
 		long cost = System.currentTimeMillis() - start;
-		System.out.println("MapAndObject.get() costTime:"+cost+" per request cost:"+(cost/(float)count)+" count="+count);
+		logger.debug("MapAndObject.get() costTime:"+cost+" per request cost:"+(cost/(float)count)+" count="+count);
 		assertTrue("MapAndObject.get() costTime:234 per request cost:0.00234 count=100000",cost < 1000);
 	}
 	
@@ -71,7 +74,7 @@ public class MapAndObjectTest extends TestCase {
 			BeanUtils.describe(role);
 		}
 		long cost = System.currentTimeMillis() - start;
-		System.out.println("BeanUtils.describe(role) costTime:"+cost+" per request cost:"+(cost/(float)count));
+		logger.debug("BeanUtils.describe(role) costTime:"+cost+" per request cost:"+(cost/(float)count));
 		
 	}
 	

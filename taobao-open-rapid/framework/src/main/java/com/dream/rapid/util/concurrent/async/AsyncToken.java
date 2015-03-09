@@ -24,12 +24,12 @@ import javax.swing.SwingUtilities;
  *	    //token可以继续传递给外部,以便外面感兴趣的listener监听这个异步方法的执行结果   
  *	    token.addResponder(new IResponder() {   
  *	        public void onFault(Exception fault) {   
- *	            System.out.println("email send fail,cause:"+fault);   
+ *	            logger.debug("email send fail,cause:"+fault);   
  *	            //此处可以直接引用address,subject,content,如,我们可以再次发送一次   
  *	            sendAsyncEmail(address,subject,content);   
  *	        }   
  *	        public void onResult(Object result) {   
- *	            System.out.println("email send success,result:"+result);   
+ *	            logger.debug("email send success,result:"+result);   
  *	        }   
  *	    });   
  *	}   

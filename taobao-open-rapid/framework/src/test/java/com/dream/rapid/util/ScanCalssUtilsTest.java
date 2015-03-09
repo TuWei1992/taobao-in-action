@@ -16,7 +16,7 @@ public class ScanCalssUtilsTest extends TestCase {
 //
 //    public void generateTestByPackage(String packageName) throws ClassNotFoundException,Exception {
 //        List<String> classes = ScanClassUtils.scanPackages(packageName);
-//        System.out.println(classes);
+//        logger.debug(classes);
 //        for(String className:classes){
 //            Class clazz = Class.forName(className);
 //            new GeneratorFacade().generateByClass(clazz, "template_clazz");

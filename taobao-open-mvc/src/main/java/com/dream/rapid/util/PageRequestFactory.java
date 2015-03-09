@@ -25,7 +25,7 @@ public class PageRequestFactory {
     	String[] datePatterns = new String[] {"yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-MM-dd HH:mm:ss.SSS","HH:mm:ss"};
     	ConvertRegisterHelper.registerConverters(beanUtils.getConvertUtils(),datePatterns);
     	
-        System.out.println("PageRequestFactory.MAX_PAGE_SIZE="+MAX_PAGE_SIZE);
+//        logger.debug("PageRequestFactory.MAX_PAGE_SIZE="+MAX_PAGE_SIZE);
     }
 
     public static PageRequest bindPageRequest(PageRequest pageRequest,HttpServletRequest request){

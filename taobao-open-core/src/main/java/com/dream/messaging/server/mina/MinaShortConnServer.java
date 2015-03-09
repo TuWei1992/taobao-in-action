@@ -10,8 +10,12 @@ import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MinaShortConnServer {
+	
+	private final Logger logger = (Logger) LoggerFactory.getLogger(getClass());
 	private static final int PORT = 8001;
 
 	   
@@ -36,7 +40,7 @@ public class MinaShortConnServer {
 
        acceptor.bind(new InetSocketAddress(PORT));
 
-       System.out.println("Listeningon port " + PORT);
+       logger.debug("Listeningon port " + PORT);
 
     }
 }

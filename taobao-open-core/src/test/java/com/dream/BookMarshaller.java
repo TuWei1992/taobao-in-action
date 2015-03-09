@@ -23,7 +23,7 @@ public class BookMarshaller {
 //		}
 		String ss = "身份证";
 		
-		System.out.println(String.valueOf(ss));
+//		logger.debug(String.valueOf(ss));
 		
 		
 		String u = StringEscapeUtils.escapeHtml(ss);

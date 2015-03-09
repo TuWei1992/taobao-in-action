@@ -21,6 +21,8 @@ import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSet;
 import org.dbunit.operation.DatabaseOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.ResourceUtils;
 
 /**
@@ -29,6 +31,9 @@ import org.springframework.util.ResourceUtils;
  *
  */
 public class DBUnitFlatXmlHelper {
+	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	private DatabaseConnection databaseConnection; // DbUnit的数据库连接
 
 	private CachedDataSet cachedDataSet; // 存储临时数据
@@ -61,10 +66,10 @@ public class DBUnitFlatXmlHelper {
 		for (String dataFile : flatXmlDataFiles) {
 			try {
 				File file = ResourceUtils.getFile(dataFile);
-				System.out.println("[DbUnit INFO] insert test dataFile,filepath="+dataFile);
+				logger.debug("[DbUnit INFO] insert test dataFile,filepath="+dataFile);
 				insertTestData(file);
 			} catch (FileNotFoundException e) {
-				System.out.println("[DbUnit WARN] not found DbUnit DataFile,filepath="+ dataFile);
+				logger.debug("[DbUnit WARN] not found DbUnit DataFile,filepath="+ dataFile);
 				continue;
 			}
 		}
@@ -100,7 +105,7 @@ public class DBUnitFlatXmlHelper {
 
 	/**删除测试数据*/
 	public void deleteTestDatas() throws DatabaseUnitException, SQLException {
-		System.out.println("[DbUnit INFO] delete test datas");
+		logger.debug("[DbUnit INFO] delete test datas");
 		for(ListIterator it = testDataSets.listIterator(); it.hasNext();) {
 			IDataSet testDataSet = (IDataSet)it.next();
 			DatabaseOperation.DELETE.execute(getDatabaseConnection(),testDataSet);

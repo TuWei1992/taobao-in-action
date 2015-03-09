@@ -3,7 +3,11 @@ package com.dream.rapid.generator.ext;
 import java.io.File;
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.dream.rapid.generator.GeneratorFacade;
+import com.dream.rapid.generator.GeneratorMain;
 import com.dream.rapid.generator.GeneratorProperties;
 import com.dream.rapid.generator.util.ArrayHelper;
 import com.dream.rapid.generator.util.StringHelper;
@@ -15,6 +19,8 @@ import com.dream.rapid.generator.util.SystemHelper;
  */
 public class CommandLine {
 	
+	protected static  final Logger logger = LoggerFactory.getLogger(CommandLine.class);
+	
 	public static void main(String[] args) throws Exception {
 		//disable freemarker logging
 		freemarker.log.Logger.selectLoggerLibrary(freemarker.log.Logger.LIBRARY_NONE);
@@ -24,7 +30,7 @@ public class CommandLine {
 
 	private static void startProcess() throws Exception {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("templateRootDir:"+new File(getTemplateRootDir()).getAbsolutePath());
+		logger.debug("templateRootDir:"+new File(getTemplateRootDir()).getAbsolutePath());
 		printUsages();
 		while(sc.hasNextLine()) {
 			try {
@@ -72,13 +78,13 @@ public class CommandLine {
 	}
 
 	private static void printUsages() {
-		System.out.println("Usage:");
-		System.out.println("\tgen table_name [include_path]: generate files by table_name");
-		System.out.println("\tdel table_name [include_path]: delete files by table_name");
-		System.out.println("\tgen * [include_path]: search database all tables and generate files");
-		System.out.println("\tdel * [include_path]: search database all tables and delete files");
-		System.out.println("\tquit : quit");
-		System.out.println("\t[include_path] subdir of templateRootDir,example: 1. dao  2. dao/**,service/**");
+		logger.debug("Usage:");
+		logger.debug("\tgen table_name [include_path]: generate files by table_name");
+		logger.debug("\tdel table_name [include_path]: delete files by table_name");
+		logger.debug("\tgen * [include_path]: search database all tables and generate files");
+		logger.debug("\tdel * [include_path]: search database all tables and delete files");
+		logger.debug("\tquit : quit");
+		logger.debug("\t[include_path] subdir of templateRootDir,example: 1. dao  2. dao/**,service/**");
 		System.out.print("please input command:");
 	}
 	

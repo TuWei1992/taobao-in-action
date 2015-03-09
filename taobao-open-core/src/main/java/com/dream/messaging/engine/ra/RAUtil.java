@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.dream.messaging.utils.BitConverter;
 
 // TODO: Auto-generated Javadoc
@@ -28,7 +31,7 @@ import com.dream.messaging.utils.BitConverter;
  * @author Zhang Fu
  */
 public class RAUtil {
-	
+	protected static final Logger logger = LoggerFactory.getLogger(RAUtil.class);
 	/** The buffer. */
 	private static int buffer = 4* 1024;
 	
@@ -74,7 +77,7 @@ public class RAUtil {
 				byte[] length = new byte[4];
 				System.arraycopy(bytes, headerLen -4, length, 0, 4);
 				msgLen = BitConverter.bytesToInt(length);
-				System.out.println("msg body len = "+msgLen);
+				logger.debug("msg body len = "+msgLen);
 				gotLen = true;
 			}
 		}while(totalLen < msgLen + headerLen);

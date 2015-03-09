@@ -1,11 +1,7 @@
 package com.dream.rapid.base;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,6 +41,13 @@ import com.taobao.api.TaobaoResponse;
  * /userinfo/{id}   DELETE  => delete()  
  * /userinfo        DELETE  => batchDelete()  
  * </pre>
+ * 
+ * 
+ * 泛型的意义
+ * <pre>
+ * 当前Controller的领域对象、主键和查询条件
+ * </pre>
+ * 
  * 
  * @author Frank
  */

@@ -9,6 +9,8 @@ import javax.sql.DataSource;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.dream.rapid.freemarker.FreemarkerTemplateProcessor;
 import com.dream.rapid.test.hsql.HSQLMemDataSourceUtils;
@@ -39,20 +41,23 @@ public class DataSourceTemplateLoaderTest {
 		model.put("username", "qiu");
 		model.put("sex", "男");
 	}
+	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	@Test
 	public void test_get_template() throws Exception, TemplateException {
 		testProcessTemplate();
 		
 		Thread.sleep(1000 * 5);
 		
-		System.out.println("**************************");
+		logger.debug("**************************");
 		testProcessTemplate();
 	}
 	
 	private void testProcessTemplate() throws IOException {
 		Template t = conf.getTemplate("/test/template.ftl");
 		String out = FreemarkerTemplateProcessor.processTemplateIntoString(t, model);
-		System.out.println(out);
+		logger.debug(out);
 		Assert.assertEquals("用户名: qiu 性别:男",out);
 	}
 	

@@ -5,6 +5,8 @@ import java.io.Writer;
 
 import junit.framework.TestCase;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
@@ -15,10 +17,10 @@ public class HttpIncludeTest extends TestCase {
 	MockHttpServletResponse response = new MockHttpServletResponse();
 	MockHttpServletRequest request = new MockHttpServletRequest();
 	HttpInclude http = new HttpInclude(request, response);
-	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	public void test_remote_with_cookie() {
 		response.setCharacterEncoding("UTF-8");
-		System.out.println(http.include("http://www.163.com"));
+		logger.debug(http.include("http://www.163.com"));
 	}
 	
 	boolean includeExecuted = false;
@@ -42,8 +44,8 @@ public class HttpIncludeTest extends TestCase {
 //		HttpInclude http = new HttpInclude(request, response);
 //		
 //		String includeContent = http.include("/userinfo/blog.htm");
-//		System.out.println(includeContent);
-//		System.out.println(response.getIncludedUrl());
+//		logger.debug(includeContent);
+//		logger.debug(response.getIncludedUrl());
 //		
 //		assertTrue(includeExecuted);
 //		assertEquals(includeContent,"test_local_write_date_with_output_stream");
@@ -70,8 +72,8 @@ public class HttpIncludeTest extends TestCase {
 //		HttpInclude http = new HttpInclude(request, response);
 //		
 //		String includeContent = http.include("/userinfo/blog.htm");
-//		System.out.println(includeContent);
-//		System.out.println(response.getIncludedUrl());
+//		logger.debug(includeContent);
+//		logger.debug(response.getIncludedUrl());
 //		
 //		assertTrue(includeExecuted);
 //		assertEquals(includeContent,"test_local_write_date_with_write");
@@ -160,16 +162,16 @@ public class HttpIncludeTest extends TestCase {
 		MultiThreadTestUtils.executeAndWait(threads, new Runnable() {
 			public void run() {
 				String msg = count+++" thread:"+Thread.currentThread().toString();
-				System.out.println(msg);
+				logger.debug(msg);
 				for(int i = 0; i < 5; i++) {
-					System.out.println(msg+" "+i);
+					logger.debug(msg+" "+i);
 					http.include("http://www.taobao.com", NULL_WRITER);
 				}
 			}
 		});
 		
 //		for(int i = 0; i < 10; i++) {
-//			System.out.println(count++);
+//			logger.debug(count++);
 //			http.include("http://www.taobao.com", NULL_WRITER);
 //		}
 	}

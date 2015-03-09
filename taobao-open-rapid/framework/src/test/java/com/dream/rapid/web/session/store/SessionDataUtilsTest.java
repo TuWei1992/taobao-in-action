@@ -6,9 +6,14 @@ import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import static org.junit.Assert.*;
 
 public class SessionDataUtilsTest {
+	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	@Test
 	public void encode() throws UnsupportedEncodingException {
 		Map map = new HashMap();
@@ -17,10 +22,10 @@ public class SessionDataUtilsTest {
 		map.put("null", null);
 		map.put("abc", "abc");
 		String data = JdbcSessionStore.encode(map);
-		System.out.println(data);
+		logger.debug(data);
 		
 		Map decodeMap = JdbcSessionStore.decode(data);
-		System.out.println(decodeMap.get("null"));
+//		logger.debug(decodeMap.get("null"));
 		
 		assertEquals(decodeMap.get("empty"),"");
 		assertEquals(decodeMap.get("blank"),"  ");

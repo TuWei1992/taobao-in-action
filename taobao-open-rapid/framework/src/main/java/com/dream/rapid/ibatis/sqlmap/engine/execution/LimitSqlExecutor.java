@@ -3,6 +3,9 @@ package com.dream.rapid.ibatis.sqlmap.engine.execution;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.dream.rapid.jdbc.dialect.Dialect;
 import com.ibatis.sqlmap.engine.execution.SqlExecutor;
 import com.ibatis.sqlmap.engine.mapping.statement.RowHandlerCallback;
@@ -21,10 +24,10 @@ public class LimitSqlExecutor extends SqlExecutor {
 	public Dialect getDialect() {
 		return dialect;
 	}
-
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	public void setDialect(Dialect dialect) {
 		if(dialect != null) {
-			System.out.println("[iBATIS] set ibatis LimitSqlExecutor.dialect = "+dialect.getClass().getName());
+			logger.debug("[iBATIS] set ibatis LimitSqlExecutor.dialect = "+dialect.getClass().getName());
 		}
 		this.dialect = dialect;
 	}

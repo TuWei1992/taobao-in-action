@@ -4,16 +4,19 @@ import java.sql.Timestamp;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class LoopRunnableTest {
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	public int count = 0;
 	@Test
 	public void test_all_in_one() throws InterruptedException {
 		LoopRunnable loopRunnable = new LoopRunnable(new Runnable() {
 			public void run() {
 				count ++;
-				System.out.println(new Timestamp(System.currentTimeMillis()));
+//				logger.debug(new Timestamp(System.currentTimeMillis()));
 			}
 		});
 		loopRunnable.setSleepInterval(100);

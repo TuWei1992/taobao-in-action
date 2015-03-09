@@ -6,6 +6,9 @@ import java.lang.reflect.Modifier;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.ibatis.ibator.api.IbatorRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.engine.execution.SqlExecutor;
@@ -26,7 +29,7 @@ public class SqlMapClientFactoryBean extends org.springframework.orm.ibatis.SqlM
 	public void setSqlExecutor(SqlExecutor sqlExecutor) {
 		this.sqlExecutor = sqlExecutor;
 	}
-
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		super.afterPropertiesSet();
@@ -36,7 +39,7 @@ public class SqlMapClientFactoryBean extends org.springframework.orm.ibatis.SqlM
 			SqlMapExecutorDelegate delegate = client.getDelegate();
 			try {
 				ReflectUtil.setFieldValue(delegate, "sqlExecutor", SqlExecutor.class, sqlExecutor);
-				System.out.println("[iBATIS] success set ibatis SqlMapClient.sqlExecutor = "+sqlExecutor.getClass().getName());
+				logger.debug("[iBATIS] success set ibatis SqlMapClient.sqlExecutor = "+sqlExecutor.getClass().getName());
 			}catch(Exception e) {
 				System.err.println("[iBATIS] error,cannot set ibatis SqlMapClient.sqlExecutor = "+sqlExecutor.getClass().getName()+" cause:"+e);
 			}

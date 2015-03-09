@@ -104,7 +104,7 @@ public class DESUtil {
 //	   String Str=DESUtil.decrypt(msg, key);
 //	   //byte[] retByt=e.encrypt(xmlstr, key);
 //	   //String Str=e.toHexString(retByt);
-//	   System.out.println(Str);
+//	   logger.debug(Str);
 //	  } catch (Exception e1) {
 //	  }
 //	 

@@ -8,7 +8,7 @@ public class BaseQuery extends PageRequest implements java.io.Serializable {
 	public static final int DEFAULT_PAGE_SIZE = 10;
 	
     static {
-        System.out.println("BaseQuery.DEFAULT_PAGE_SIZE="+DEFAULT_PAGE_SIZE);
+//        logger.debug("BaseQuery.DEFAULT_PAGE_SIZE="+DEFAULT_PAGE_SIZE);
     }
     
 	public BaseQuery() {

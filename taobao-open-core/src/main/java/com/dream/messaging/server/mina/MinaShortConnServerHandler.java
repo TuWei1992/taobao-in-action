@@ -10,6 +10,8 @@ import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.dream.messaging.pool.Initialization;
+
 public class MinaShortConnServerHandler extends IoHandlerAdapter {
 	private final Logger logger = (Logger) LoggerFactory.getLogger(getClass());
 
@@ -79,7 +81,7 @@ public class MinaShortConnServerHandler extends IoHandlerAdapter {
 
     public void sessionIdle(IoSession session, IdleStatus status) {
 
-       logger.info("Disconnectingthe idle.");
+       logger.info("Disconnecting the idle.");
 
        // disconnect an idle client
 

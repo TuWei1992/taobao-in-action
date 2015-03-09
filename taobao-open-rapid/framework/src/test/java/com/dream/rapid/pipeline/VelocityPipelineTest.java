@@ -11,11 +11,13 @@ import org.apache.velocity.app.VelocityEngine;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.ResourceUtils;
 
 
 public class VelocityPipelineTest {
-
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	VelocityEngine engine = new VelocityEngine();
 	VelocityPipeline pipeline;
 	@Before
@@ -35,7 +37,7 @@ public class VelocityPipelineTest {
 		StringWriter sw = new StringWriter();
 //		p.pipeline(engine,new String[] {"first.vm","second.vm","three.vm"}, new HashMap(), sw);
 		pipeline.pipeline("first.vm|second.vm | three.vm", new HashMap(), sw);
-		System.out.println(sw.toString());
+		logger.debug(sw.toString());
 		String expected = "<html><head>second_override_content</head><body>first_override_content<three><second>first</second></three></body></html>";
 		Assert.assertEquals(expected,sw.toString().replaceAll("\\s+", ""));
 	}

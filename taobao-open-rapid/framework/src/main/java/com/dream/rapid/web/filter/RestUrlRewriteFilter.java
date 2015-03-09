@@ -12,6 +12,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -77,7 +79,7 @@ public class RestUrlRewriteFilter extends OncePerRequestFilter implements Filter
 			throw new ServletException("init paramerter error",e);
 		}
 	}
-
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	private void initParameter(FilterConfig filterConfig) throws IOException {
 		prefix = getStringParameter(filterConfig,"prefix",DEFAULT_PREFIX);
 		debug = getBooleanParameter(filterConfig,"debug",false);
@@ -89,12 +91,12 @@ public class RestUrlRewriteFilter extends OncePerRequestFilter implements Filter
 			excludePrefixes = excludePrefixsString.split(",");
 		}
 		
-		System.out.println();
-		System.out.println("RestUrlRewriteFilter.prefix="+prefix+" will rewrite url from /demo.html => ${prefix}/demo.html by forward");
-		System.out.println("RestUrlRewriteFilter.excludeExtentions=["+excludeExtentionsString+"] will not rewrite url");
-		System.out.println("RestUrlRewriteFilter.excludePrefixes=["+excludePrefixsString+"] will not rewrite url");
-		System.out.println("RestUrlRewriteFilter.debug="+debug);
-		System.out.println();
+		logger.debug("");
+		logger.debug("RestUrlRewriteFilter.prefix="+prefix+" will rewrite url from /demo.html => ${prefix}/demo.html by forward");
+		logger.debug("RestUrlRewriteFilter.excludeExtentions=["+excludeExtentionsString+"] will not rewrite url");
+		logger.debug("RestUrlRewriteFilter.excludePrefixes=["+excludePrefixsString+"] will not rewrite url");
+		logger.debug("RestUrlRewriteFilter.debug="+debug);
+		logger.debug("");
 	}
 
 	protected void doFilterInternal(HttpServletRequest request,HttpServletResponse response, FilterChain filterChain)throws ServletException, IOException {
@@ -103,12 +105,12 @@ public class RestUrlRewriteFilter extends OncePerRequestFilter implements Filter
 		if(rewriteURL(from)) {
 			final String to = prefix+from;
 			if(debug) {
-				System.out.println("RestUrlRewriteFilter: forward request from "+from+" to "+to);
+				logger.debug("RestUrlRewriteFilter: forward request from "+from+" to "+to);
 			}
 			request.getRequestDispatcher(to).forward(request, response);
 		}else {
 			if(debug) {
-				System.out.println("RestUrlRewriteFilter: not rewrite url:"+request.getRequestURI());
+				logger.debug("RestUrlRewriteFilter: not rewrite url:"+request.getRequestURI());
 			}
 			filterChain.doFilter(request, response);
 		}

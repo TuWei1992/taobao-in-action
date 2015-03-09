@@ -26,7 +26,7 @@ public class OverrideTag extends BodyTagSupport{
 			return EVAL_PAGE;
 		}
 		BodyContent b = getBodyContent();
-//		System.out.println("Override.content:"+b.getString());
+//		logger.debug("Override.content:"+b.getString());
 		String varName = Utils.getOverrideVariableName(name);
 
 		pageContext.getRequest().setAttribute(varName, b.getString());

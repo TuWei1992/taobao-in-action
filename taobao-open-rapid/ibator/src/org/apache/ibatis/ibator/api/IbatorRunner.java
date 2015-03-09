@@ -33,6 +33,10 @@ import org.apache.ibatis.ibator.exception.InvalidConfigurationException;
 import org.apache.ibatis.ibator.exception.XMLParserException;
 import org.apache.ibatis.ibator.internal.DefaultShellCallback;
 import org.apache.ibatis.ibator.internal.util.messages.Messages;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.dream.rapid.base.BaseQuery;
 
 /**
  * This class allows ibator to be run from the command line.
@@ -151,13 +155,13 @@ public class IbatorRunner {
             writeLine(Messages.getString(key));
         }
 	}
-	
+	protected static  final Logger logger = LoggerFactory.getLogger(IbatorRunner.class);
 	private static void writeLine(String message) {
-		System.out.println(message);
+		logger.debug(message);
 	}
 
 	private static void writeLine() {
-		System.out.println();
+		logger.debug("/n");
 	}
     
     private static Map<String, String> parseCommandLine(String[] args) {

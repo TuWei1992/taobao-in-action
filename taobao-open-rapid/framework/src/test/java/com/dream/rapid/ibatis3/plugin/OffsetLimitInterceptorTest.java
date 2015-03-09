@@ -9,6 +9,8 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.RowBounds;
 import org.junit.Assert;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.dream.rapid.jdbc.dialect.DerbyDialect;
 import com.dream.rapid.jdbc.dialect.Dialect;
@@ -19,6 +21,7 @@ import com.dream.rapid.jdbc.dialect.SQLServerDialect;
 
 
 public class OffsetLimitInterceptorTest {
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	OffsetLimitInterceptor di = new OffsetLimitInterceptor();
 	
@@ -55,6 +58,6 @@ public class OffsetLimitInterceptorTest {
 		}
 		float cost = System.currentTimeMillis() - start;
 		
-		System.out.println(String.format("costTime:%s perMethodCost:%s tps:%s %s",cost,cost/count,count/(cost/1000),dialect.getClass().getSimpleName()));
+		logger.debug(String.format("costTime:%s perMethodCost:%s tps:%s %s",cost,cost/count,count/(cost/1000),dialect.getClass().getSimpleName()));
 	}
 }

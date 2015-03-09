@@ -37,13 +37,13 @@ public class BlockDirectiveTest {
 		conf.setSharedVariable("super", new SuperDirective());
 		File dir = ResourceUtils.getFile("classpath:fortest_freemarker");
 		conf.setDirectoryForTemplateLoading(dir);
-		System.out.println(dir.getAbsolutePath());
+//		logger.debug(dir.getAbsolutePath());
 	}
 	
 	@Test
 	public void testOverride() throws FileNotFoundException, IOException {
 
-		System.out.println(processor.processTemplate("child.flt",new HashMap()));
+//		logger.debug(processor.processTemplate("child.flt",new HashMap()));
 		assertEquals("<html><head>base_head_content</head><body>base_body_content</body></html>",processTemplate("base.flt"));
 		assertEquals("<html><head>base_head_content</head><body><divclass='content'>PoweredByrapid-framework</div></body></html>",processTemplate("child.flt").trim());
 		assertEquals("<html><head>grandchild_head_content</head><body>grandchild_body_content</body></html>",processTemplate("grandchild.flt").trim());
@@ -53,7 +53,7 @@ public class BlockDirectiveTest {
 	@Test
 	public void testOverride_with_super() throws FileNotFoundException, IOException {
 
-		System.out.println(processor.processTemplate("super.flt",new HashMap()));
+//		logger.debug(processor.processTemplate("super.flt",new HashMap()));
 		assertEquals("<html><head>base_head_content</head><body><super>base_body_content<super></body></html>",processTemplate("super.flt"));
 		assertEquals("<html><head><supersuperhead/></head><body><supersuper><super>base_body_content<super><supersuper></body></html>",processTemplate("supersuper.flt"));
 		assertEquals("<html><head><supersuperhead/><supersupersuper><supersuperhead/></head><body><supersuper><super>base_body_content<super><supersuper></body></html>",processTemplate("supersupersuper.flt"));
@@ -75,13 +75,13 @@ public class BlockDirectiveTest {
 			if( i == count - 2) {
 				StringWriter out = new StringWriter();
 				conf.getTemplate("performance.flt").process(hashMap,out);
-				System.out.println(out.toString());
+//				logger.debug(out.toString());
 			}else {
 				conf.getTemplate("performance.flt").process(hashMap,OverrideDirectiveTest.NULL_WRITER);
 			}
 		}
 		float cost = System.currentTimeMillis() - start;
-		System.out.println("cost:"+cost+" TPS:"+ (count/(cost/1000))+" ");
+//		logger.debug("cost:"+cost+" TPS:"+ (count/(cost/1000))+" ");
 		
 	}
 

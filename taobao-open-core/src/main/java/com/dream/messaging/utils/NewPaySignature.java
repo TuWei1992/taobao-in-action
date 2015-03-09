@@ -64,7 +64,7 @@ package com.dream.messaging.utils;
 //		tmppath += "&customerId="+customerId;
 //		
 //		// 需上传的加密数据
-//		System.out.println("加密后的数据为：" + tmppath);
+//		logger.debug("加密后的数据为：" + tmppath);
 //		
 //		return tmppath;
 //	}
@@ -80,7 +80,7 @@ package com.dream.messaging.utils;
 //		DESDecrypt desDecrypt = new DESDecrypt();
 //		String tmppath = desDecrypt.decrypty(rsaDecryptStr);
 //		
-//		System.out.println("解密后的数据为：" + tmppath);
+//		logger.debug("解密后的数据为：" + tmppath);
 //		
 //		return tmppath;
 //	}

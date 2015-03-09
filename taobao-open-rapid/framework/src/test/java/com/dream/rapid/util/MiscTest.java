@@ -26,10 +26,13 @@ import org.apache.commons.beanutils.converters.SqlDateConverter;
 import org.apache.commons.beanutils.converters.SqlTimeConverter;
 import org.apache.commons.beanutils.converters.SqlTimestampConverter;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.dream.rapid.beanutils.converter.StringConverter;
 
 public class MiscTest extends TestCase {
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	public void test_removeString() {
 		assertEquals("abc123456",StringUtils.remove("abc-123-456", "-"));
@@ -42,16 +45,16 @@ public class MiscTest extends TestCase {
 		map.put("k1", "v1");
 		map.put("k2", "v2");
 		map.put("k3", "v4");
-		System.out.println(map);
-		System.out.println(toString(map));
+//		logger.debug(map);
+		logger.debug(toString(map));
 	}
 	
 	public void test_convert_utils() {
 		ConvertUtilsBean convert = new ConvertUtilsBean();
 		registerConverters(convert, new String[]{"yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-MM-dd HH:mm:ss.SSS"});
-		System.out.println(convert.convert("2010-01-01", java.util.Date.class));
-		System.out.println(convert.convert("2010-01-01 10:10:10", java.util.Date.class));
-		System.out.println(convert.convert("2010-01-01 10:10:10.102", java.sql.Timestamp.class));
+//		logger.debug(convert.convert("2010-01-01", java.util.Date.class));
+//		logger.debug(convert.convert("2010-01-01 10:10:10", java.util.Date.class));
+//		logger.debug(convert.convert("2010-01-01 10:10:10.102", java.sql.Timestamp.class));
 	}
 
 	public static void registerConverters(ConvertUtilsBean convertUtils,String[] datePatterns) {

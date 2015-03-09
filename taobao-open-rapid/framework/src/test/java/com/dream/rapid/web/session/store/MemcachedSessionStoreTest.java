@@ -12,12 +12,14 @@ import java.util.Map;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.thimbleware.jmemcached.MemCacheDaemon;
 
 
 public class MemcachedSessionStoreTest {
-	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	MemcachedSessionStore store = new MemcachedSessionStore();
 	Map sessionData = new HashMap();
 	Process memcachedProcess;
@@ -27,7 +29,7 @@ public class MemcachedSessionStoreTest {
         startMemcachedServer(11633);
         startMemcachedServer(11933);
         Thread.sleep(1000);
-		System.out.println("memcached started");
+		logger.debug("memcached started");
 		
 		sessionData.put("empty", "");
 		sessionData.put("blank", " ");
@@ -43,7 +45,7 @@ public class MemcachedSessionStoreTest {
 		for(Process p : process) {
 			p.destroy();
 			p.waitFor();
-			System.out.println(" exit:"+p.exitValue());
+			logger.debug(" exit:"+p.exitValue());
 		}
 		Thread.sleep(1000);
 		for(MemCacheDaemon d : daemons) {
@@ -65,7 +67,7 @@ public class MemcachedSessionStoreTest {
 	        daemons.add(daemon);
 //			File file = ResourceUtils.getFile("classpath:fortest_memcached/memcached.exe");
 //			String cmd = file.getAbsolutePath()+" -p "+port;
-//			System.out.println("exec:"+cmd);
+//			logger.debug("exec:"+cmd);
 //			process.add(Runtime.getRuntime().exec(cmd));
 		}catch(Error e) {
 			throw new IllegalStateException("start memcached error",e);

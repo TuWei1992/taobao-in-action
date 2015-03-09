@@ -304,9 +304,9 @@ public class XMLHelper {
         
         Map table = nd.attributes;
         List columns = nd.childs;
-        System.out.println(table);
-        System.out.println(columns);
-//        System.out.println(nd);
+//        logger.debug(table);
+//        logger.debug(columns);
+//        logger.debug(nd);
     }
 
 }

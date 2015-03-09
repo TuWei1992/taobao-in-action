@@ -1,9 +1,12 @@
 package com.dream.rapid.util.concurrent.async;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import junit.framework.TestCase;
 
 public class AsyncTokenTest extends TestCase {
-
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	Exception exception = new Exception();
 	public void testOnFault() throws InterruptedException {
 		AsyncToken token = new AsyncToken();
@@ -11,7 +14,7 @@ public class AsyncTokenTest extends TestCase {
 		
 		token.addResponder(new IResponder() {
 			public void onFault(Exception fault) {
-				System.out.println("onFault()");
+				logger.debug("onFault()");
 				assertEquals(fault,exception);
 			}
 			public void onResult(Object result) {
@@ -45,7 +48,7 @@ public class AsyncTokenTest extends TestCase {
 				assertNull(fault);
 			}
 			public void onResult(Object result) {
-				System.out.println("onResult()");
+				logger.debug("onResult()");
 				assertEquals(result,exception);
 			}
 		});
@@ -73,7 +76,7 @@ public class AsyncTokenTest extends TestCase {
 		token.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
 			public void uncaughtException(IResponder responder, Throwable e) {
 				assertEquals(caughtException,e);
-				System.out.println("caughtException");
+				logger.debug("caughtException");
 			}
 		});
 		

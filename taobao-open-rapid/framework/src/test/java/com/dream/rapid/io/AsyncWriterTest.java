@@ -3,9 +3,13 @@ package com.dream.rapid.io;
 import java.io.IOException;
 import java.io.StringWriter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import junit.framework.TestCase;
 
 public class AsyncWriterTest extends TestCase {
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	public void test() throws IOException, InterruptedException {
 		StringWriter stringWriter = new StringWriter();
@@ -37,7 +41,7 @@ public class AsyncWriterTest extends TestCase {
 			writer.append('c');
 		}
 		writer.close();
-		System.out.println(stringWriter.toString().length());
+//		logger.debug(stringWriter.toString().length());
 		assertEquals(200000,stringWriter.toString().length());
 	}
 	
@@ -48,7 +52,7 @@ public class AsyncWriterTest extends TestCase {
 			writer.append('c');
 			fail();
 		}catch(IOException e) {
-			System.out.println(e.getMessage());
+			logger.debug(e.getMessage());
 			assertEquals(e.getMessage(),"must start() before wirte()");
 		}
 	}

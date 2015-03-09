@@ -33,24 +33,24 @@ public class HttpCallTest {
 //        req.setNick("sandbox_c_1");
 //        UserGetResponse resp = client.execute(req );
 //        /**正常请求，获取用户信息，由于email是需要用户授权才能获取，因此返回的信息中不包含emaill信息**/
-//        System.out.println(resp.getBody());
+//        logger.debug(resp.getBody());
 //        
 //        /**传入用户授权的sessionkey， 可获取用户 的email**/
 //        resp = client.execute(req, "6101813112fbded1142381ece45b633a381c53976144a932074082786");
-//        System.out.println(resp.getBody());
+//        logger.debug(resp.getBody());
 //        
 //        /**传入不存在的nick ，对错误进行处理****/
 //        req.setNick("sandbox_nouser");
 //        resp = client.execute(req);
 //        
 //        if(resp.isSuccess()) {
-//            System.out.println(resp.getBody());
+//            logger.debug(resp.getBody());
 //        } else {
 //            /**如果subCode 以isp开头，可重试，否则是由于业务错误，请不要重试。***/
 //            if(resp.getSubCode() != null && resp.getSubCode().startsWith("isp"))
 //                resp = client.execute(req);
 //            else 
-//                System.out.println(resp.getBody());
+//                logger.debug(resp.getBody());
 //        }
     	List<ShopCategory> list = new ArrayList<ShopCategory>();
     	ShopCategory cat = new ShopCategory();
@@ -79,7 +79,7 @@ public class HttpCallTest {
     	list.add(cat2);
     	ObjectMapper objectMapper =  new ObjectMapper();
     	String s = objectMapper.writeValueAsString(list);
-    	System.out.println(s);
+//    	logger.debug(s);
     	
     }
 }

@@ -3,24 +3,26 @@ package com.dream.rapid.jdbc.dialect;
 import junit.framework.Assert;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.Assert.*;
 public class OracleDialectTest {
-	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
 	OracleDialect dialect = new OracleDialect();
 	@Test
 	public void test() {
 		String sql = dialect.getLimitString("select * from user", 10, 100);
 		assertEquals("select * from ( select row_.*, rownum rownum_ from ( select * from user ) row_ ) where rownum_ <= 10+100 and rownum_ > 10",sql);
-		System.out.println(sql);
+		logger.debug(sql);
 		
 		String sql0limit = dialect.getLimitString("select * from user", 0, 100);
 		assertEquals("select * from ( select * from user ) where rownum <= 100",sql0limit);
-		System.out.println(sql0limit);
+		logger.debug(sql0limit);
 		
 		String forUpdateSql = dialect.getLimitString("select * from user for update", 10, 100);
 		assertEquals("select * from ( select row_.*, rownum rownum_ from ( select * from user ) row_ ) where rownum_ <= 10+100 and rownum_ > 10 for update",forUpdateSql);
-		System.out.println(forUpdateSql);
+		logger.debug(forUpdateSql);
 	}
 	@Test
 	public void getLimitStringWithPlaceHolader() {

@@ -69,6 +69,9 @@
 		<ehcache.version>2.6.9</ehcache.version>
 		<sitemesh.version>2.4.2</sitemesh.version>
 		<jackson.version>1.9.11</jackson.version>
+		<jackson.xml.version>2.3.2-jdk1.5</jackson.xml.version>
+        <jaxb-api.version>2.2.6</jaxb-api.version>
+        <jaxb-impl.version>2.1</jaxb-impl.version>
 		<taobao.version>20140830</taobao.version>
 		<urlrewritefilter.version>3.1.0</urlrewritefilter.version>
 		<flyway.version>3.0</flyway.version>
@@ -84,7 +87,7 @@
 		<jstl.version>1.1.2</jstl.version>
 		<javax.servlet.version>2.5</javax.servlet.version>
 		<taglibs.version>1.1.2</taglibs.version>
-		<jetty.version>7.4.0.v20110414</jetty.version>
+		<jetty.version>8.1.16.v20140903</jetty.version>
 		<jetty1.version>6.1.26</jetty1.version>
 		<!-- Plugin的属性定义 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -155,10 +158,10 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			    <groupId>aopalliance</groupId>
-			    <artifactId>aopalliance</artifactId>
-			    <version>${aopalliance.version}</version>
-			</dependency>
+		    <groupId>aopalliance</groupId>
+		    <artifactId>aopalliance</artifactId>
+		    <version>${aopalliance.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -201,10 +204,10 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -226,15 +229,15 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-jms</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-test</artifactId>
-				<version>${spring.version}</version>
-				<scope>test</scope>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>cglib</groupId>
@@ -246,18 +249,16 @@
 			<artifactId>asm</artifactId>
 			<version>${asm.version}</version>
 		</dependency>
-		
 		<dependency>
             <groupId>org.apache.ibatis</groupId>
             <artifactId>ibatis-sqlmap</artifactId>
             <version>${ibatis.version}</version>
         </dependency>
-        
         <dependency>
-			    <groupId>org.mybatis</groupId>
-			    <artifactId>mybatis</artifactId>
-			    <version>${mybatis.version}</version>
-			</dependency>	
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>${mybatis.version}</version>
+		</dependency>	
 		
 		<!-- 主要依赖库的版本定义 End -->
 
@@ -359,23 +360,25 @@
 			<artifactId>commons-logging</artifactId>
 			<version>${commons-logging.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>commons-cli</groupId>
 			<artifactId>commons-cli</artifactId>
 			<version>1.2</version>
 		</dependency>
-	
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-jexl</artifactId>
 			<version>2.1.1</version>
 		</dependency>
-		
 		<dependency>
 		  <groupId>commons-validator</groupId>
   		  <artifactId>commons-validator</artifactId>
   		  <version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+			<version>2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>cssparser</groupId>
@@ -439,41 +442,49 @@
 			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
-				<groupId>org.codehaus.jackson</groupId>
-				<artifactId>jackson-jaxrs</artifactId>
-				<version>${jackson.version}</version>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
-
+		  <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-xc</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson.xml.version}</version>
+        </dependency>
+		
 		<!-- JSON end -->
 		<dependency>
 			<groupId>org.tuckey</groupId>
 			<artifactId>urlrewritefilter</artifactId>
 			<version>${urlrewritefilter.version}</version>
 		</dependency>
-		
 		<dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <version>${flyway.version}</version>
         </dependency>
-
 		<dependency>
 			<groupId>com.taobao</groupId>
 			<artifactId>taobao-sdk-java-online_standard</artifactId>
 			<version>${taobao.version}</version>
 		</dependency>
-		
 		<!-- JSR303 bean validation begin -->
-			<dependency>
-			    <groupId>javax.validation</groupId>
-			    <artifactId>validation-api</artifactId>
-			    <version>${javax.validation.version}</version>
-			</dependency>			
-			<dependency>
-			    <groupId>org.hibernate</groupId>
-			    <artifactId>hibernate-validator</artifactId>
-			    <version>${hibernate.validator.version}</version>
-			</dependency>
+		<dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>${javax.validation.version}</version>
+		</dependency>			
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>${hibernate.validator.version}</version>
+		</dependency>
 			<!-- JSR303 bean validation end -->
 		<dependency>
 			<groupId>org.quartz-scheduler</groupId>
@@ -673,7 +684,7 @@
 		<dependency>
 			<groupId>org.mortbay.jetty</groupId>
 			<artifactId>jetty</artifactId>
-			<version>${jetty.version}</version>
+			<version>${jetty1.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -762,12 +773,33 @@
 <!-- 				  <artifactId>jpos</artifactId> -->
 <!-- 				  <version>1.9.8</version> -->
 <!-- 			</dependency> -->
-		</dependencies>
-	</dependencyManagement>
-	
-	<build>
-		<pluginManagement>
-			<plugins>
+
+		<dependency>
+			  <groupId>org.vaadin.dialogs</groupId>
+			  <artifactId>confirmdialog</artifactId>
+			  <version>2.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+	    <dependency>
+	        <groupId>org.springframework.data</groupId>
+	        <artifactId>spring-data-redis</artifactId>
+	        <version>1.4.1.RELEASE</version>
+	    </dependency>
+	    <dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
+
+<build>
+	<pluginManagement>
+		<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
@@ -892,21 +924,67 @@
 					<artifactId>maven-dependency-plugin</artifactId>
 					<version>2.1</version>
 				</plugin>
-				<!-- cobertura插件 -->
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>cobertura-maven-plugin</artifactId>
-					<version>2.4</version>
-				</plugin>
+				
 				<!-- deploy插件-->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>2.5</version>
-				</plugin>		
+				</plugin>
+				<!-- jrebel -->
+				<plugin>
+					<groupId>org.zeroturnaround</groupId>
+					<artifactId>jrebel-maven-plugin</artifactId>
+					<version>1.1.5</version>
+					<executions>
+						<execution>
+							<id>generate-rebel-xml</id>
+							<phase>process-resources</phase>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- 增加functional test的Source目录 -->
+				<plugin> 
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId> 
+					<version>1.8</version> 
+					<!-- 
+					<executions> 
+						<execution> 
+							<id>add-functional-source</id> 
+							<phase>generate-sources</phase> 
+							<goals>
+								<goal>add-test-source</goal>
+							</goals> 
+							<configuration>
+								<sources>
+									<source>src/test/functional</source>
+								</sources> 
+							</configuration> 
+							</execution> 
+						</executions>  -->
+				  </plugin>
+				  <!-- cobertura插件, 设置不需要计算覆盖率的类 -->
+				  <plugin> 
+				  	<groupId>org.codehaus.mojo</groupId>
+				  	<artifactId>cobertura-maven-plugin</artifactId> 
+					<version>2.6</version>
+					<!-- 
+					<configuration>
+						<instrumentation>
+							<excludes>
+								<exclude>**/entity/**/*.class</exclude> 
+								<exclude>**/*Controller.class</exclude>
+							</excludes>
+						</instrumentation> 
+					</configuration>-->
+				</plugin>
 			</plugins>
-		</pluginManagement>
-		<plugins>
+	</pluginManagement>
+	<plugins>
 			<!-- compiler插件, 设定JDK版本 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -938,37 +1016,21 @@
 					<argLine>-Xmx256M</argLine>
 				</configuration>
 			</plugin>
-
 			<!-- 增加functional test的Source目录 -->
-			<!--<plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>build-helper-maven-plugin</artifactId> 
-				<version>1.8</version> <executions> <execution> <id>add-functional-source</id> 
-				<phase>generate-sources</phase> <goals> <goal>add-test-source</goal> </goals> 
-				<configuration> <sources> <source>src/test/functional</source> </sources> 
-				</configuration> </execution> </executions> </plugin> -->
-
+			<plugin> 
+				<groupId>org.codehaus.mojo</groupId> 
+				<artifactId>build-helper-maven-plugin</artifactId>
+			</plugin>
 			<!-- cobertura插件, 设置不需要计算覆盖率的类 -->
-			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>cobertura-maven-plugin</artifactId> 
-				<version>2.6</version> <configuration> <instrumentation> <excludes> <exclude>**/entity/**/*.class</exclude> 
-				<exclude>**/*Controller.class</exclude> </excludes> </instrumentation> </configuration> 
-				</plugin> -->
-
-		
-
-			<!-- jrebel
+			<plugin> 
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId> 
+			</plugin>
+			<!-- jrebel -->
 			<plugin>
 				<groupId>org.zeroturnaround</groupId>
 				<artifactId>jrebel-maven-plugin</artifactId>
-				<version>1.1.5</version>
-				<executions>
-					<execution>
-						<id>generate-rebel-xml</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
+			</plugin>
 			<!-- resources插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -1012,7 +1074,7 @@
 		        </configuration>
       		</plugin>
 		</plugins>
-	</build>
+</build>
 
 	<profiles>
 		<!-- 执行functional test -->

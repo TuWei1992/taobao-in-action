@@ -15,6 +15,8 @@ import java.util.StringTokenizer;
 import javax.sql.DataSource;
 
 import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.util.ResourceUtils;
@@ -26,6 +28,9 @@ import org.springframework.util.ResourceUtils;
  *
  */
 public class HSQLMemDataSourceUtils {
+	
+
+	protected static final Logger logger = LoggerFactory.getLogger(HSQLMemDataSourceUtils.class);
 
 	public static DataSource getDataSource(Class initScripts,String encoding) {
 		try {
@@ -53,7 +58,7 @@ public class HSQLMemDataSourceUtils {
 	}
 	
 	public static DataSource getDataSource(File initScripts,String encoding) {
-		System.out.println("execute hsql db scripts from file:"+initScripts.getAbsolutePath());
+		logger.debug("execute hsql db scripts from file:"+initScripts.getAbsolutePath());
 		Reader input = null;
 		try {
 			input = new InputStreamReader(new FileInputStream(initScripts),encoding);
@@ -91,13 +96,13 @@ public class HSQLMemDataSourceUtils {
 		try {
 			String sql = IOUtils.toString(initScripts);
 			StringTokenizer tokenizer = new StringTokenizer(sql,";");
-			System.out.println("Execute HSQL DB DataSource with sql:");
+			logger.debug("Execute HSQL DB DataSource with sql:");
 			while(tokenizer.hasMoreTokens()) {
 				String tokenSql = tokenizer.nextToken().trim();
 				if("".equals(tokenSql)) {
 					continue;
 				}
-				System.out.println(tokenSql);
+				logger.debug(tokenSql);
 				try {
 					Statement stat = conn.createStatement();
 					stat.execute(tokenSql);

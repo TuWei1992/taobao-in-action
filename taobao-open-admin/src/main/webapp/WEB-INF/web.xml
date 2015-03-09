@@ -27,7 +27,8 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath*:/applicationContext.xml
+			classpath*:/applicationContext.xml,
+			classpath:/sampleRopApplicationContext.xml
 		</param-value>
 	</context-param>
 	<context-param>
@@ -83,17 +84,17 @@
 	
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
 	
 	<filter-mapping>
 		<filter-name>sitemeshFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
 	
 	 <filter-mapping>
         <filter-name>rewriteFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>*.do</url-pattern>
     </filter-mapping>
 
 	<servlet>
@@ -107,8 +108,23 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+	
+	<!--Rop框架请求捕获-->
+    <servlet>
+        <servlet-name>rop</servlet-name>
+        <servlet-class>
+            com.dream.rest.RopServlet
+        </servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>rop</servlet-name>
+        <url-pattern>/router</url-pattern>
+    </servlet-mapping>
+	
 
 	<session-config>
 		<session-timeout>20</session-timeout>

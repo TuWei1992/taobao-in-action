@@ -22,6 +22,6 @@ public class MinaLongConnServer {
 //       acceptor.setHandler(new MinaLongConnServerHandler());
 //       acceptor.getSessionConfig().setReadBufferSize(2048);
 //       acceptor.bind(new InetSocketAddress(PORT));
-//       System.out.println("Listeningon port " + PORT);
+//       logger.debug("Listeningon port " + PORT);
     }
 }

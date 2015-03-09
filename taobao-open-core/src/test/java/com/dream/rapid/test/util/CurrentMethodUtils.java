@@ -1,6 +1,5 @@
 package com.dream.rapid.test.util;
 
-import junit.framework.TestCase;
 
 /**
  * 得到当前被调用的方法

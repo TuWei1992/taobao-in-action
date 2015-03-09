@@ -2,6 +2,8 @@ package com.dream.scheduling.myschedule;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileReader;
 import java.sql.Connection;
@@ -60,8 +62,8 @@ public class SqlRunner {
             conn.close();
         }
     }
-
+    protected final Logger logger = LoggerFactory.getLogger(getClass());
     private void log(String msg) {
-        System.out.println(new Date() + " INFO " + msg);
+        logger.debug(new Date() + " INFO " + msg);
     }
 }

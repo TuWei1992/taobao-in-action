@@ -19,7 +19,7 @@ public class MessagingDataConnectorTest extends AbstractJUnit4SpringContextTests
 	
 	 @Before 
 	 public void initialize() {
-		
+		 connector = (MessagingDataConnector) this.applicationContext.getBean("messagingDataConnector");
 	 }
 
 	
@@ -31,7 +31,6 @@ public class MessagingDataConnectorTest extends AbstractJUnit4SpringContextTests
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 		}
-		connector = (MessagingDataConnector) this.applicationContext.getBean("messagingDataConnector");
 		Object domain = new com.dream.messaging.connector.TDpCorpStmtInqRq();
 		String sourceSystemId = "a", transCode = "T24",targetSystemId = "b";
 		Object response = connector.executeRequest(domain, sourceSystemId, transCode, targetSystemId);
@@ -48,8 +47,28 @@ public class MessagingDataConnectorTest extends AbstractJUnit4SpringContextTests
 			// TODO Auto-generated catch block
 		}
 		
+		TIA209813 domain = new TIA209813();
+		TIA tia = new TIA();
+		tia.setCICSTranCode("1000");
+		tia.setTranCode(9813);
+		tia.setAppCode(20);
+		tia.setFrontEndTranCode(209813);
+		domain.setId("123456");
+		domain.setTia(tia);
 		
-		connector = (MessagingDataConnector) this.applicationContext.getBean("fixFormatMessagingDataConnector");
+		String sourceSystemId = "a", transCode = "209813", targetSystemId = "b";
+		Object response = connector.executeRequest(domain, sourceSystemId, transCode, targetSystemId);
+		logger.debug(response);
+	}
+	
+	@Test
+	public void executeRequestLV() {
+		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}
 		
 		TIA209813 domain = new TIA209813();
 		TIA tia = new TIA();
@@ -58,13 +77,107 @@ public class MessagingDataConnectorTest extends AbstractJUnit4SpringContextTests
 		tia.setAppCode(20);
 		tia.setFrontEndTranCode(209813);
 		domain.setId("123456");
-		
-		
 		domain.setTia(tia);
 		
 		String sourceSystemId = "a", transCode = "209813", targetSystemId = "b";
 		Object response = connector.executeRequest(domain, sourceSystemId, transCode, targetSystemId);
 		logger.debug(response);
 	}
+	
+	@Test
+	public void executeRequestXML() {
+		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}
+		
+		TIA209813 domain = new TIA209813();
+		TIA tia = new TIA();
+		tia.setCICSTranCode("1000");
+		tia.setTranCode(9813);
+		tia.setAppCode(20);
+		tia.setFrontEndTranCode(209813);
+		domain.setId("123456");
+		domain.setTia(tia);
+		
+		String sourceSystemId = "a", transCode = "209813", targetSystemId = "b";
+		Object response = connector.executeRequest(domain, sourceSystemId, transCode, targetSystemId);
+		logger.debug(response);
+	}
+	
+	@Test
+	public void executeRequestJSON() {
+		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}
+		
+		TIA209813 domain = new TIA209813();
+		TIA tia = new TIA();
+		tia.setCICSTranCode("1000");
+		tia.setTranCode(9813);
+		tia.setAppCode(20);
+		tia.setFrontEndTranCode(209813);
+		domain.setId("123456");
+		domain.setTia(tia);
+		
+		String sourceSystemId = "a", transCode = "209813", targetSystemId = "b";
+		
+		connector = (MessagingDataConnector) this.applicationContext.getBean("jsonMessagingDataConnector");
+		
+		Object response = connector.executeRequest(domain, sourceSystemId, transCode, targetSystemId);
+		logger.debug(response);
+	}
+	
+	@Test
+	public void executeRequestCSV() {
+		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}
+		
+		TIA209813 domain = new TIA209813();
+		TIA tia = new TIA();
+		tia.setCICSTranCode("1000");
+		tia.setTranCode(9813);
+		tia.setAppCode(20);
+		tia.setFrontEndTranCode(209813);
+		domain.setId("123456");
+		domain.setTia(tia);
+		
+		String sourceSystemId = "a", transCode = "209813", targetSystemId = "b";
+		Object response = connector.executeRequest(domain, sourceSystemId, transCode, targetSystemId);
+		logger.debug(response);
+	}
+	
+	@Test
+	public void executeRequestRA() {
+		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}
+		
+		TIA209813 domain = new TIA209813();
+		TIA tia = new TIA();
+		tia.setCICSTranCode("1000");
+		tia.setTranCode(9813);
+		tia.setAppCode(20);
+		tia.setFrontEndTranCode(209813);
+		domain.setId("123456");
+		domain.setTia(tia);
+		
+		String sourceSystemId = "a", transCode = "209813", targetSystemId = "b";
+		Object response = connector.executeRequest(domain, sourceSystemId, transCode, targetSystemId);
+		logger.debug(response);
+	}
+
 
 }

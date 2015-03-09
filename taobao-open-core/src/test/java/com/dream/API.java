@@ -36,7 +36,7 @@ public class API {
          UserSellerGetResponse response;
          try {
              response = client.execute(req,sessionkey); //执行API请求并打印结果
-             System.out.println("result:"+response.getBody());
+//             logger.debug("result:"+response.getBody());
           
          } catch (ApiException e) {
          // deal error

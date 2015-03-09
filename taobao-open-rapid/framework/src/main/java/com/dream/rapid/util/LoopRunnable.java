@@ -12,7 +12,7 @@ import org.apache.commons.logging.LogFactory;
  * <pre>
  * LoopRunnable lr = new LoopRunnable(new Runnable() {
  *	public void run() {
- *		System.out.println(new Timestamp(System.currentTimeMillis()));
+ *		logger.debug(new Timestamp(System.currentTimeMillis()));
  *	}
  * });
  * lr.setSleepInterval(100);

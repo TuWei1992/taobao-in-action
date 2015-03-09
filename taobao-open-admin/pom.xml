@@ -298,7 +298,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -310,7 +309,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.4</version>
 <!-- 				<configuration> -->
 <!-- 					<warName>${project.artifactId}</warName> -->
 <!-- 				</configuration> -->
@@ -320,7 +318,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.17</version>
 				<configuration>
 					<includes>
 						<include>**/*Test.java</include>
@@ -358,7 +355,6 @@
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.1</version>
 				<configuration>
 					<path>/${project.artifactId}</path>
 				</configuration>
@@ -385,28 +381,24 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
 			</plugin>
 
 			<!-- install插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-install-plugin</artifactId>
-				<version>2.5.1</version>
 			</plugin>
 
 			<!-- ant插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
 			</plugin>
 
 			<!--数据库迁移-->
 			<plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
-                <version>3.0</version>
                 <configuration>
                     <url>jdbc:h2:file:target/foobar</url>
                     <user>sa</user>

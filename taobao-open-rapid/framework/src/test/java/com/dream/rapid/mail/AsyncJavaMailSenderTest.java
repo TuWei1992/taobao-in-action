@@ -26,13 +26,13 @@ public class AsyncJavaMailSenderTest extends TestCase {
 //		
 //		token.addResponder(new IResponder() {
 //			public void onFault(Exception e) {
-//				System.out.println("send email fail,cause:"+e);
+//				logger.debug("send email fail,cause:"+e);
 //				e.printStackTrace();
 //				executedFail = true;
 //			}
 //
 //			public void onResult(Object result) {
-//				System.out.println("send email success");
+//				logger.debug("send email success");
 //				executedSuccess = true;
 //			}
 //		});

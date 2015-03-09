@@ -10,6 +10,8 @@ import junit.framework.TestCase;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.validation.MapBindingResult;
@@ -30,6 +32,8 @@ public class ValidatorTest extends TestCase{
 		BeanValidatorHolder.cleanHolder();
 	}
 	
+	protected   final Logger logger = LoggerFactory.getLogger(getClass());
+	
 	public void test() {
 
 		MapBindingResult errors = new MapBindingResult(new HashMap(), "vb");
@@ -40,7 +44,7 @@ public class ValidatorTest extends TestCase{
 //		assertEquals("请输入值",errors.getFieldError("blog").getDefaultMessage());
 //		assertEquals("必须小于或等于 100",errors.getFieldError("height").getDefaultMessage());
 //		assertEquals("长度必须在 10 至 20 之间",errors.getFieldError("password").getDefaultMessage());
-		System.out.println(errors);
+		logger.debug(errors+"");
 	} 
 	
 	public void testBeanValidatorHoldervalidate() {
