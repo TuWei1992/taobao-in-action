@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 public class MinaShortConnServer {
 	
 	private final Logger logger = (Logger) LoggerFactory.getLogger(getClass());
-	private static final int PORT = 8001;
+	private static final int PORT = 18001;
 
     public void start()throws IOException{
        IoAcceptor acceptor = new NioSocketAcceptor();

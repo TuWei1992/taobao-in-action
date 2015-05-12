@@ -19,7 +19,7 @@
         service-access-controller="serviceAccessController"
         formatting-conversion-service="conversionService"
         ext-error-base-names="i18n/rop/sampleRopError,i18n/rop/sampleRopError1"
-        service-timeout-seconds="10"
+        service-timeout-seconds="1000"
         invoke-times-controller="invokeTimesController"
         upload-file-max-size="10"
         upload-file-types="png,gif"
@@ -52,6 +52,7 @@
     <!--注册拦截器，可配置多个-->
     <rop:interceptors>
         <bean class="com.dream.rest.sample.ReservedUserNameInterceptor"/>
+        <bean class="com.dream.rest.sample.HttpBodyInterceptor"/>
     </rop:interceptors>
 
     <!--注册监听器，可配置多具-->

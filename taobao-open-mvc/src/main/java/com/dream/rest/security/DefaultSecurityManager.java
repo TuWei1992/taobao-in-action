@@ -299,11 +299,11 @@ public class DefaultSecurityManager implements SecurityManager {
     }
 
     private MainError validateBusinessParams(RopRequestContext context) {
-        List<ObjectError> errorList =
-                (List<ObjectError>) context.getAttribute(SimpleRopRequestContext.SPRING_VALIDATE_ERROR_ATTRNAME);
+        List<ObjectError> errorList =  (List<ObjectError>) context.getAttribute(SimpleRopRequestContext.SPRING_VALIDATE_ERROR_ATTRNAME);
 
         //将Bean数据绑定时产生的错误转换为Rop的错误
         if (errorList != null && errorList.size() > 0) {
+        	logger.error("Business params invalidate.", errorList);
             return toMainErrorOfSpringValidateErrors(errorList, context.getLocale(),context);
         } else {
             return null;
@@ -410,8 +410,7 @@ public class DefaultSecurityManager implements SecurityManager {
      * @param locale
      * @return
      */
-    private MainError toMainErrorOfSpringValidateErrors(
-            List<ObjectError> allErrors, Locale locale,RopRequestContext context) {
+    private MainError toMainErrorOfSpringValidateErrors( List<ObjectError> allErrors, Locale locale,RopRequestContext context) {
         if (hastSubErrorType(allErrors, SubErrorType.ISV_MISSING_PARAMETER)) {
             return getBusinessParameterMainError(allErrors, locale, SubErrorType.ISV_MISSING_PARAMETER,context);
         } else if (hastSubErrorType(allErrors, SubErrorType.ISV_PARAMETERS_MISMATCH)) {

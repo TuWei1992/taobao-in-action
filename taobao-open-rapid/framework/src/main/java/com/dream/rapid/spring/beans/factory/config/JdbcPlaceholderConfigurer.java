@@ -28,7 +28,7 @@ import org.springframework.util.Assert;
  */
 public class JdbcPlaceholderConfigurer extends PropertyPlaceholderConfigurer implements InitializingBean{
 	private DataSource dataSource;
-	private String sql;
+	private String sql; 
 	
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;

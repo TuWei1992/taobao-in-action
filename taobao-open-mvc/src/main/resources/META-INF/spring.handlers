@@ -1,1 +1,2 @@
 http\://www.dream.com/schema/rest=com.dream.rest.config.RopNamespaceHandler
+http\://www.dream.com/schema/pool=com.dream.pool.config.PoolNamespaceHandler

@@ -81,3 +81,6 @@ DefaultXXX：默认基类
 19.定时任务：taobao-open-schedule
 19.1默认配置文件：classpath:///myschedule/web/myschedule-settings.properties
 19.2客户化配置文件：基于JVM系统参数的配置文件，通过JVM参数myschedule.settings，如果未取得JVM系统参数，则通过系统环境变量获取MYSCHEDULE_SETTINGS，如果系统环境变量无法取得则使用默认配置。
+
+
+20.在Eclipse中使用JUnit时，先执行mvn test-compile，再执行响应方法。

@@ -6,18 +6,13 @@
 
 package com.dream.auth.dao;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-
 import java.util.Date;
-import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.dream.auth.vo.query.AuthQuery;
 import com.dream.rapid.base.BaseDaoTestCase;
-import com.dream.rapid.page.Page;
 import com.dream.rapid.test.context.TestMethodContext;
 
 /**

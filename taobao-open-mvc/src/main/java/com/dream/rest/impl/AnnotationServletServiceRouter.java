@@ -457,8 +457,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
             RopRequest ropRequest = null;
             try {
                 //用系统级参数构造一个RequestContext实例（第一阶段绑定）
-                ropRequestContext = requestContextBuilder.buildBySysParams(
-                        ropContext, servletRequest, servletResponse);
+                ropRequestContext = requestContextBuilder.buildBySysParams(ropContext, servletRequest, servletResponse);
 
                 //验证系统级参数的合法性
                 MainError mainError = securityManager.validateSystemParameters(ropRequestContext);
@@ -595,14 +594,15 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         try {
             if (interceptors != null && interceptors.size() > 0) {
                 for (Interceptor interceptor : interceptors) {
-
+                	if(!interceptor.isMatch(ropRequestContext)){
+                		continue;
+                	}
                     interceptor.beforeService(ropRequestContext);
 
                     //如果有一个产生了响应，则阻止后续的调用
                     if (ropRequestContext.getRopResponse() != null) {
                         if (logger.isDebugEnabled()) {
-                            logger.debug("拦截器[" + interceptor.getClass().getName() + "]产生了一个RopResponse," +
-                                    " 阻止本次服务请求继续，服务将直接返回。");
+                            logger.debug("拦截器[" + interceptor.getClass().getName() + "]产生了一个RopResponse," + " 阻止本次服务请求继续，服务将直接返回。");
                         }
                         return;
                     }
@@ -625,6 +625,9 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
         try {
             if (interceptors != null && interceptors.size() > 0) {
                 for (Interceptor interceptor : interceptors) {
+                	if(!interceptor.isMatch(ropRequestContext)){
+                		continue;
+                	}
                     interceptor.beforeResponse(ropRequestContext);
                 }
             }
@@ -686,8 +689,7 @@ public class AnnotationServletServiceRouter implements ServiceRouter {
                 ropResponse = serviceMethodAdapter.invokeServiceMethod(ropRequest);
             } catch (Exception e) { //出错则招聘服务不可用的异常
                 if (logger.isInfoEnabled()) {
-                    logger.info("调用" + context.getMethod() + "时发生异常，异常信息为：" + e.getMessage());
-                    e.printStackTrace();
+                    logger.info("调用" + context.getMethod() + "时发生异常，异常信息为：",e);
                 }
                 ropResponse = new ServiceUnavailableErrorResponse(context.getMethod(), context.getLocale(), e);
             }

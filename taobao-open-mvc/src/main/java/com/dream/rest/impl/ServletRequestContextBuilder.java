@@ -123,12 +123,14 @@ public class ServletRequestContextBuilder implements RequestContextBuilder {
     public RopRequest buildRopRequest(RopRequestContext ropRequestContext) {
         AbstractRopRequest ropRequest = null;
         if (ropRequestContext.getServiceMethodHandler().isRopRequestImplType()) {
-            HttpServletRequest request =
-                    (HttpServletRequest) ropRequestContext.getRawRequestObject();
+            HttpServletRequest request = (HttpServletRequest) ropRequestContext.getRawRequestObject();
             BindingResult bindingResult = doBind(request, ropRequestContext.getServiceMethodHandler().getRequestType());
             ropRequest = buildRopRequestFromBindingResult(ropRequestContext, bindingResult);
 
             List<ObjectError> allErrors = bindingResult.getAllErrors();
+            if(allErrors!=null&&!allErrors.isEmpty()){
+            	logger.error("Errors in result binding.",allErrors);
+            }
             ropRequestContext.setAttribute(SimpleRopRequestContext.SPRING_VALIDATE_ERROR_ATTRNAME, allErrors);
         } else {
             ropRequest = new DefaultRopRequest();

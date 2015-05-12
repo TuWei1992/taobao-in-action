@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * <pre>
- * 功能说明：
+ * 功能说明：<xml><logonResponse><sessionId>123456789</sessionId><name>zhangsan</name></logonResponse></xml>
  * </pre>
  *
  * @author Frank
@@ -21,6 +21,9 @@ public class LogonResponse{
 
     @XmlAttribute
     private String sessionId;
+    
+    @XmlAttribute(name = "name")
+    private String name;
 
     public String getSessionId() {
         return sessionId;

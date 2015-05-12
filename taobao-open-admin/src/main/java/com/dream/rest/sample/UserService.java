@@ -8,6 +8,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.pool2.ObjectPool;
+import org.apache.mina.core.future.WriteFuture;
+import org.apache.mina.core.session.IoSession;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.FileCopyUtils;
 
@@ -21,6 +24,7 @@ import com.dream.rest.annotation.ObsoletedType;
 import com.dream.rest.annotation.ServiceMethod;
 import com.dream.rest.annotation.ServiceMethodBean;
 import com.dream.rest.response.BusinessServiceErrorResponse;
+import com.dream.rest.response.ErrorResponse;
 import com.dream.rest.response.NotExistErrorResponse;
 import com.dream.rest.sample.request.CreateUserRequest;
 import com.dream.rest.sample.request.LogonRequest;
@@ -48,7 +52,7 @@ public class UserService extends AbstractUserService{
 
     private static final String USER_NAME_RESERVED = "USER_NAME_RESERVED";
     private List reservesUserNames = Arrays.asList(new String[]{"toms", "jhon"});
-
+    private ObjectPool<IoSession> objectPool;
 
     public Object getSession(LogonRequest request) {
 
@@ -73,7 +77,12 @@ public class UserService extends AbstractUserService{
         //返回响应
         LogonResponse logonResponse = new LogonResponse();
         logonResponse.setSessionId("mockSessionId1");
-        return logonResponse;
+
+        ErrorResponse error =new ErrorResponse();
+        error.setCode("error");
+        error.setMessage("message");
+        
+        return error;
     }
 
     @ServiceMethod(method = "user.logout",version = "1.0")
@@ -152,8 +161,18 @@ public class UserService extends AbstractUserService{
     }
 
     //版本为5.0的user.add:不需要进行签名验证
-    @ServiceMethod(method = "user.add", version = "5.0", ignoreSign = IgnoreSignType.YES)
+    @ServiceMethod(method = "user.add", version = "5.0", ignoreSign = IgnoreSignType.YES,needInSession = NeedInSessionType.NO)
     public Object addUser5(CreateUserRequest request) {
+        CreateUserResponse response = new CreateUserResponse();
+        response.setCreateTime("20120101010102");
+        response.setUserId("4");
+        return response;
+    }
+    
+    
+  //版本为5.0的user.add:不需要进行签名验证
+    @ServiceMethod(method = "user.add", version = "6.0", ignoreSign = IgnoreSignType.YES,needInSession = NeedInSessionType.NO)
+    public Object addUser5() {
         CreateUserResponse response = new CreateUserResponse();
         response.setCreateTime("20120101010102");
         response.setUserId("4");
@@ -237,12 +256,20 @@ public class UserService extends AbstractUserService{
         if("9999".equals(userId)){
             return new NotExistErrorResponse("user","userId","9999",request.getRopRequestContext().getLocale());
         }else{
-            CreateUserResponse response = new CreateUserResponse();
-            //add creaet new user here...
-            response.setCreateTime("20120101010102");
-            response.setUserId(userId);
-            response.setFeedback("user.get");
-            return response;
+        	IoSession  session = null;
+        	try{
+        		session =  objectPool.borrowObject();
+            	WriteFuture future = session.write("abcd");
+            	future.awaitUninterruptibly();
+            	String result = (String) session.getAttribute("result");
+                CreateUserResponse response = new CreateUserResponse();
+                response.setCreateTime(result);
+                response.setUserId(userId);
+                response.setFeedback("user.get");
+                return response;
+        	}finally{
+        		objectPool.returnObject(session);
+        	}
         }
     }
     

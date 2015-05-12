@@ -59,6 +59,18 @@ public interface ClientRequest {
      * @return
      */
     <T> CompositeResponse post(RopRequest ropRequest, Class<T> ropResponseClass, String methodName, String version);
+    
+    
+    /**
+     * 直接使用 ropRequest发送请求
+     * @param ropRequest
+     * @param ropResponseClass
+     * @param methodName
+     * @param version
+     * @param <T>
+     * @return
+     */
+    <T> CompositeResponse post(String ropRequestString, Class<T> ropResponseClass, String methodName, String version);
 
     /**
      * 使用GET发送服务请求

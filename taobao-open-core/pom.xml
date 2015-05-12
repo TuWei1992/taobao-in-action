@@ -29,6 +29,12 @@
 	
 	<!-- 依赖项定义 -->
 	<dependencies>
+	
+		<dependency>
+		    <groupId>hsqldb</groupId>
+		    <artifactId>hsqldb</artifactId>
+		</dependency>
+		
 		<!-- 主要依赖库的版本定义 Start -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

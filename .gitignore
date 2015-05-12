@@ -76,6 +76,7 @@ hs_err_pid*
 # Maven #
 target/
 build/
+classes/
 workspace/
 .settings/
 .project
@@ -86,4 +87,5 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 
+*.bak
 documentation/~$plan.doc

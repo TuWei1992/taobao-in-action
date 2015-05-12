@@ -19,7 +19,7 @@ public class MinaLongConnServer {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MinaLongConnServer.class);
 	
-	private static final int PORT = 8002;
+	private static final int PORT = 18002;
 
     public void start()throws IOException{
        IoAcceptor acceptor = new NioSocketAcceptor();

@@ -155,11 +155,9 @@ public class DefaultRopContext implements RopContext {
                                 } else if (method.getParameterTypes().length == 1) {
                                     Class<?> paramType = method.getParameterTypes()[0];
                                     if (!ClassUtils.isAssignable(RopRequest.class, paramType)) {
-                                        throw new RopException(method.getDeclaringClass().getName() + "." + method.getName()
-                                                + "的入参必须是" + RopRequest.class.getName());
+                                        throw new RopException(method.getDeclaringClass().getName() + "." + method.getName() + "的入参必须是" + RopRequest.class.getName());
                                     }
-                                    boolean ropRequestImplType = !(paramType.isAssignableFrom(RopRequest.class) ||
-                                            paramType.isAssignableFrom(AbstractRopRequest.class));
+                                    boolean ropRequestImplType = !(paramType.isAssignableFrom(RopRequest.class) || paramType.isAssignableFrom(AbstractRopRequest.class));
                                     serviceMethodHandler.setRopRequestImplType(ropRequestImplType);
                                     serviceMethodHandler.setRequestType((Class<? extends RopRequest>) paramType);
                                 } else {

@@ -30,6 +30,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.dream.rest.CommonConstant;
 import com.dream.rest.MessageFormat;
+import com.dream.rest.RopException;
 import com.dream.rest.RopRequest;
 import com.dream.rest.annotation.IgnoreSign;
 import com.dream.rest.annotation.Temporary;
@@ -273,9 +274,21 @@ public class DefaultRopClient implements RopClient {
             Map<String, String> requestParams = getRequestForm(ropRequest, methodName, version);
             return post(ropResponseClass, requestParams);
         }
+        
+        
+
+       
 
         private <T> CompositeResponse post(Class<T> ropResponseClass, Map<String, String> requestParams) {
-            String responseContent = restTemplate.postForObject(serverUrl, toMultiValueMap(requestParams), String.class);
+            String responseContent = restTemplate.postForObject(selectUrl(), toMultiValueMap(requestParams), String.class);
+            if (logger.isDebugEnabled()) {
+                logger.debug("response:\n" + responseContent);
+            }
+            return toCompositeResponse(responseContent, ropResponseClass);
+        }
+        
+        private <T> CompositeResponse post(Class<T> ropResponseClass, String ropRequest) {
+            String responseContent = restTemplate.postForObject(selectUrl(), ropRequest, String.class);
             if (logger.isDebugEnabled()) {
                 logger.debug("response:\n" + responseContent);
             }
@@ -343,18 +356,7 @@ public class DefaultRopClient implements RopClient {
 
         private String buildGetUrl(Map<String, String> form) {
             StringBuilder requestUrl = new StringBuilder();
-            
-            if(serverUrl!=null){
-            	requestUrl.append(serverUrl);
-            }else{
-            	try{
-            		String url = loadBalance.select(serverUrls);
-            		requestUrl.append(url);
-            	}catch(Exception ex){
-            		logger.error("Building the url exception:", ex);
-            		throw new RuntimeException(ex);
-            	}
-            }
+            requestUrl.append(selectUrl());
             requestUrl.append("?");
             String joinChar = "";
             for (Map.Entry<String, String> entry : form.entrySet()) {
@@ -367,6 +369,21 @@ public class DefaultRopClient implements RopClient {
             return requestUrl.toString();
         }
         
+        private String selectUrl(){
+        	StringBuilder requestUrl = new StringBuilder();
+        	if(serverUrl!=null){
+            	requestUrl.append(serverUrl);
+            }else{
+            	try{
+            		String url = loadBalance.select(serverUrls);
+            		requestUrl.append(url);
+            	}catch(Exception ex){
+            		logger.error("Building the url exception:", ex);
+            		throw new RopException(ex);
+            	}
+            }
+        	return requestUrl.toString();
+        }
         
         
 
@@ -471,6 +488,17 @@ public class DefaultRopClient implements RopClient {
 		 */
 		public void setRopClient(RopClient ropClient) {
 			this.ropClient = ropClient;
+		}
+
+
+		@Override
+		public <T> CompositeResponse post(String ropRequestString,Class<T> ropResponseClass, String methodName, String version) {
+			Map<String, String> requestParams = addOtherParamMap(methodName, version);
+        	String responseContent = restTemplate.postForObject(selectUrl(), ropRequestString, String.class,requestParams);
+            if (logger.isDebugEnabled()) {
+                logger.debug("response:\n" + responseContent);
+            }
+            return toCompositeResponse(responseContent, ropResponseClass);
 		}
     }
 

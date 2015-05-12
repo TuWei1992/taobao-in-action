@@ -5,6 +5,7 @@
 package com.dream.rest.sample.request;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
@@ -45,9 +46,9 @@ public class CreateUserRequest extends AbstractRopRequest {
     @Valid
     private Address address;
 
-//    @Valid
-//    private List<Address> addresses;
-//
+    @Valid
+    private List<Address> addresses;
+    
 //    private Map<String,String> attachMap;
 
     private String format;
@@ -142,6 +143,14 @@ public class CreateUserRequest extends AbstractRopRequest {
 
     public void setFavorites(String[] favorites) {
         this.favorites = favorites;
+    }
+    
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> address) {
+        this.addresses = address;
     }
 
 }

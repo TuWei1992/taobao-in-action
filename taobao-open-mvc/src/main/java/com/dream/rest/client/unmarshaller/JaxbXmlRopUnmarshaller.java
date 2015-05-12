@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * <pre>
- * 功能说明：
+ * 功能说明：将返回报文解析为Java Bean对象。
  * </pre>
  *
  * @author Frank
